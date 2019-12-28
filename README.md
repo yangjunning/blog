@@ -16,7 +16,7 @@ git config --global user.email "youngjuning@aliyun.com"
 ### 创建新版本库
 
 ```
-git clone http://192.168.2.112/yangjunning/test.git
+git clone https://github.com/youngjuning/blog.git
 cd test
 touch README.md
 git add README.md
@@ -29,7 +29,7 @@ git push -u origin master
 ```
 cd existing_folder
 git init
-git remote add origin http://192.168.2.112/yangjunning/test.git
+git remote add origin https://github.com/youngjuning/blog.git
 git add .
 git commit -m "Initial commit"
 git push -u origin master
