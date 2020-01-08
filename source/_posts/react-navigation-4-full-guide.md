@@ -33,13 +33,11 @@ implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
 implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
 ```
 
-## react-navigation
-
-### createAppContainer
+## createAppContainer
 
 createAppContainer 是一个函数，该函数返回一个 React 组件 并将 createStackNavigator 创建的 React 组件 作为参数，并且可以直接从 App.js 导出,用作我们应用程序的根组件。
 
-#### onNavigationStateChange(prevState, newState, action)
+### onNavigationStateChange(prevState, newState, action)
 
 每当导航器管理的 navigation state 发生变化时，都会调用该函数。 它接收之前的 state、navigation 的新 state 以及发布状态更改的 action。 默认情况下，它将 state 的更改打印到控制台。我们可以利用该 props 进行页面跟踪并将其发送到 APM 系统。
 
