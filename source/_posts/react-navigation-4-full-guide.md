@@ -4,7 +4,11 @@ date: 2020-01-10 10:29:14
 tags:
 ---
 
-> 本文适用于 React Native 0.60 及更高版本
+## 适用范围
+
+- react-native 0.60+
+- react-navigation 4+
+- react-navigation 2+
 
 ## 优势
 
@@ -94,7 +98,7 @@ createStackNavigator(
     DemoScreen: {
       screen: DemoScreen,
       navigationOptions: {
-        header: null,
+        headerShown: null,
       },
     },
   },
