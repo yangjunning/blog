@@ -12,5 +12,7 @@ categories:
 - [react-native-ui-lib](https://www.npmjs.com/package/react-native-ui-lib)
 - [native-base](https://www.npmjs.com/package/native-base): Essential cross-platform UI components for React Native
 - [UI Kitten](https://akveo.github.io/react-native-ui-kitten/): React Native framework for creating stunning cross-platform mobile applications. Design system based, brings your product from MVP to enterprise. Forever Open Source and free!
-- [Bringing Material Design to React Native](https://github.com/xinthink/react-native-material-kit)
+- [react-native-material-kit](https://github.com/xinthink/react-native-material-kit): Bringing Material Design to React Native
 - [react-native-paper](https://www.npmjs.com/package/react-native-paper): Material design for React Native
+
+<!--more-->
