@@ -1,5 +1,7 @@
 ---
 title: React Navigation 4 完全指南
+date: 2020-01-10 10:29:14
+tags:
 ---
 
 > 本文适用于 React Native 0.60 及更高版本
