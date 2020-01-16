@@ -83,14 +83,12 @@ const onNavigationStateChange = (prevState, currentState) => {
 export default onNavigationStateChange
 ```
 
-## StatusBar 处理
-
-### 隐藏 header
+## 隐藏 Header
 
 ```ts
 // stack级别
 createStackNavigator(routeConfigMap, {
-  headerMode: 'none',
+  headerMode: 'none', // <---
 })
 // screen级别
 createStackNavigator(
@@ -98,7 +96,7 @@ createStackNavigator(
     DemoScreen: {
       screen: DemoScreen,
       navigationOptions: {
-        headerShown: null,
+        headerShown: null, // <---
       },
     },
   },
@@ -106,60 +104,43 @@ createStackNavigator(
 )
 ```
 
-### 透明 StatusBar
+## 隐藏 Header background
 
 > 这个场景是 UI 的背景图是渐变的情况下没办法指定 StatusBar 的背景色
 
 ```tsx
-import React from 'react'
-import { Text, StatusBar, View } from 'react-native'
-import { getStatusBarHeight } from 'react-native-status-bar-height'
-
-interface Props {
-  navigation: NavigationStackProp
-}
-
-export default class StatusBarDemoScreen extends React.Component<Props> {
-  render() {
-    return (
-      <>
-        <StatusBar translucent barStyle="light-content" backgroundColor="rgba(0,0,0,0)" />
-        <View style={{ flex: 1, backgroundColor: '#6a51ae', paddingTop: getStatusBarHeight(), alignItems: 'center' }}>
-          <Text style={{ fontSize: 20, color: '#ffffff' }}>Screen</Text>
-        </View>
-      </>
-    )
-  }
-}
+static navigationOptions = ({ navigation }) => ({
+  headerTransparent: true // <---
+})
 ```
 
-### 不透明 StatusBar
+## 获取 Header Height
 
-如果设置 StatusBar translucent 属性为 false，则需要借助 SafeAreaView 来解决 ios 内容上移的问题，好处是不会 StatusBar 高度不会发生变化，用户体验更好。
+```js
+import { useHeaderHeight } from 'react-navigation-stack'
 
-```tsx
-import React from 'react'
-import { Text, StatusBar, View, Platform } from 'react-native'
-import { getStatusBarHeight } from 'react-native-status-bar-height'
+const headerHeight = useHeaderHeight()
+```
 
-interface Props {
-  navigation: NavigationStackProp
-}
+## 去掉标题栏下的阴影
 
-export default class StatusBarDemoScreen extends React.Component<Props> {
-  render() {
-    return (
-      <>
-        <StatusBar barStyle="dark-content" translucent={false} backgroundColor="#ecf0f1" />
-        <SafeAreaView style={{ flex: 1, alignItems: 'center', backgroundColor: '#ecf0f1' }}>
-          <Text style={{ fontSize: 40 }}>Detail Screen</Text>
-        </SafeAreaView>
-        <!--由于SafeAreaView支持ios 11 以上的系统，我们可以通过判断平台的方式解决这个问题-->
-        <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#ecf0f1', paddingTop: Platform.OS === 'ios'? getStatusBarHeight(): 0 }}>
-          <Text style={{ fontSize: 40 }}>Detail Screen</Text>
-        </View>
-      </>
-    )
-  }
-}
+```js
+static navigationOptions = ({ navigation }) => ({
+  headerStyle: {
+    // 隐藏导航栏下的阴影效果
+    elevation: 0, // android
+    shadowOpacity: 0, // ios
+  },
+})
+```
+
+## 改变标题栏标题颜色
+
+```js
+static navigationOptions = ({ navigation }) => ({
+  headerTintColor: '#ffffff', // 返回按钮和标题都使用这个属性作为它们的颜色
+  headerStyle: {
+    color: '#000000' // 优先级高
+  },
+})
 ```
