@@ -273,3 +273,157 @@ export default class DetailsScreen extends React.Component<Props> {
   }
 }
 ```
+
+## 在任意组件访问 navigation props
+
+```tsx
+import React from 'react'
+import { Button } from 'react-native'
+import { withNavigation } from 'react-navigation'
+import { NavigationStackProp } from 'react-navigation-stack'
+
+interface Props {
+  navigation: NavigationStackProp
+}
+
+class MyBackButton extends React.Component<Props> {
+  render() {
+    return (
+      <Button
+        title="Back"
+        onPress={() => {
+          this.props.navigation.goBack()
+        }}
+      />
+    )
+  }
+}
+
+export default withNavigation(MyBackButton)
+```
+
+## 在没有 navigation props 的情况下执行路由跳转
+
+### AppContainer
+
+```tsx
+import { setTopLevelNavigator } from 'path/to/NavigationService'
+...
+<AppContainer
+  ref={navigatorRef => {
+    if (navigatorRef) {
+      setTopLevelNavigator(navigatorRef)
+    }
+  }}
+/>
+```
+
+### NavigationService
+
+```ts
+import {
+  NavigationState,
+  NavigationLeafRoute,
+  NavigationParams,
+  NavigationRoute,
+  NavigationActions,
+  StackActions,
+} from 'react-navigation'
+
+let navigator
+
+export const setTopLevelNavigator = navigatorRef => {
+  navigator = navigatorRef
+}
+
+/**
+ *  从 navigation state 中获取当前页面名
+ * @param navigationState NavigationState
+ */
+export const getCurrentRoute = (
+  navigationState: NavigationState | NavigationLeafRoute<NavigationParams>,
+): NavigationRoute<NavigationParams> | null => {
+  if (!navigationState) {
+    return null
+  }
+  const route = navigationState.routes[navigationState.index]
+  // 在嵌套的导航中快速翻找
+  if (route.routes) {
+    return getCurrentRoute(route)
+  }
+  return route
+}
+
+/**
+ * 在没有 navigation 这个 prop 的情况下进行页面跳转
+ * @param routeName 路由名
+ * @param params 路由参数
+ */
+export const navigate = (routeName: string, params?: object) => {
+  navigator.dispatch(
+    NavigationActions.navigate({
+      routeName,
+      params,
+    }),
+  )
+}
+
+/**
+ * 在没有 navigation 这个 prop 的情况下进行页面goBack操作
+ */
+export const goBack = () => {
+  navigator.dispatch(NavigationActions.back())
+}
+
+/**
+ * 在没有 navigation 这个 prop 的情况下进行页面reset操作
+ * @param routeName 路由名
+ * @param params 路由参数
+ */
+export const reset = (routeName: string, params?: object) => {
+  const resetAction = StackActions.reset({
+    index: 0,
+    actions: [NavigationActions.navigate({ routeName, params })],
+  })
+  navigator.dispatch(resetAction)
+}
+
+/**
+ * 在没有 navigation 这个 prop 的情况下进行页面 replace 操作
+ * @param number 返回的层数
+ */
+export const replace = (routeName: string, params?: object) => {
+  navigator.dispatch(StackActions.replace({ routeName, params }))
+}
+
+/**
+ * 在没有 navigation 这个 prop 的情况下进行页面 push 操作
+ * @param number 返回的层数
+ */
+export const push = (routeName: string, params?: object) => {
+  navigator.dispatch(StackActions.push({ routeName, params }))
+}
+
+/**
+ * 在没有 navigation 这个 prop 的情况下进行页面 pop 操作
+ * @param number 返回的层数
+ */
+export const pop = (n: number) => {
+  navigator.dispatch(StackActions.pop({ n }))
+}
+
+/**
+ * 在没有 navigation 这个 prop 的情况下进行页面 pop 操作
+ */
+export const popToTop = () => {
+  navigator.dispatch(StackActions.popToTop())
+}
+
+export default {
+  setTopLevelNavigator,
+  getCurrentRoute,
+  navigate,
+  goBack,
+  reset,
+}
+```
