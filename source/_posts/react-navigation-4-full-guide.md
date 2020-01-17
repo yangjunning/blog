@@ -244,3 +244,32 @@ const AppNavigator = createStackNavigator({
 
 const AppNavigator = createSwitchNavigator(AppNavigator)
 ```
+
+## 自定义 Android 物理返回键行为
+
+```jsx
+import React from 'react'
+import { Text, View, Alert } from 'react-native'
+import { AndroidBackHandler } from 'react-navigation-backhandler'
+
+export default class DetailsScreen extends React.Component<Props> {
+  onBackButtonPressAndroid = () => {
+    if (!this.props.navigation.isFocused()) {
+      // 确保当页面聚焦时才执行后边的代码
+      return false
+    }
+    Alert.alert('自定义安卓物理返回键行为')
+    return true
+  }
+
+  render() {
+    return (
+      <AndroidBackHandler onBackPress={this.onBackButtonPressAndroid}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#ecf0f1' }}>
+          <Text style={{ fontSize: 40 }}>Detail Screen</Text>
+        </View>
+      </AndroidBackHandler>
+    )
+  }
+}
+```
