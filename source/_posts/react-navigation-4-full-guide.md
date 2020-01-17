@@ -117,9 +117,10 @@ static navigationOptions = ({ navigation }) => ({
 ## 获取 Header Height
 
 ```js
-import { useHeaderHeight } from 'react-navigation-stack'
+import { useHeaderHeight, Header } from 'react-navigation-stack'
 
 const headerHeight = useHeaderHeight()
+console.log(Header.HEIGHT)
 ```
 
 ## 去掉标题栏下的阴影
