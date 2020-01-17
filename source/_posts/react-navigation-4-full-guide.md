@@ -83,7 +83,9 @@ const onNavigationStateChange = (prevState, currentState) => {
 export default onNavigationStateChange
 ```
 
-## 隐藏 Header
+## 标题栏 Header
+
+### 隐藏 Header
 
 ```ts
 // stack级别
@@ -104,7 +106,7 @@ createStackNavigator(
 )
 ```
 
-## 隐藏 Header background
+### 隐藏 Header background
 
 > 这个场景是 UI 的背景图是渐变的情况下没办法指定 StatusBar 的背景色
 
@@ -114,7 +116,7 @@ static navigationOptions = ({ navigation }) => ({
 })
 ```
 
-## 获取 Header Height
+### 获取 Header Height
 
 ```js
 import { useHeaderHeight, Header } from 'react-navigation-stack'
@@ -123,7 +125,7 @@ const headerHeight = useHeaderHeight()
 console.log(Header.HEIGHT)
 ```
 
-## 去掉标题栏下的阴影
+### 去掉标题栏下的阴影
 
 ```js
 static navigationOptions = ({ navigation }) => ({
@@ -135,7 +137,7 @@ static navigationOptions = ({ navigation }) => ({
 })
 ```
 
-## 改变标题栏标题颜色
+### 改变标题栏标题颜色
 
 ```js
 static navigationOptions = ({ navigation }) => ({
@@ -144,4 +146,101 @@ static navigationOptions = ({ navigation }) => ({
     color: '#000000' // 优先级高
   },
 })
+```
+
+## Navigation options 解析
+
+### 选项卡导航器包含一个堆栈，在选项卡导航器设置 tabBarLabel
+
+```jsx
+class A extends React.Component {
+  // etc..
+}
+
+class B extends React.Component {
+  // etc..
+}
+
+const HomeStack = createStackNavigator(
+  { A },
+  {
+    navigationOptions: {
+      tabBarLabel: '首页',
+    },
+  },
+)
+
+const SettingsStack = createStackNavigator(
+  { B },
+  {
+    navigationOptions: {
+      tabBarLabel: '设置',
+    },
+  },
+)
+
+export default createAppContainer(
+  createBottomTabNavigator({
+    HomeStack,
+    SettingsStack,
+  }),
+)
+```
+
+### 堆栈包含一个选项卡导航器，在堆栈标题栏上设置 headerTitle
+
+每个 tab 都有自己的 stack， 当 tab 页面处于顶层时，你可以隐藏 stack 的 header。
+
+```js
+const FeedStack = createStackNavigator({
+  FeedHome: FeedScreen,
+  /* other routes here */
+})
+
+const ProfileStack = createStackNavigator({
+  ProfileHome: ProfileScreen,
+  /* other routes here */
+})
+
+const TabNavigator = createBottomTabNavigator(
+  {
+    Feed: FeedStack,
+    Profile: ProfileStack,
+  },
+  {
+    navigationOptions: {
+      // Hide the header from AppNavigator stack
+      headerShown: false,
+    },
+  },
+)
+
+const AppNavigator = createStackNavigator({
+  Home: TabNavigator,
+  Settings: SettingsScreen,
+})
+```
+
+### 选项卡导航器包含堆栈，你希望隐藏特定页面上的 tabbar
+
+添加另一个 Stack Navigator 作为 Tab Navigator 的父级, 并将 Detail 页面放在里面。
+
+```js
+const FeedStack = createStackNavigator({
+  FeedHome: FeedScreen,
+  /* any other route you want to render under the tab bar */
+})
+
+const TabNavigator = createBottomTabNavigator({
+  Feed: FeedStack,
+  Profile: ProfileScreen,
+})
+
+const AppNavigator = createStackNavigator({
+  Tabs: TabNavigator,
+  Details: DetailsScreen,
+  /* any other route you want to render above the tab bar */
+})
+
+const AppNavigator = createSwitchNavigator(AppNavigator)
 ```
