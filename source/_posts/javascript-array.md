@@ -69,8 +69,6 @@ if (!Array.isArray) {
 ## ES1 方法
 
 - `Array.prototype.join`: `join()` 方法将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。**原始数组不会被改变**。
-- `Array.prototype.reverse()`: `reverse()` 方法将数组中元素的位置颠倒，并返回该数组。**该方法会改变原数组**。
-- `Array.prototype.sort()`: `sort()` 方法用原地算法对数组的元素进行排序，并返回数组。默认排序顺序是在将元素转换为字符串，然后比较它们的 UTF-16 代码单元值序列时构建的; sort 方法接收一个比较函数作为参数，如果第一参数应该位于第二个参数之前则返回负数，如果第一个参数应该位于第二个之后则返回一个正数。**该方法会改变原数组**。
 
 ```js
 // join
@@ -79,7 +77,14 @@ console.log(colors.join()) // "red,blue,green"
 console.log(colors.join('|')) // "red|blue|green"
 console.log(colors.join('|')) // "red|blue|green"
 console.log('red|blue|green'.split('|')) // ["red", "blue", "green"]
+```
 
+- `String.prototype.split`(ES3): `split()` 方法使用指定的分隔符字符串将一个 String 对象分割成子字符串数组，以一个指定的分割字串来决定每个拆分的位置。
+
+- `Array.prototype.reverse()`: `reverse()` 方法将数组中元素的位置颠倒，并返回该数组。**该方法会改变原数组**。
+- `Array.prototype.sort()`: `sort()` 方法用原地算法对数组的元素进行排序，并返回数组。默认排序顺序是在将元素转换为字符串，然后比较它们的 UTF-16 代码单元值序列时构建的; sort 方法接收一个比较函数作为参数，如果第一参数应该位于第二个参数之前则返回负数，如果第一个参数应该位于第二个之后则返回一个正数。**该方法会改变原数组**。
+
+```js
 // reverse
 var colors = [1, 2, 3, 4, 5]
 console.log(colors.reverse()) // [5, 4, 3, 2, 1]
@@ -98,20 +103,12 @@ console.log(sort(colors)) // [1, 3, 5, 10, 20]
 console.log(sort(colors, false)) // [20, 10, 5, 3, 1]
 ```
 
-- `String.prototype.split`(ES3): `split()` 方法使用指定的分隔符字符串将一个 String 对象分割成子字符串数组，以一个指定的分割字串来决定每个拆分的位置。
-
 ## ES3 方法
 
 - `Array.prototype.push`: `push()` 方法可以接受任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度。**该方法会改变原数组**。
 - `Array.prototype.pop`: `pop()` 方法从数组末尾移除最后一项，减少数组的 `length` 值，并返回该项。**该方法会改变原数组**。
 - `Array.prototype.shift`: `shift()` 方法能够移除数组中的第一项并返回该项, 同时将数组长度减 1。**该方法会改变原数组**。
 - `Array.prototype.unshift`: `unshift()` 方法能够在数组前端添加任意个项，并返回新数组的长度。**该方法会改变原数组**。
-- `Array.prototype.concat()`: `concat()` 方法用于合并两个或多个数组。**原始数组不会被改变**，而是返回一个新数组。
-- `Array.prototype.slice()`: `slice()` 方法返回一个新的数组对象，这一对象是一个由 `begin` 和 `end` 决定的原数组的浅拷贝（包括 `begin`，不包括 `end`）。**原始数组不会被改变**。
-- `Array.prototype.splice()`: `splice()` 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。**此方法会改变原数组**。
-  - **删除**: 可以删除任意数量的项，只需指定 2 个参数: 要删除的第一项的位置和要删除的项数。例如，`splice(0, 2)` 会删除数组中的前两项。
-  - **插入**: 可以向指定位置插入任意数量的项，只需要提供 3 个参数：起始位置、0（要删除的项数）和要插入的项。如果要插入多个项，可以再传入任意多个项。例如，`splice(2, 0, "red", "green")` 会从当前数组的位置 2 开始插入字符串 `"red"` 和 `green`。
-  - **替换**: 可以向指定位置插入任意数量的项，且同时删除任意数量的项，只需要指定 3 个参数：起始位置、要删除的项数和要插入的任意数量的项。插入的项不必与删除的项数相等。例如，`splice(2, 1, "red", "green")` 会删除当前数组位置 2 的项，然后再从位置 2 开始插入字符串 `"red"` 和 `green`。
 
 ```js
 // push、pop
@@ -127,12 +124,20 @@ var count = colors.unshift('black', 'brown') // 向开头推入两项
 console.log(count) // 5
 var item = colors.shift() // 取得第一项
 console.log(item) // "red"
+```
 
+- `Array.prototype.concat()`: `concat()` 方法用于合并两个或多个数组。**原始数组不会被改变**，而是返回一个新数组。
+- `Array.prototype.slice()`: `slice()` 方法返回一个新的数组对象，这一对象是一个由 `begin` 和 `end` 决定的原数组的浅拷贝（包括 `begin`，不包括 `end`）。**原始数组不会被改变**。
+- `Array.prototype.splice()`: `splice()` 方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。**此方法会改变原数组**。
+  - **删除**: 可以删除任意数量的项，只需指定 2 个参数: 要删除的第一项的位置和要删除的项数。例如，`splice(0, 2)` 会删除数组中的前两项。
+  - **插入**: 可以向指定位置插入任意数量的项，只需要提供 3 个参数：起始位置、0（要删除的项数）和要插入的项。如果要插入多个项，可以再传入任意多个项。例如，`splice(2, 0, "red", "green")` 会从当前数组的位置 2 开始插入字符串 `"red"` 和 `green`。
+  - **替换**: 可以向指定位置插入任意数量的项，且同时删除任意数量的项，只需要指定 3 个参数：起始位置、要删除的项数和要插入的任意数量的项。插入的项不必与删除的项数相等。例如，`splice(2, 1, "red", "green")` 会删除当前数组位置 2 的项，然后再从位置 2 开始插入字符串 `"red"` 和 `green`。
+
+```js
 // concat
 var colors = ['red', 'blue', 'green']
 var colors1 = ['black', 'brown']
 console.log(colors.concat(colors1)) // ["red", "blue", "green", "black", "brown"]
-
 // slice
 /**
  * 如果 `slice()` 方法的参数中有一个负数，则用数组长度加上该数来确定相应地位置。例如，在一个包含5项的数组上调用 `slice(-2, -1)` 与调用 `slice(3, 4)` 得到的结果相同。如果结束位置小于起始位置，则返回空数组。
@@ -182,4 +187,93 @@ var morePeople
  */
 console.log(people.indexOf(person)) // -1
 console.log(morePeople.indexOf(person)) // 0
+```
+
+- `Array.prototype.every()`: 对数组中的每一项运行给定函数，如果该函数对每一项都返回 `true`，则返回 `true`。
+- `Array.prototype.some()`: 对数组中的每一项运行给定函数，如果该函数对任一项返回 `true`，则返回 `true`。
+- `Array.prototype.filter()`: 对数组中的每一项运行给定函数，返回该函数会返回 `true` 的项组成的数组。
+- `Array.prototype.map()`: 对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。
+- `Array.prototype.forEach()`: 对数组中的每一项运行给定函数，这个方法没有返回值。
+
+```js
+// every
+var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+var everyResult = numbers.every((item, index, array) => {
+  return item > 2
+})
+console.log(everyResult) // false
+// some
+var someResult = numbers.some((item, index, array) => {
+  return item > 2
+})
+console.log(someResult) // true
+// filter
+var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+var filterResult = numbers.filter((item, index, array) => {
+  return item > 2
+})
+console.log(filterResult) // [3, 4, 5, 4, 3]
+// map
+var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+var mapResult = numbers.map((item, index, array) => {
+  return item * 2
+})
+console.log(mapResult) // [2, 4, 6, 8, 10, 8, 6, 4, 2]
+// forEach
+var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+numbers.forEach((item, index, array) => {
+  // 执行某些操作
+})
+```
+
+- `Array.prototype.reduce()`
+- `Array.prototype.reduceRight()`
+
+`reduce()` 和 `reduceRight()` 方法都会迭代数组的所有项，然后构建一个最终返回的值。其中，`reduce()` 方法从数组的第一项开始，逐个遍历到最后。而 `reduceRight()` 则从数组的最后一项开始，向前遍历到第一项。
+
+这两个参数都接受两个参数: 一个在每一项上调用的函数和（可选的）作为归并基础的初始值。传给 `reduce` 和 `reduceRight` 的函数接受 4 个参数：前一个值、当前值、项的索引和数组对象。这个函数返回的任何值都会作为第一个参数自动传给下一项。第一次迭代发生在数组的第二项上，因此第一个参数是数组的第一项，第二个参数就是数组的第二项。
+
+```js
+// 数组求和
+var values = [1, 2, 3, 4, 5]
+var sum = values.reduce((prev, cur, index, array) => {
+  return prev + cur
+})
+console.log(sum)
+// 数组求乘积
+var values = [1, 2, 3, 4, 5]
+var pro = values.reduce((prev, cur, index, array) => {
+  return prev * cur
+})
+console.log(pro) // 120
+// 求最大值
+var values = [1, 2, 3, 4, 5]
+var max = values.reduce((prev, cur, index, array) => {
+  return prev > cur ? prev : cur
+})
+console.log(max) // 5
+```
+
+reduce 方法在数组对象中的运用：
+
+> 搬砖工小王拿到了这样的格式：`var arr = [ {name: 'brick1'}, {name: 'brick2'}, {name: 'brick3'} ]`
+> 希望得到这样的数据格式：`brick1, brick2 & brick3`
+> 当然数组异常流: `[{name:'brick1'}]` 和空数组传入得到 `"brick1"` 和空
+
+```js
+var array = [{ name: 'brick11' }, { name: 'brick12' }, { name: 'brick13' }]
+var carryBricks = arr => {
+  return arr.reduce((prev, cur, index, array) => {
+    if (index === 0) {
+      return cur.name
+    } else if (index === array.length - 1) {
+      return prev + ' & ' + cur.name
+    } else {
+      return prev + ',' + cur.name
+    }
+  }, '')
+}
+console.log(carryBricks(array)) // "brick11,brick12 & brick13"
+console.log(carryBricks([{ name: 'brick1' }])) // "brick1"
+console.log(carryBricks([])) // ""
 ```
