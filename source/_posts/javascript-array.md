@@ -246,17 +246,55 @@ var pro = values.reduce((prev, cur, index, array) => {
   return prev * cur
 })
 console.log(pro) // 120
+/**
+ * 【累加对象数组里的值】
+ * 要累加对象数组中包含的值，必须提供初始值，以便各个item正确通过你的函数。
+ */
+var values = [{ x: 1 }, { x: 2 }, { x: 3 }]
+var sum = values.reduce((prev, cur) => {
+  return prev + cur.x
+}, 0)
+console.log(sum) // 6
 // 求最大值
 var values = [1, 2, 3, 4, 5]
 var max = values.reduce((prev, cur, index, array) => {
   return prev > cur ? prev : cur
 })
 console.log(max) // 5
+// 计算数组中每个元素出现的次数
+var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+var countedNames = names.reduce((allNames, name) => {
+  if (allNames.indexOf(name) > -1) {
+    allNames[name]++
+  } else {
+    allNames[name] = 1
+  }
+  return allNames
+})
+// 按属性对object array分类
+var people = [
+  { name: '张三', age: 26 },
+  { name: '李扬', age: 25 },
+  { name: '杨六', age: 25 },
+  { name: '王五', age: 26 },
+]
+var groupBy = (objectArray, property) => {
+  return objectArray.reduce((acc, cur) => {
+    const key = cur[property]
+    if (!acc[key]) {
+      acc[key] = [cur]
+    } else {
+      acc[key].push(cur)
+    }
+    return acc
+  }, {})
+}
+var groupedPeople = groupBy(people, 'age')
 ```
 
-reduce 方法在数组对象中的运用：
+**reduce 高级用法:**
 
-> 搬砖工小王拿到了这样的格式：`var arr = [ {name: 'brick1'}, {name: 'brick2'}, {name: 'brick3'} ]`
+> 搬砖工小王拿到了这样的格式：`var arr = [ {n ame: 'brick1'}, {name: 'brick2'}, {name: 'brick3'} ]`
 > 希望得到这样的数据格式：`brick1, brick2 & brick3`
 > 当然数组异常流: `[{name:'brick1'}]` 和空数组传入得到 `"brick1"` 和空
 
