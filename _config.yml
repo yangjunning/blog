@@ -111,3 +111,8 @@ deploy:
   type: git
   repository: https://gh_token@github.com/youngjuning/youngjuning.github.io.git
   branch: master
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
