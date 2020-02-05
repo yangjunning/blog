@@ -30,10 +30,10 @@ console.log({ a:1 } === { a:1 }) // false
 
 **深比较**也称原值相等，深比较是指检查两个**对象**的所有属性是否**都相等**,深比较需要以递归的方式遍历两个对象的所有属性，操作比较耗时，深比较不管这两个对象是不是同一对象的引用。
 
+### lodash.isEqual
+
 > `_.isEqual`: 执行深比较来确定两者的值是否相等。
 > 注意: 这个方法支持比较 `arrays`, `array buffers`, `booleans`, `date objects`, `error objects`, `maps`, `numbers`, `Object objects`, `regexes`, `sets`, `strings`, `symbols`, 以及 `typed arrays`. Object对象值比较自身的属性，不包括继承的和可枚举的属性。不支持函数和DOM节点比较。
-
-### lodash.isEqual
 
 ```js
 import _ from 'lodash'
