@@ -79,8 +79,6 @@ console.log(colors.join('|')) // "red|blue|green"
 console.log('red|blue|green'.split('|')) // ["red", "blue", "green"]
 ```
 
-- `String.prototype.split`(ES3): `split()` 方法使用指定的分隔符字符串将一个 String 对象分割成子字符串数组，以一个指定的分割字串来决定每个拆分的位置。
-
 - `Array.prototype.reverse()`: `reverse()` 方法将数组中元素的位置颠倒，并返回该数组。**该方法会改变原数组**。
 - `Array.prototype.sort()`: `sort()` 方法用原地算法对数组的元素进行排序，并返回数组。默认排序顺序是在将元素转换为字符串，然后比较它们的 UTF-16 代码单元值序列时构建的; sort 方法接收一个比较函数作为参数，如果第一参数应该位于第二个参数之前则返回负数，如果第一个参数应该位于第二个之后则返回一个正数。**该方法会改变原数组**。
 
