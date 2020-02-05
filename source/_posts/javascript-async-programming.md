@@ -52,7 +52,6 @@ ES6 规定，Promise 对象是一个构造函数，用来生成 Promise 实例�
 ```js
 const promise = new Promise((resolve, reject) => {
   // ... some code
-
   if (/* 异步操作成功 */){
     resolve(value)
   } else {
