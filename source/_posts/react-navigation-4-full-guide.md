@@ -2,7 +2,7 @@
 title: React Navigation 4 完全指南
 date: 2020-01-10 10:29:14
 categories:
-  - [CrossPlatform, ReactNative]
+  - ReactNative
 ---
 
 ## 适用范围

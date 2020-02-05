@@ -2,7 +2,7 @@
 title: React Navigation 5 完全指南
 date: 2020-01-17 10:29:14
 categories:
-  - [CrossPlatform, ReactNative]
+  - ReactNative
 ---
 
 ## 适用范围

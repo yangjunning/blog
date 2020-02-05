@@ -2,7 +2,7 @@
 title: awesome-react-native
 date: 2020-01-10 10:38:29
 categories:
-  - [CrossPlatform, ReactNative]
+  - ReactNative
 ---
 
 ## UI Librarys

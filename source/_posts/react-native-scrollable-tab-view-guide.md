@@ -2,7 +2,7 @@
 title: react-native-scrollable-tab-view 指南
 date: 2020-01-30 15:19:19
 categories:
-  - [CrossPlatform, ReactNative]
+  - ReactNative
 tags: tab-view
 ---
 

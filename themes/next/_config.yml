@@ -122,8 +122,8 @@ scheme: Gemini
 menu:
   home: / || home
   #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -205,7 +205,7 @@ links_settings:
   layout: block
 
 links:
-  #Title: http://yoursite.com
+  陈锋个人博客: https://chenyuhu.js.org/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -223,9 +223,9 @@ toc:
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
 chat:
-  enable: true
-  service: chatra
-  #service: tidio
+  enable: false
+  # service: chatra
+  service: tidio
   icon: comment # Icon name in Font Awesome, set false to disable icon.
   text: Chat # Button text, change it as you wish.
 
@@ -775,7 +775,7 @@ swiftype_key:
 # See: https://chatra.io
 # Dashboard: https://app.chatra.io/settings/general
 chatra:
-  enable: true
+  enable: false
   async: true
   id: BnenxHrBprmgYquvi # Visit Dashboard to get your ChatraID
   #embed: # Unfinished experimental feature for developers. See: https://chatra.io/help/api/#injectto
@@ -784,8 +784,8 @@ chatra:
 # See: https://www.tidiochat.com
 # Dashboard: https://www.tidiochat.com/panel/dashboard
 tidio:
-  enable: false
-  key: # Public Key, get it from dashboard. See: https://www.tidiochat.com/panel/settings/developer
+  enable: true
+  key: gvqpjnio6w2yeiatu5q1kqrpwwvmk9a9 # Public Key, get it from dashboard. See: https://www.tidiochat.com/panel/settings/developer
 
 
 # ---------------------------------------------------------------
