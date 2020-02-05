@@ -529,6 +529,8 @@ _.uniqWith(objects, _.isEqual) // [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
 
 ### 数组排序
 
+- `_.sortBy(collection, [iteratees=[_.identity]])`: 创建一个元素数组。 以 `iteratee` 处理的结果升序排序。 这个方法执行稳定排序，也就是说相同元素会保持原始排序。 `iteratees` 调用1个参数：(`value`)。可以使用 `Array.prototype.reverse` 方法倒序
+
 ```js
 import _ from 'lodash'
 
@@ -573,7 +575,7 @@ _.flattenDepth(array, 2) // [1, 2, 3, [4], 5]
 _.flattenDepth(array, 3) // [1, 2, 3, 4, 5]
 ```
 
-## 参考网址
+### 获取部分元素
 
-- [MDN Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
-- [Lodash 中文文档](https://www.lodashjs.com/docs/latest)
+- `_.initial(array)`: 获取数组 `array` 中除了最后一个元素之外的所有元素（去除数组array中的最后一个元素）。
+- `_.tail(array)`: 获取除了 `array` 数组第一个元素以外的全部元素。
