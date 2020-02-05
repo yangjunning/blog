@@ -2,146 +2,146 @@
   "meta": { "version": 1, "warehouse": "3.0.1" },
   "models": {
     "Asset": [
-      { "_id": "source/CNAME", "path": "CNAME", "modified": 1, "renderable": 0 },
-      { "_id": "source/README.md", "path": "README.md", "modified": 1, "renderable": 0 },
-      { "_id": "themes/next/source/css/main.styl", "path": "css/main.styl", "modified": 1, "renderable": 1 },
+      { "_id": "source/CNAME", "path": "CNAME", "modified": 0, "renderable": 0 },
+      { "_id": "source/README.md", "path": "README.md", "modified": 0, "renderable": 0 },
+      { "_id": "themes/next/source/css/main.styl", "path": "css/main.styl", "modified": 0, "renderable": 1 },
       {
         "_id": "themes/next/source/images/apple-touch-icon-next.png",
         "path": "images/apple-touch-icon-next.png",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/images/algolia_logo.svg",
         "path": "images/algolia_logo.svg",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
-      { "_id": "themes/next/source/images/avatar.gif", "path": "images/avatar.gif", "modified": 1, "renderable": 1 },
+      { "_id": "themes/next/source/images/avatar.gif", "path": "images/avatar.gif", "modified": 0, "renderable": 1 },
       {
         "_id": "themes/next/source/images/cc-by-nc-nd.svg",
         "path": "images/cc-by-nc-nd.svg",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/images/cc-by-nc-sa.svg",
         "path": "images/cc-by-nc-sa.svg",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/images/cc-by-nc.svg",
         "path": "images/cc-by-nc.svg",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/images/cc-by-nd.svg",
         "path": "images/cc-by-nd.svg",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
-      { "_id": "themes/next/source/images/cc-by.svg", "path": "images/cc-by.svg", "modified": 1, "renderable": 1 },
+      { "_id": "themes/next/source/images/cc-by.svg", "path": "images/cc-by.svg", "modified": 0, "renderable": 1 },
       {
         "_id": "themes/next/source/images/cc-by-sa.svg",
         "path": "images/cc-by-sa.svg",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/images/favicon-16x16-next.png",
         "path": "images/favicon-16x16-next.png",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/images/favicon-32x32-next.png",
         "path": "images/favicon-32x32-next.png",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
-      { "_id": "themes/next/source/images/cc-zero.svg", "path": "images/cc-zero.svg", "modified": 1, "renderable": 1 },
-      { "_id": "themes/next/source/images/logo.svg", "path": "images/logo.svg", "modified": 1, "renderable": 1 },
-      { "_id": "themes/next/source/images/quote-l.svg", "path": "images/quote-l.svg", "modified": 1, "renderable": 1 },
-      { "_id": "themes/next/source/images/quote-r.svg", "path": "images/quote-r.svg", "modified": 1, "renderable": 1 },
-      { "_id": "themes/next/source/js/bookmark.js", "path": "js/bookmark.js", "modified": 1, "renderable": 1 },
-      { "_id": "themes/next/source/js/next-boot.js", "path": "js/next-boot.js", "modified": 1, "renderable": 1 },
+      { "_id": "themes/next/source/images/cc-zero.svg", "path": "images/cc-zero.svg", "modified": 0, "renderable": 1 },
+      { "_id": "themes/next/source/images/logo.svg", "path": "images/logo.svg", "modified": 0, "renderable": 1 },
+      { "_id": "themes/next/source/images/quote-l.svg", "path": "images/quote-l.svg", "modified": 0, "renderable": 1 },
+      { "_id": "themes/next/source/images/quote-r.svg", "path": "images/quote-r.svg", "modified": 0, "renderable": 1 },
+      { "_id": "themes/next/source/js/bookmark.js", "path": "js/bookmark.js", "modified": 0, "renderable": 1 },
+      { "_id": "themes/next/source/js/next-boot.js", "path": "js/next-boot.js", "modified": 0, "renderable": 1 },
       {
         "_id": "themes/next/source/js/algolia-search.js",
         "path": "js/algolia-search.js",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
-      { "_id": "themes/next/source/js/utils.js", "path": "js/utils.js", "modified": 1, "renderable": 1 },
-      { "_id": "themes/next/source/js/motion.js", "path": "js/motion.js", "modified": 1, "renderable": 1 },
-      { "_id": "themes/next/source/js/local-search.js", "path": "js/local-search.js", "modified": 1, "renderable": 1 },
-      { "_id": "themes/next/source/lib/anime.min.js", "path": "lib/anime.min.js", "modified": 1, "renderable": 1 },
+      { "_id": "themes/next/source/js/utils.js", "path": "js/utils.js", "modified": 0, "renderable": 1 },
+      { "_id": "themes/next/source/js/motion.js", "path": "js/motion.js", "modified": 0, "renderable": 1 },
+      { "_id": "themes/next/source/js/local-search.js", "path": "js/local-search.js", "modified": 0, "renderable": 1 },
+      { "_id": "themes/next/source/lib/anime.min.js", "path": "lib/anime.min.js", "modified": 0, "renderable": 1 },
       {
         "_id": "themes/next/source/js/schemes/pisces.js",
         "path": "js/schemes/pisces.js",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
-      { "_id": "themes/next/source/js/schemes/muse.js", "path": "js/schemes/muse.js", "modified": 1, "renderable": 1 },
+      { "_id": "themes/next/source/js/schemes/muse.js", "path": "js/schemes/muse.js", "modified": 0, "renderable": 1 },
       {
         "_id": "themes/next/source/lib/font-awesome/bower.json",
         "path": "lib/font-awesome/bower.json",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/lib/font-awesome/HELP-US-OUT.txt",
         "path": "lib/font-awesome/HELP-US-OUT.txt",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/lib/velocity/velocity.min.js",
         "path": "lib/velocity/velocity.min.js",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/lib/velocity/velocity.ui.min.js",
         "path": "lib/velocity/velocity.ui.min.js",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/lib/font-awesome/css/font-awesome.css",
         "path": "lib/font-awesome/css/font-awesome.css",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/lib/font-awesome/css/font-awesome.css.map",
         "path": "lib/font-awesome/css/font-awesome.css.map",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/lib/font-awesome/css/font-awesome.min.css",
         "path": "lib/font-awesome/css/font-awesome.min.css",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.woff",
         "path": "lib/font-awesome/fonts/fontawesome-webfont.woff",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.woff2",
         "path": "lib/font-awesome/fonts/fontawesome-webfont.woff2",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       },
       {
         "_id": "themes/next/source/lib/font-awesome/fonts/fontawesome-webfont.eot",
         "path": "lib/font-awesome/fonts/fontawesome-webfont.eot",
-        "modified": 1,
+        "modified": 0,
         "renderable": 1
       }
     ],
@@ -171,8 +171,8 @@
       },
       {
         "_id": "themes/next/_config.yml",
-        "hash": "803dd37cc58fbd1adb483a32a3ad54f4d02902e7",
-        "modified": 1580885698132
+        "hash": "26c910b398a30cc3651e17a84093afd0b3bc8d0a",
+        "modified": 1580885745286
       },
       {
         "_id": "themes/next/.stylintrc",
@@ -3910,7 +3910,8 @@
         "_id": "themes/next/.git/objects/pack/pack-af38791b7cae7524f13916f622b150f2378bab9c.pack",
         "hash": "f04c3159780985a3ad4c0aedc0f71dddbb49d0af",
         "modified": 1577515674286
-      }
+      },
+      { "_id": "themes/next/.DS_Store", "hash": "14d500cb962d583abccc40a772fdfaf02b37aab4", "modified": 1580885833180 }
     ],
     "Category": [
       { "name": "javascript", "_id": "ck68yj5uq00049zey4dgafdqn" },
