@@ -111,3 +111,5 @@ public
 
 # Mac
 .DS_Store
+
+db.json
