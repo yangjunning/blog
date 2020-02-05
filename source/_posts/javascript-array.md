@@ -415,6 +415,8 @@ _.groupBy(students, 'province')
 
 ### 删除数组项
 
+#### 根据断言删除数组项
+
 - `remove`: 移除数组中 predicate（断言）返回为真值的所有元素，并返回移除元素组成的数组。predicate（断言） 会传入 3 个参数： (`value`, `index`, `array`)。
 
 ```js
@@ -441,6 +443,8 @@ console.log(students)
 console.log(removedStudent)
 // [{name: "谢晧曜", province: "江苏"}]
 ```
+
+#### 根据给定值删除数组项
 
 - `_.pull(array, [values])`: 移除数组 array 中所有和给定值相等的元素，使用 SameValueZero 进行全等比较。
 - `_.pullAll(array, values)`: 这个方法类似 \_.pull，区别是这个方法接收一个要移除值的数组。
@@ -545,6 +549,28 @@ _.sortBy(users, 'user.name')
  *  {age: 48, user: "fred"}
  * ]
  */
+```
+
+### 数组降维
+
+- `_.flatten(array)`: 减少一级 `array` 嵌套深度。
+- `_.flattenDeep(array)`: 将 `array` 递归为一维数组。
+- `_.flattenDepth(array, [depth=1])`: 根据 `depth` 递归减少 `array` 的嵌套层级
+
+```js
+import _ from 'lodash'
+
+// flatten
+_.flatten([1, [2, [3, [4]], 5]]) // [1, 2, [3, [4]], 5]
+
+// flattenDeep
+_.flattenDeep([1, [2, [3, [4]], 5]]) // [1, 2, 3, 4, 5]
+
+// flattenDepth
+var array = [1, [2, [3, [4]], 5]]
+_.flattenDepth(array, 1) // [1, 2, [3, [4]], 5]
+_.flattenDepth(array, 2) // [1, 2, 3, [4], 5]
+_.flattenDepth(array, 3) // [1, 2, 3, 4, 5]
 ```
 
 ## 参考网址
