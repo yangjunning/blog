@@ -1,5 +1,5 @@
 ---
-title: javascript 数组笔记
+title: JavaScript Array 完全指南
 date: 2020-01-30 20:38:39
 categories: javascript
 ---
