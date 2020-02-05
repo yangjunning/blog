@@ -87,7 +87,7 @@
       {
         "_id": "themes/next/source/lib/font-awesome/bower.json",
         "path": "lib/font-awesome/bower.json",
-        "modified": 0,
+        "modified": 1,
         "renderable": 1
       },
       {
@@ -184,11 +184,11 @@
         "hash": "ecca3b919a5b15886e3eca58aa84aafc395590da",
         "modified": 1577515674311
       },
-      { "_id": "themes/next/README.md", "hash": "dc026053a4d9fb97a58dbc3e9060e480f6852b23", "modified": 1577515674312 },
+      { "_id": "themes/next/README.md", "hash": "505355233db43a2dcdbc1e9b7eaffe7f0e8877fd", "modified": 1580886168894 },
       {
         "_id": "themes/next/LICENSE.md",
-        "hash": "18144d8ed58c75af66cb419d54f3f63374cd5c5b",
-        "modified": 1577515674312
+        "hash": "25e04a8592a8bb3b613259be1c8081c4467dc01b",
+        "modified": 1580886168851
       },
       {
         "_id": "themes/next/crowdin.yml",
@@ -298,18 +298,18 @@
       },
       {
         "_id": "themes/next/.github/CODE_OF_CONDUCT.md",
-        "hash": "aa4cb7aff595ca628cb58160ee1eee117989ec4e",
-        "modified": 1577515674309
+        "hash": "d75cd9cd483ab8c72f30584a02ffe8d23574747b",
+        "modified": 1580886168503
       },
       {
         "_id": "themes/next/.github/CONTRIBUTING.md",
-        "hash": "5ef63f34bd3b6bd4d7304d48ce5e0e3e2bead385",
-        "modified": 1577515674309
+        "hash": "b90089acb912f6176779c815f825dfeb43414966",
+        "modified": 1580886168657
       },
       {
         "_id": "themes/next/.github/PULL_REQUEST_TEMPLATE.md",
-        "hash": "715dcf9b0429a4a4c7107d6d1d00a34e4cf9aa99",
-        "modified": 1577515674310
+        "hash": "22fa21c69cbe1f172956df27ef3d0bb58e35ce45",
+        "modified": 1580886168815
       },
       {
         "_id": "themes/next/.github/config.yml",
@@ -353,43 +353,43 @@
       },
       {
         "_id": "themes/next/docs/DATA-FILES.md",
-        "hash": "40a8089076005e0d26ef7c0db58a2b5b464cda6c",
-        "modified": 1577515674313
+        "hash": "905ebbf19011108857ba16e4ce123726b728f090",
+        "modified": 1580886169244
       },
       {
         "_id": "themes/next/docs/AGPL3.md",
-        "hash": "0d2b8c5fa8a614723be0767cc3bca39c49578036",
-        "modified": 1577515674313
+        "hash": "84b75ef116abdbf1636c46dd8cb0110c226fc57b",
+        "modified": 1580886169127
       },
       {
         "_id": "themes/next/docs/AUTHORS.md",
-        "hash": "10135a2f78ac40e9f46b3add3e360c025400752f",
-        "modified": 1577515674313
+        "hash": "b60730fe640d1a61aea24ed61cab8008e72b19c5",
+        "modified": 1580886169210
       },
       {
         "_id": "themes/next/docs/INSTALLATION.md",
-        "hash": "af88bcce035780aaa061261ed9d0d6c697678618",
-        "modified": 1577515674313
+        "hash": "f5b7c0ea6cdf0bc2243cce9a557a55e38e686d93",
+        "modified": 1580886169277
       },
       {
         "_id": "themes/next/docs/LEANCLOUD-COUNTER-SECURITY.md",
-        "hash": "08cda41b4bcf687facfda19ab39718ec7a05ae54",
-        "modified": 1577515674313
+        "hash": "3f1c13bf9b4784b2659626686612be5a61288197",
+        "modified": 1580886169348
       },
       {
         "_id": "themes/next/docs/MATH.md",
-        "hash": "f520b336f16665e164d6edf075bdcc6aa17b31bc",
-        "modified": 1577515674314
+        "hash": "84006d434a00898b689b70a5337e247ae1fe918c",
+        "modified": 1580886169413
       },
       {
         "_id": "themes/next/docs/ALGOLIA-SEARCH.md",
-        "hash": "c7a994b9542040317d8f99affa1405c143a94a38",
-        "modified": 1580791905046
+        "hash": "20993162a9736117df969d7e7852f357baf20cbc",
+        "modified": 1580886169173
       },
       {
         "_id": "themes/next/docs/UPDATE-FROM-5.1.X.md",
-        "hash": "682937d48bf5d243842a76190921322e26c75247",
-        "modified": 1577515674314
+        "hash": "eb949125fa838d3b434563808395fc38ba9db77f",
+        "modified": 1580886169432
       },
       {
         "_id": "themes/next/docs/LICENSE.txt",
@@ -608,88 +608,88 @@
       },
       {
         "_id": "themes/next/.github/ISSUE_TEMPLATE/bug-report.md",
-        "hash": "8ae029084b9ac482adf0fae2a0979dd388476513",
-        "modified": 1578230681938
+        "hash": "0e9f17ccd19f492a0268a33946b549fa0a41a7b9",
+        "modified": 1580886168725
       },
       {
         "_id": "themes/next/.github/ISSUE_TEMPLATE/feature-request.md",
-        "hash": "7a9526f749205c882d672a4f51e6a3033c80ca6e",
-        "modified": 1578230681938
+        "hash": "9c761c02ef065226584609f382f8ca36595e5704",
+        "modified": 1580886168746
       },
       {
         "_id": "themes/next/.github/ISSUE_TEMPLATE/other.md",
-        "hash": "89667adbb85c25716dba607cd7a38191acf60736",
-        "modified": 1578230681938
+        "hash": "ce302bdf832e7bf5de82ebbc46ee287461932466",
+        "modified": 1580886168769
       },
       {
         "_id": "themes/next/.github/ISSUE_TEMPLATE/question.md",
-        "hash": "789a3cceb8f37a4b63b1fb2452a03332a3c365ed",
-        "modified": 1578230681939
+        "hash": "a11bdf40a71baa2e82c2d7247d4679a1e822c846",
+        "modified": 1580886168796
       },
       {
         "_id": "themes/next/docs/zh-CN/ALGOLIA-SEARCH.md",
-        "hash": "34b88784ec120dfdc20fa82aadeb5f64ef614d14",
-        "modified": 1580791905047
+        "hash": "f5e189993f4501a199b5a5099f302eec00f20426",
+        "modified": 1580886169573
       },
       {
         "_id": "themes/next/docs/zh-CN/CONTRIBUTING.md",
-        "hash": "17d7203e85a8ce9760c42a853dee0f26a8f7ee4e",
-        "modified": 1577515674315
+        "hash": "6dfc93e6e7ec57ab005d222cd15da2fd22e35697",
+        "modified": 1580886169723
       },
       {
         "_id": "themes/next/docs/zh-CN/CODE_OF_CONDUCT.md",
-        "hash": "fb23b85db6f7d8279d73ae1f41631f92f64fc864",
-        "modified": 1577515674315
+        "hash": "6300758eff4b2fbea8adcb88981d1382a25fee3b",
+        "modified": 1580886169627
       },
       {
         "_id": "themes/next/docs/zh-CN/INSTALLATION.md",
-        "hash": "579c7bd8341873fb8be4732476d412814f1a3df7",
-        "modified": 1577515674316
+        "hash": "040c8f9b07fc56b4484fb6c5b67ad4a90c8d9609",
+        "modified": 1580886169788
       },
       {
         "_id": "themes/next/docs/zh-CN/DATA-FILES.md",
-        "hash": "ca1030efdfca5e20f9db2e7a428998e66a24c0d0",
-        "modified": 1577515674315
+        "hash": "9b56a1b4390cfa46e04c0812a44dca8c8281444f",
+        "modified": 1580886169756
       },
       {
         "_id": "themes/next/docs/zh-CN/MATH.md",
-        "hash": "f0ffb74de522749c9f2fda46970a61bdafbfbc24",
-        "modified": 1577515674316
+        "hash": "e69d46904394021df17655431fcac94222b46630",
+        "modified": 1580886169940
       },
       {
         "_id": "themes/next/docs/zh-CN/LEANCLOUD-COUNTER-SECURITY.md",
-        "hash": "0b0b9ec6ec4a89e701a3b91f8d7d95752d3e241b",
-        "modified": 1577515674316
+        "hash": "10553180fd2d4d68f30ba50015288ac50bd940d7",
+        "modified": 1580886169860
       },
       {
         "_id": "themes/next/docs/zh-CN/README.md",
-        "hash": "b6a3611d40863c12804c5846994786119ce3b79f",
-        "modified": 1577515674316
+        "hash": "819c74273fa0efb7027cd077d8c58000c97deabc",
+        "modified": 1580886169975
       },
       {
         "_id": "themes/next/docs/ru/DATA-FILES.md",
-        "hash": "0bd2d696f62a997a11a7d84fec0130122234174e",
-        "modified": 1577515674314
+        "hash": "56ba9162e09e26181208d0d803c0798633538598",
+        "modified": 1580886169457
       },
       {
         "_id": "themes/next/docs/ru/INSTALLATION.md",
-        "hash": "9c4fe2873123bf9ceacab5c50d17d8a0f1baef27",
-        "modified": 1577515674314
+        "hash": "feb92ceea9706a091b815fe81788ce1d8d032258",
+        "modified": 1580886169489
       },
       {
         "_id": "themes/next/docs/zh-CN/UPDATE-FROM-5.1.X.md",
-        "hash": "7f37327bbcae7ed7d04d187fd5e9bc6bbf14926a",
-        "modified": 1577515674316
+        "hash": "e5e295de3754c2503ab2701390e58476df09cabd",
+        "modified": 1580886170007
       },
       {
         "_id": "themes/next/docs/ru/README.md",
-        "hash": "41b1bef32fb991410ebf559b4c45022549f95215",
-        "modified": 1577515674315
+        "hash": "b56c9094e1cce1b6e2353bd3c3bc6af588dffea8",
+        "modified": 1580886169512
       },
       {
         "_id": "themes/next/docs/ru/UPDATE-FROM-5.1.X.md",
-        "hash": "fe3f5cda1975114884d84bef384a562920d70335",
-        "modified": 1577515674315
+        "hash": "5f80fdfa7596dfc4889cc93e81b8a528c102955f",
+        "modified": 1580886169530
       },
       {
         "_id": "themes/next/layout/_partials/footer.swig",
@@ -3363,8 +3363,8 @@
       },
       {
         "_id": "themes/next/source/lib/font-awesome/.bower.json",
-        "hash": "a2aaaf12378db56bd10596ba3daae30950eac051",
-        "modified": 1577515674360
+        "hash": "834cc715ba3830a57369b1f9f4e727da51508c1a",
+        "modified": 1580886170025
       },
       {
         "_id": "themes/next/source/lib/font-awesome/.npmignore",
@@ -3373,8 +3373,8 @@
       },
       {
         "_id": "themes/next/source/lib/font-awesome/bower.json",
-        "hash": "279a8a718ab6c930a67c41237f0aac166c1b9440",
-        "modified": 1577515674360
+        "hash": "43f52bf46fe6010a78dad88d41bec9201b5f7170",
+        "modified": 1580886170031
       },
       {
         "_id": "themes/next/source/lib/font-awesome/HELP-US-OUT.txt",
