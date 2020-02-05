@@ -315,3 +315,239 @@ console.log(carryBricks(array)) // "brick11,brick12 & brick13"
 console.log(carryBricks([{ name: 'brick1' }])) // "brick1"
 console.log(carryBricks([])) // ""
 ```
+
+## lodash
+
+### 数组并集
+
+- `_.union([arrays])`: 创建一个按顺序排列的唯一值的数组。所有给定数组的元素值使用 SameValueZero 做等值比较。（ `arrays`（数组）的并集，按顺序返回，返回数组的元素是唯一的）
+- `_.unionBy([arrays], [iteratee=_.identity])`: 这个方法类似 `_.union` ，除了它接受一个 `iteratee` （迭代函数），调用每一个数组（`array`）的每个元素以产生唯一性计算的标准。`iteratee` 会传入一个参数：(`value`)。
+- `_.unionWith([arrays], [comparator])`: 这个方法类似 `_.union`， 除了它接受一个 `comparator` 调用比较 `arrays` 数组的每一个元素。 `comparator` 调用时会传入 2 个参数： (`arrVal`, `othVal`)。
+
+```js
+import _ from 'lodash'
+// union
+_.union([2], [1, 2]) // [2, 1]
+
+// unionBy
+_.unionBy([2.1], [1.2, 2.3], Math.floor) // [2.1, 1.2]
+// The `_.property` iteratee shorthand.
+_.unionBy([{ x: 1 }], [{ x: 2 }, { x: 1 }], 'x') // [{ 'x': 1 }, { 'x': 2 }]
+
+// unionWith
+var objects = [
+  { x: 1, y: 2 },
+  { x: 2, y: 1 },
+]
+var others = [
+  { x: 1, y: 1 },
+  { x: 1, y: 2 },
+]
+_.unionWith(objects, others, _.isEqual) // [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 1 }]
+```
+
+### 数组交集
+
+- `_.intersection([arrays])`: 创建唯一值的数组，这个数组包含所有给定数组都包含的元素，使用 SameValueZero 进行相等性比较。（可以理解为给定数组的交集）
+- `_.intersectionBy([arrays], [iteratee=_.identity])`: 这个方法类似 `_.intersection`，区别是它接受一个 `iteratee` 调用每一个 arrays 的每个值以产生一个值，通过产生的值进行了比较。结果值是从第一数组中选择。iteratee 会传入一个参数：`(value)`。
+- `_.intersectionWith([arrays], [comparator])`: 这个方法类似 `_.intersection`，区别是它接受一个 `comparator` 调用比较 arrays 中的元素。结果值是从第一数组中选择。`comparator` 会传入两个参数：`(arrVal, othVal)`。
+
+```js
+import _ from 'lodash'
+// intersection
+_.intersection([2, 1], [4, 2], [1, 2])) // [2]
+
+// intersectionBy
+_.intersectionBy([2.1, 1.2], [4.3, 2.4], Math.floor) // [2.1]
+// The `_.property` iteratee shorthand.
+_.intersectionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x') // => [{ 'x': 1 }]
+
+// intersectionWith
+var objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
+var others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }];
+_.intersectionWith(objects, others, _.isEqual) // [{ 'x': 1, 'y': 2 }]
+```
+
+### 数组差集
+
+- `_.difference(array, [values])`: 创建一个具有唯一 array 值的数组，每个值不包含在其他给定的数组中。（即创建一个新数组，这个数组中的值，为第一个数字（array 参数）排除了给定数组中的值。）该方法使用 SameValueZero 做相等比较。结果值的顺序是由第一个数组中的顺序确定。
+- `_.differenceBy(array, [values], [iteratee=_.identity])`: 这个方法类似 \_.difference ，除了它接受一个 iteratee （迭代器）， 调用 array 和 values 中的每个元素以产生比较的标准。 结果值是从第一数组中选择。iteratee 会调用一个参数：(value)。（首先使用迭代器分别迭代 array 和 values 中的每个元素，返回的值作为比较值）。
+- `_.differenceWith(array, [values], [comparator])`: 这个方法类似 `_.difference` ，除了它接受一个 `comparator` （比较器），它调用比较 `array`，`values` 中的元素。 结果值是从第一数组中选择。`comparator` 调用参数有两个：`(arrVal, othVal)`。
+
+```js
+import _ from 'lodash'
+
+// difference
+_.difference([3, 2, 1], [4, 2]) // [3, 1]
+
+// differenceBy
+_.differenceBy([3.1, 2.2, 1.3], [4.4, 2.5], Math.floor) // [3.1, 1.3]
+// The `_.property` iteratee shorthand.
+_.differenceBy([{ x: 2 }, { x: 1 }], [{ x: 1 }], 'x') // [{ 'x': 2 }]
+
+// differenceWith
+var objects = [
+  { x: 1, y: 2 },
+  { x: 2, y: 1 },
+]
+_.differenceWith(objects, [{ x: 1, y: 2 }], _.isEqual) // [{ 'x': 2, 'y': 1 }]
+```
+
+### 数组分组
+
+- `_.groupBy(collection, [iteratee=_.identity])`: 创建一个对象，`key` 是 `iteratee` 遍历 `collection`(集合) 中的每个元素返回的结果。 分组值的顺序是由他们出现在 `collection`(集合) 中的顺序确定的。每个键对应的值负责生成 `key` 的元素组成的数组。`iteratee` 调用 1 个参数： (`value`)。
+
+```js
+import _ from 'lodash'
+
+_.groupBy([6.1, 4.2, 6.3], Math.floor) // { '4': [4.2], '6': [6.1, 6.3] }
+// The `_.property` iteratee shorthand.
+_.groupBy(['one', 'two', 'three'], 'length') // { '3': ['one', 'two'], '5': ['three'] }
+const students = [
+  { name: '杨俊宁', province: '河南' },
+  { name: '宋光刚', province: '河南' },
+  { name: '谢晧曜', province: '江苏' },
+  { name: '李珂威', province: '河南' },
+]
+_.groupBy(students, 'province')
+// { '江苏': [{ name: '谢晧曜', province: '江苏' }], '河南': [{ name: '杨俊宁', province: '河南' }, { name: '宋光刚', province: '河南' },{ name: '李珂威', province: '河南' }] }
+```
+
+### 删除数组项
+
+- `remove`: 移除数组中 predicate（断言）返回为真值的所有元素，并返回移除元素组成的数组。predicate（断言） 会传入 3 个参数： (`value`, `index`, `array`)。
+
+```js
+import _ from 'lodash'
+
+const array = [1, 2, 3, 4]
+const evens = _.remove(array, value => {
+  return value % 2 == 0
+})
+console.log(array) // => [1, 3]
+console.log(evens) // => [2, 4]
+
+const students = [
+  { name: '杨俊宁', province: '河南' },
+  { name: '宋光刚', province: '河南' },
+  { name: '谢晧曜', province: '江苏' },
+  { name: '李珂威', province: '河南' },
+]
+const removedStudent = _.remove(students, student => {
+  return student.province === '江苏'
+})
+console.log(students)
+// [{name: "杨俊宁", province: "河南"}, {name: "宋光刚", province: "河南"}, {name: "李珂威", province: "河南"}]
+console.log(removedStudent)
+// [{name: "谢晧曜", province: "江苏"}]
+```
+
+- `_.pull(array, [values])`: 移除数组 array 中所有和给定值相等的元素，使用 SameValueZero 进行全等比较。
+- `_.pullAll(array, values)`: 这个方法类似 \_.pull，区别是这个方法接收一个要移除值的数组。
+- `_.pullAllBy(array, values, [iteratee=_.identity])`: 这个方法类似于 `_.pullAll` ，区别是这个方法接受一个 `iteratee`（迭代函数） 调用 `array` 和 `values`的每个值以产生一个值，通过产生的值进行了比较。`iteratee` 会传入一个参数： (`value`)。
+- `_.pullAllWith(array, values, [comparator])`: 这个方法类似于 `_.pullAll`，区别是这个方法接受 `comparator` 调用 `array` 中的元素和 `values` 比较。`comparator` 会传入两个参数：(`arrVal`, `othVal`)。
+
+> pull 系列和 difference 系列不同之处在于 pull 系列方法会改变数组 array
+
+```js
+import _ from 'lodash'
+
+// pull
+var array = [1, 2, 3, 1, 2, 3]
+_.pull(array, 2, 3)
+console.log(array) // [1, 1]
+
+// pullAll
+var array = [1, 2, 3, 1, 2, 3]
+_.pullAll(array, [2, 3])
+console.log(array) // [1, 1]
+
+// pullAllBy
+var array = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 1 }]
+_.pullAllBy(array, [{ x: 2 }, { x: 3 }], 'x')
+console.log(array) // [{ 'x': 1 }, { 'x': 1 }]
+
+// pullAllWith
+var array = [
+  { x: 1, y: 2 },
+  { x: 3, y: 4 },
+  { x: 5, y: 6 },
+]
+_.pullAllWith(array, [{ x: 3, y: 4 }], _.isEqual)
+console.log(array) // [{ 'x': 1, 'y': 2 }, { 'x': 5, 'y': 6 }]
+```
+
+- `_.pullAt(array, [indexes])`: 根据索引 `indexes`，移除 `array` 中对应的元素，并返回被移除元素的数组。
+
+```js
+import _ from 'lodash'
+
+var array = [5, 10, 15, 20]
+var evens = _.pullAt(array, 1, 3)
+
+console.log(array) // [5, 15]
+console.log(evens) // [10, 20]
+```
+
+- `_.without(array, [values])`: 创建一个剔除所有给定值的新数组，剔除值的时候，使用 SameValueZero 做相等比较。不像 `_.pull`, 这个方法会返回一个新数组。
+
+```js
+import _ from 'lodash'
+
+_.without([2, 1, 2, 3], 1, 2) // [3]
+```
+
+### 数组去重
+
+- `_.uniq(array)`: 创建一个去重后的 array 数组副本。使用了 SameValueZero 做等值比较。只有第一次出现的元素才会被保留。
+- `_.uniqBy(array, [iteratee=_.identity])`: 这个方法类似 `_.uniq` ，除了它接受一个 `iteratee`（迭代函数），调用每一个数组（`array`）的每个元素以产生唯一性计算的标准。`iteratee` 调用时会传入一个参数：(`value`)。
+- `_.uniqWith(array, [comparator])`: 这个方法类似 `_.uniq`， 除了它接受一个 `comparator` 调用比较 `array` 数组的每一个元素。 `comparator` 调用时会传入 2 个参数：(`arrVal`, `othVal`)。
+
+```js
+import _ from 'lodash'
+
+// uniq
+_.uniq([2, 1, 2]) // [2, 1]
+
+// uniqBy
+_.uniqBy([2.1, 1.2, 2.3], Math.floor) // [2.1, 1.2]
+// The `_.property` iteratee shorthand.
+_.uniqBy([{ x: 1 }, { x: 2 }, { x: 1 }], 'x') // [{ 'x': 1 }, { 'x': 2 }]
+
+// uniqWith
+var objects = [
+  { x: 1, y: 2 },
+  { x: 2, y: 1 },
+  { x: 1, y: 2 },
+]
+_.uniqWith(objects, _.isEqual) // [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
+```
+
+### 数组排序
+
+```js
+import _ from 'lodash'
+
+var users = [
+  { user: { name: 'fred' }, age: 48 },
+  { user: { name: 'barney' }, age: 36 },
+  { user: { name: 'fred' }, age: 40 },
+  { user: { name: 'barney' }, age: 34 },
+]
+
+// The `_.property` iteratee shorthand.
+_.sortBy(users, 'user.name')
+/**
+ * [
+ *  {age: 34, user: "barney"},
+ *  {age: 36, user: "barney"},
+ *  {age: 40, user: "fred"},
+ *  {age: 48, user: "fred"}
+ * ]
+ */
+```
+
+## 参考网址
+
+- [MDN Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- [Lodash 中文文档](https://www.lodashjs.com/docs/latest)
