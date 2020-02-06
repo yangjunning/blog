@@ -597,7 +597,7 @@ comments:
 disqus:
   enable: true
   shortname: youngjuning
-  count: true
+  count: false
   #post_meta_order: 0
 
 # DisqusJS
