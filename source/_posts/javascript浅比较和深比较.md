@@ -25,9 +25,9 @@ ECMAScript 中有五种基本类型: Undefined、Null、Boolean、Number 和 Str
 ```js
 var m = { a: 1 }
 var n = { a: 1 }
+var x = m
 console.log(m === n) // false
-// 虽然没有赋值给变量，但比较的还是栈内存中的值引用
-console.log({ a:1 } === { a:1 }) // false
+console.log(m === n) // true
 ```
 
 > 变量名只是指向栈内存的指针，也就是给这个栈内存取得别名
