@@ -11,7 +11,6 @@ categories: javascript
 
 ```js
 const a // Uncaught SyntaxError: Missing initializer in const declaration
-
 const b = 2
 b = 3 // Uncaught TypeError: Assignment to constant variable.
 ```
