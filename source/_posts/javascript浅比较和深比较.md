@@ -1,3 +1,9 @@
+---
+title: javascript浅比较和深比较
+date: 2020-02-05 14:33:23
+categories: javascript
+---
+
 ## 基本类型和引用类型的值
 
 ECMAScript 变量可能包含两种不同数据类型的值：基本类型值和引用类型值。**基本类型值**指的是简单的数据段，而**引用类型的值**指那些可能由多个值构成的对象。
@@ -19,9 +25,9 @@ ECMAScript 中有五种基本类型: Undefined、Null、Boolean、Number 和 Str
 ```js
 var m = { a: 1 }
 var n = { a: 1 }
+var x = m
 console.log(m === n) // false
-// 虽然没有赋值给变量，但比较的还是栈内存中的值引用
-console.log({ a:1 } === { a:1 }) // false
+console.log(m === n) // true
 ```
 
 > 变量名只是指向栈内存的指针，也就是给这个栈内存取得别名
