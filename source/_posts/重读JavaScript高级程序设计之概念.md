@@ -176,7 +176,42 @@ person['first name'] = '张三'
 
 ECMAScript-262 对内置对象的定义是：”由 ECMAScript 实现提供的、不依赖于宿主环境的对象，这些对象在 ECMAScript 程序执行之前就已经存在了。“意思就是说，开发人员不必显式地实例化内置对象，因为它们已经实例化了。ECMAScript 定义了两个单体内置对象：Global 和 Math。
 
+## 面向对象
+
+面向对象（Object-Oriented，OO）的语言有一个标志，那就是它们都有类的概念，而通过类可以创建任意多个具有属性和方法的对象。ECMAScript 中没有类的概念，因此它的对象也与基于类的语言中的对象有所不同。
+
+ECMA-262 把对象定义为：”无序属性的集合，其属性可以包含基础值、对象或者函数。“ 严格来讲，这就相当于说是对象时一组没有特定顺序的值。对象的每个属性或方法都有一个名字，而每个名字都映射到一个值。正因为这样，我们可以把 ECMAScript 的对象想象成散列表：无非就是一组键值对，其中值可以是数据或函数。
+
+每个对象都是基于一个引用类型创建的，这个引用类型可以是原生类型，也可以是开发人员定义的类型。
+
+### 构造函数
+
+构造函数与其他函数的唯一区别，就在于调用它们的方式不同。不过，构造函数毕竟也是函数，不存在定义构造函数的特殊语法。任何函数，只要通过 `new` 操作符来调用，那他就可以作为构造函数；而任何函数，如果不通过 `new` 操作符来调用，那它跟普通的函数也不会有什么两样。例如：
+
+```js
+function Person(name) {
+  this.name = name
+  this.sayName = function() {
+    alert(name)
+  }
+}
+
+// 当作普通函数调用
+var person = new Person('杨俊宁')
+person.sayName() // 杨俊宁
+
+// 当作普通函数调用
+Person('杨俊宁') // 添加到 window
+window.sayName() // 杨俊宁
+
+// 在另一个对象的作用域中调用
+var o = new Object()
+Person.call(o, '杨小然')
+o.sayName() // 杨小然
+```
+
 ## 深入
 
 - var、let、const
 - null 和 undefined
+- [Object.defineProperty()](https://www.jianshu.com/p/07ba2b0c8fca)
