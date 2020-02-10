@@ -196,15 +196,12 @@ function Person(name) {
     alert(name)
   }
 }
-
 // 当作普通函数调用
 var person = new Person('杨俊宁')
 person.sayName() // 杨俊宁
-
 // 当作普通函数调用
 Person('杨俊宁') // 添加到 window
 window.sayName() // 杨俊宁
-
 // 在另一个对象的作用域中调用
 var o = new Object()
 Person.call(o, '杨小然')
@@ -264,7 +261,29 @@ console.log(person1.sayName === person2.sayName) // true
 
 在这个例子中，实例属性都是在构造函数中定义的，而由所有实例共享的属性 `constructor` 和方法 `sayName()` 则是在原型中定义的。而修改了 `person1.friends`(向其中添加一个新字符串)，并不会影响到 `person2.friends`，因为它们分别引用了不同的数组。
 
-这种构造函数与原型混成的模式，是目前在 ECMAScript 中使用最广泛、认同度最高的一种创建自定义类型的方法。可以说，这是用来定义引用类型的一种默认模式
+这种构造函数与原型混成的模式，是目前在 ECMAScript 中使用最广泛、认同度最高的一种创建自定义类型的方法。可以说，这是用来定义引用类型的一种默认模式。
+
+### 动态原型模式
+
+有其他 OO 语言经验的开发人员在看到独立的构造函数和原型时，很可能会感到非常困惑。动态原型模式正式致力于解决这个问题的一个方案，它把所有信息都封装在了构造函数中，而通过在构造函数中初始化原型（仅在必要的情况下），又保持了同时使用构造函数和原型的优点。换句话说，可以通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型。来看一个例子。
+
+```js
+function Person(name, age, job) {
+  // 属性
+  this.name = name
+  this.age = age
+  this.job = job
+  // 方法
+  if (typeof this.sayName !== 'function') {
+    Person.prototype.sayName = function() {
+      alert(this.name)
+    }
+  }
+}
+
+var friend = new Person('Nicholas', 29, 'Software Engineer')
+friend.sayName()
+```
 
 ## 深入
 
