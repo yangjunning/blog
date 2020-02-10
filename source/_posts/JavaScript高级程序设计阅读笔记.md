@@ -1,7 +1,8 @@
 ---
-title: 重读《JavaScript高级程序设计》之概念
+title: 《JavaScript高级程序设计》阅读笔记
 date: 2020-02-06 14:33:23
 categories: javascript
+tags: 阅读笔记
 ---
 
 <img src="https://i.loli.net/2020/02/06/nKlMCA4agtzHc6R.png" height="300">
@@ -231,6 +232,39 @@ o.sayName() // 杨小然
 虽然在所有的实现中都无法访问到 `[[Prototype]]`，但可以通过 `Object.getPrototypeOf()` 方法来确定对象之间是否存在这种关系。从本质上讲，如果 `[[Prototype]]` 指向调用 `isPrototypeOf()` 方法的对象，那么这个方法就返回 true。
 
 ECMAScript 5 增加了一个新方法，叫 `Object.getPrototypeOf()`，在所有支持的实现中，这个方法返回 `[[Prototype]]` 的值。
+
+### 组合使用构造函数模式和原型模式
+
+创建自定义类型的最常见方式，就是组合使用构造函数模式与原型模式。构造函数模式用于定义实例属性，而原型模式用于定义方法和共享属性。结果，每个实例都会有自己的一份实例属性的副本，但同时有共享着对方法的引用，最大限度地节省了内存。另外，这种混杂模式还支持向构造函数传递参数；可谓是集两种模式之长。下面的代码重写了前面的例子。
+
+```js
+function Person(name, age, job) {
+  this.name = name
+  this.age = age
+  this.job = job
+  this.friends = ['Shelby', 'Court']
+}
+
+Person.prototype = {
+  constructor: Person,
+  sayName: function() {
+    alert(this.name)
+  },
+}
+
+var person1 = new Person('Nicholas', 29, 'Software Engineer')
+var person2 = new Person('Greg', 27, 'Doctor')
+
+person1.friends.push('Van')
+console.log(person1.friends) // ["Shelby", "Court", "Van"]
+console.log(person2.friends) // ["Shelby", "Court"]
+console.log(person1.friends === person2.friends) // false
+console.log(person1.sayName === person2.sayName) // true
+```
+
+在这个例子中，实例属性都是在构造函数中定义的，而由所有实例共享的属性 `constructor` 和方法 `sayName()` 则是在原型中定义的。而修改了 `person1.friends`(向其中添加一个新字符串)，并不会影响到 `person2.friends`，因为它们分别引用了不同的数组。
+
+这种构造函数与原型混成的模式，是目前在 ECMAScript 中使用最广泛、认同度最高的一种创建自定义类型的方法。可以说，这是用来定义引用类型的一种默认模式
 
 ## 深入
 
