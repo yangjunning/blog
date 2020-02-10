@@ -33,7 +33,6 @@ custom_file_path:
   #mixin: source/_data/mixins.styl
   #style: source/_data/styles.styl
 
-
 # ---------------------------------------------------------------
 # Site Information Settings
 # See: https://theme-next.org/docs/getting-started/
@@ -59,7 +58,7 @@ footer:
     # If you want to animate the icon, set it to true.
     animated: true
     # Change the color of icon, using Hex Code.
-    color: "#808080"
+    color: '#808080'
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
@@ -98,7 +97,6 @@ creative_commons:
   post: true
   language:
 
-
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -108,7 +106,6 @@ creative_commons:
 #scheme: Mist
 #scheme: Pisces
 scheme: Gemini
-
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -133,7 +130,6 @@ menu:
 menu_settings:
   icons: true
   badges: true
-
 
 # ---------------------------------------------------------------
 # Sidebar Settings
@@ -205,6 +201,7 @@ links_settings:
   layout: block
 
 links:
+  杨俊宁的掘金: https://juejin.im/user/5a3f85db6fb9a0450909b98a
   陈锋个人博客: https://chenyuhu.js.org/
 
 # Table of Contents in the Sidebar
@@ -228,7 +225,6 @@ chat:
   service: tidio
   icon: comment # Icon name in Font Awesome, set false to disable icon.
   text: Chat # Button text, change it as you wish.
-
 
 # ---------------------------------------------------------------
 # Post Settings
@@ -308,7 +304,6 @@ post_edit:
 # Available values: left | right | false
 post_navigation: left
 
-
 # ---------------------------------------------------------------
 # Custom Page Settings
 # See: https://theme-next.org/docs/theme-settings/custom-pages
@@ -319,8 +314,8 @@ tagcloud:
   # All values below are same as default, change them by yourself.
   min: 12 # Minimun font size in px
   max: 30 # Maxium font size in px
-  start: "#ccc" # Start color (hex, rgba, hsla or color keywords)
-  end: "#111" # End color (hex, rgba, hsla or color keywords)
+  start: '#ccc' # Start color (hex, rgba, hsla or color keywords)
+  end: '#111' # End color (hex, rgba, hsla or color keywords)
   amount: 200 # Amount of tags, change it if you have more than 200 tags
 
 # Google Calendar
@@ -334,7 +329,6 @@ calendar:
   showDeleted: false
   singleEvents: true
   maxResults: 250
-
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
@@ -350,7 +344,7 @@ text_align:
 mobile_layout_economy: true
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
-android_chrome_color: "#222"
+android_chrome_color: '#222'
 
 # Hide sticky headers and color the menu bar on Safari (iOS / macOS).
 safari_rainbow: true
@@ -383,14 +377,14 @@ reading_progress:
   enable: true
   # Available values: top | bottom
   position: top
-  color: "#37c6c0"
+  color: '#37c6c0'
   height: 3px
 
 # Bookmark Support
 bookmark:
   enable: true
   # Customize the color of the bookmark.
-  color: "#222"
+  color: '#222'
   # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
   # If manual, only save it by clicking the bookmark-icon.
   save: auto
@@ -400,7 +394,6 @@ github_banner:
   enable: true
   permalink: https://github.com/youngjuning
   title: Follow me on GitHub
-
 
 # ---------------------------------------------------------------
 # Font Settings
@@ -454,7 +447,6 @@ font:
     external: true
     family:
 
-
 # ---------------------------------------------------------------
 # SEO Settings
 # ---------------------------------------------------------------
@@ -495,7 +487,6 @@ baidu_site_verification:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
 baidu_push: true
-
 
 # ---------------------------------------------------------------
 # Third Party Plugins & Services Settings
@@ -567,7 +558,6 @@ quicklink:
   # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
   # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
   ignores:
-
 
 # ---------------------------------------------------------------
 # Comments Settings
@@ -659,7 +649,6 @@ gitalk:
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
   language:
 
-
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
 # See: https://theme-next.org/docs/third-party-services/post-widgets
@@ -669,8 +658,8 @@ gitalk:
 # To get your ID visit https://widgetpack.com
 rating:
   enable: false
-  id:     # <app_id>
-  color:  fc6423
+  id: # <app_id>
+  color: fc6423
 
 # AddThis Share. See: https://www.addthis.com
 # Go to https://www.addthis.com/dashboard to customize your tools.
@@ -731,7 +720,6 @@ busuanzi_count:
   post_views: true
   post_views_icon: eye
 
-
 # ---------------------------------------------------------------
 # Search Services
 # See: https://theme-next.org/docs/third-party-services/search-services
@@ -746,7 +734,7 @@ algolia_search:
   labels:
     input_placeholder: Search for Posts
     hits_empty: "We didn't find any results for the search: ${query}"
-    hits_stats: "${hits} results found in ${time} ms"
+    hits_stats: '${hits} results found in ${time} ms'
 
 # Local Search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
@@ -764,7 +752,6 @@ local_search:
 
 # Swiftype Search API Key
 swiftype_key:
-
 
 # ---------------------------------------------------------------
 # Chat Services
@@ -786,7 +773,6 @@ chatra:
 tidio:
   enable: true
   key: gvqpjnio6w2yeiatu5q1kqrpwwvmk9a9 # Public Key, get it from dashboard. See: https://www.tidiochat.com/panel/settings/developer
-
 
 # ---------------------------------------------------------------
 # Tags Settings
@@ -827,7 +813,6 @@ mermaid:
   enable: false
   # Available themes: default | dark | forest | neutral
   theme: forest
-
 
 # ---------------------------------------------------------------
 # Animation Settings
@@ -877,7 +862,7 @@ three:
 canvas_nest:
   enable: true
   onmobile: true # Display on mobile or not
-  color: "0,0,255" # RGB values, use `,` to separate
+  color: '0,0,255' # RGB values, use `,` to separate
   opacity: 0.5 # The opacity of line: 0~1
   zIndex: -1 # z-index property of the background
   count: 99 # The number of lines
@@ -890,7 +875,6 @@ canvas_ribbon:
   size: 300 # The width of the ribbon
   alpha: 0.6 # The transparency of the ribbon
   zIndex: -1 # The display level of the ribbon
-
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
