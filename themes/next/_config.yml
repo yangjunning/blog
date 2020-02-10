@@ -251,8 +251,8 @@ post_meta:
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
   separated_meta: true
-  item_text_post: true
-  item_text_total: true
+  item_text_post: false
+  item_text_total: false
   awl: 4
   wpm: 275
 
