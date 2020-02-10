@@ -10,7 +10,7 @@
 override: false
 
 # Console reminder if new version released.
-reminder: false
+reminder: true
 
 # Allow to cache content generation. Introduced in NexT v6.0.0.
 cache:
@@ -71,9 +71,9 @@ footer:
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: false
+    enable: true
     # Version info of NexT after scheme info (vX.X.X).
-    version: false
+    version: true
 
   # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
@@ -95,7 +95,7 @@ creative_commons:
   license: by-nc-sa
   sidebar: true
   post: true
-  language:
+  language: deed.zh
 
 # ---------------------------------------------------------------
 # Scheme Settings
