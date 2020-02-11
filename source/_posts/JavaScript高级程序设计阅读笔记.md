@@ -70,7 +70,7 @@ JavaScript 具有自动垃圾收集机制，也就是说，执行环境会负责
 对象是某个特定引用类型的实例。新对象是使用 `new` 操作符后跟一个构造函数来创建。构造函数本身就是一个函数，只不过这个函数是处于创建新对象的目的而定义的。请看下面这行代码：
 
 ```js
-var person = new Object()
+var person = new Object();
 ```
 
 这行代码创建了 `Object` 引用类型的一个新实例，然后把该实例保存在了变量 `person` 中。使用的构造函数是 `Object`，它只为新对象定义了默认的属性和方法。 ECMAScript 提供了很多原生引用类型（例如 `Object`），以便开发人员用以实现常见的计算任务。
@@ -113,7 +113,7 @@ var expression = / pattern / flags
 
 ```js
 function sum(num1, num2) {
-  return num1 + num2
+  return num1 + num2;
 }
 ```
 
@@ -121,8 +121,8 @@ function sum(num1, num2) {
 
 ```js
 var sum = function(num1, num2) {
-  return num1 + num2
-}
+  return num1 + num2;
+};
 ```
 
 ## 函数的属性和方法
@@ -147,22 +147,22 @@ var sum = function(num1, num2) {
 一般来说，访问对象属性时使用的都是点表示法，这也是很多面向对象语言中通用的语法。不过，在 JavaScript 中也可以使用方括号表示法来访问对象的属性。在使用方括号语法时，应该将要访问的属性以字符串的形式放在方括号中，如下面的例子所示：
 
 ```js
-var person = { name: '张三' }
-console.log(person.name) // 张三
-console.log(person['name']) // 张三
+var person = { name: "张三" };
+console.log(person.name); // 张三
+console.log(person["name"]); // 张三
 ```
 
 从功能上看，这两种访问对象属性的方法没有任何区别。但方括号语法的主要优点是可以通过变量来访问属性，例如：
 
 ```js
-var propertyName = 'name'
-console.log(person[propertyName]) // "张三"
+var propertyName = "name";
+console.log(person[propertyName]); // "张三"
 ```
 
 如果属性名中包含会导致语法错误的字符，或者属性名使用的是关键字或保留字，也可以使用方括号表示法：
 
 ```js
-person['first name'] = '张三'
+person["first name"] = "张三";
 ```
 
 由于 `"first name"` 中包含一个空格，所以不能使用点表示法来访问它。然后，属性名中是可以包含非字母非数字的，这时候就可以使用方括号表示法来访问他们。
@@ -191,21 +191,21 @@ ECMA-262 把对象定义为：”无序属性的集合，其属性可以包含�
 
 ```js
 function Person(name) {
-  this.name = name
+  this.name = name;
   this.sayName = function() {
-    alert(name)
-  }
+    alert(name);
+  };
 }
 // 当作普通函数调用
-var person = new Person('杨俊宁')
-person.sayName() // 杨俊宁
+var person = new Person("杨俊宁");
+person.sayName(); // 杨俊宁
 // 当作普通函数调用
-Person('杨俊宁') // 添加到 window
-window.sayName() // 杨俊宁
+Person("杨俊宁"); // 添加到 window
+window.sayName(); // 杨俊宁
 // 在另一个对象的作用域中调用
-var o = new Object()
-Person.call(o, '杨小然')
-o.sayName() // 杨小然
+var o = new Object();
+Person.call(o, "杨小然");
+o.sayName(); // 杨小然
 ```
 
 ### 原型 prototype
@@ -236,27 +236,27 @@ ECMAScript 5 增加了一个新方法，叫 `Object.getPrototypeOf()`，在所�
 
 ```js
 function Person(name, age, job) {
-  this.name = name
-  this.age = age
-  this.job = job
-  this.friends = ['Shelby', 'Court']
+  this.name = name;
+  this.age = age;
+  this.job = job;
+  this.friends = ["Shelby", "Court"];
 }
 
 Person.prototype = {
   constructor: Person,
   sayName: function() {
-    alert(this.name)
-  },
-}
+    alert(this.name);
+  }
+};
 
-var person1 = new Person('Nicholas', 29, 'Software Engineer')
-var person2 = new Person('Greg', 27, 'Doctor')
+var person1 = new Person("Nicholas", 29, "Software Engineer");
+var person2 = new Person("Greg", 27, "Doctor");
 
-person1.friends.push('Van')
-console.log(person1.friends) // ["Shelby", "Court", "Van"]
-console.log(person2.friends) // ["Shelby", "Court"]
-console.log(person1.friends === person2.friends) // false
-console.log(person1.sayName === person2.sayName) // true
+person1.friends.push("Van");
+console.log(person1.friends); // ["Shelby", "Court", "Van"]
+console.log(person2.friends); // ["Shelby", "Court"]
+console.log(person1.friends === person2.friends); // false
+console.log(person1.sayName === person2.sayName); // true
 ```
 
 在这个例子中，实例属性都是在构造函数中定义的，而由所有实例共享的属性 `constructor` 和方法 `sayName()` 则是在原型中定义的。而修改了 `person1.friends`(向其中添加一个新字符串)，并不会影响到 `person2.friends`，因为它们分别引用了不同的数组。
@@ -267,23 +267,21 @@ console.log(person1.sayName === person2.sayName) // true
 
 有其他 OO 语言经验的开发人员在看到独立的构造函数和原型时，很可能会感到非常困惑。动态原型模式正式致力于解决这个问题的一个方案，它把所有信息都封装在了构造函数中，而通过在构造函数中初始化原型（仅在必要的情况下），又保持了同时使用构造函数和原型的优点。换句话说，可以通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型。来看一个例子。
 
-```js
+<div id="runkit-1">
 function Person(name, age, job) {
-  // 属性
   this.name = name
   this.age = age
   this.job = job
-  // 方法
-  if (typeof this.sayName !== 'function') {
+  if (typeof this.sayName !== "function") {
     Person.prototype.sayName = function() {
-      alert(this.name)
+      console.log(this.name)
     }
   }
 }
-
 var friend = new Person('Nicholas', 29, 'Software Engineer')
-friend.sayName()
-```
+friend.sayName() // "Nicholas"
+
+</div>
 
 ### 继承
 
@@ -295,29 +293,23 @@ ECMAScript 描述了原型链的概念，并将原型链作为实现继承的主
 
 实现原型链有一种基本模式，其代码大致如下：
 
-<div id="runkit">
+<div id="runkit-2">
 function SuperType(){
   this.property = true
 }
-
 SuperType.prototype.getSuperValue = function() {
-return this.property
+  return this.property
 }
-
 function SubType() {
-this.property = false
+  this.subproperty = false
 }
-
 // 继承了 SuperType
 SubType.prototype = new SuperType()
-
 SubType.prototype.getSubValue = function() {
-return this.property
+  return this.subproperty
 }
-
 var instance = new SubType()
-console.log(instance.getSuperValue) // true
-
+console.log(instance.getSuperValue()) // true
 </div>
 
 以上代码定义了两个类型：`SuperType` 和 `SubType`。每个类型分别有一个属性和一个方法。它们的主要区别是 `SubType` 继承了 `SuperType`，而继承是通过创建 `SuperType` 的实例，并将该实例赋给 `SubType.prototype` 实现的。实现的本质是重写原型对象，代之以一个新类型的实例。换句话说，原来存在于 `SuperType` 的实例中的所有属性和方法，现在也存在于 `SubType.prototype` 中了。在确定了继承关系之后，我们给 `SubType.prototype` 添加了一个方法，这样就在继承了 `SuperType` 的属性和方法的基础上又添加了一个新方法。
