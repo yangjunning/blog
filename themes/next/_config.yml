@@ -117,13 +117,14 @@ scheme: Gemini
 # When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
-  home: / || home
-  #about: /about/ || user
-  tags: /tags/ || tags
-  categories: /categories/ || th
-  archives: /archives/ || archive
+  首页: / || home
+  关于: /about/ || user
+  标签: /tags/ || tags
+  分类: /categories/ || th
+  归档: /archives/ || archive
   #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
+  sitemap: /sitemap.xml || sitemap
+  baidusitemap: /baidusitemap.xml || sitemap
   commonweal: /404.html || heartbeat
 
 # Enable / Disable menu icons / item badges.
@@ -678,7 +679,7 @@ google_analytics:
   only_pageview: false
 
 # Baidu Analytics
-baidu_analytics: # <app_id>
+baidu_analytics: a1319c6a7cb0e5cc6572a6181c7e949c # <app_id>
 
 # Growingio Analytics
 growingio_analytics: # <project_id>
@@ -712,7 +713,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: user
   total_views: true
