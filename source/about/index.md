@@ -15,6 +15,6 @@ comments: false
 
 - 杨俊宁/男/1994
 - 本科/中原工学院计算机系
-- 工作年限：3年
+- 工作年限：3.5年
 - 技术博客：https://youngjuning.js.org
 - Github：https://github.com/youngjuning
