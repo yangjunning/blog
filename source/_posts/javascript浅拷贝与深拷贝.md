@@ -73,7 +73,7 @@ var shallowObj = shallowCopy(obj)
 ### `JSON.parse(JSON.stringify)` 深拷贝的局限
 
 1. 如果被拷贝的对象中有 `function`，则拷贝之后的对象就会**丢失**这个 `function`
-2. 如果被拷贝的对象中有正则表达式，则拷贝之后的对象正则表达式会变成 `Object`
+2. 如果被拷贝的对象中有正则表达式，则拷贝之后的正则表达式会变成 `Object`
 
 ```js
 let a = {name: 'youngjuning', sayName: function() {alert(this.name)}, numberReg: /\d+/}
