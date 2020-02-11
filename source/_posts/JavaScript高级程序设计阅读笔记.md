@@ -314,6 +314,32 @@ console.log(instance.getSuperValue()) // true
 
 以上代码定义了两个类型：`SuperType` 和 `SubType`。每个类型分别有一个属性和一个方法。它们的主要区别是 `SubType` 继承了 `SuperType`，而继承是通过创建 `SuperType` 的实例，并将该实例赋给 `SubType.prototype` 实现的。实现的本质是重写原型对象，代之以一个新类型的实例。换句话说，原来存在于 `SuperType` 的实例中的所有属性和方法，现在也存在于 `SubType.prototype` 中了。在确定了继承关系之后，我们给 `SubType.prototype` 添加了一个方法，这样就在继承了 `SuperType` 的属性和方法的基础上又添加了一个新方法。
 
+子类型有时候需要重写超类型中的某个方法，或者需要添加超类型中不存在的某个方法。但不管怎样，给原型添加方法的代码一定要放在替换原型的语句之后。来看下面的例子。
+
+<div id="runkit-3">
+function SuperType() {
+  this.property = true
+}
+SuperType.prototype.getSuperValue = function() {
+  return this.property
+}
+function SubType() {
+  this.subproperty = false
+}
+// 继承了 SuperType
+SubType.prototype = new SuperType()
+// 添加了新方法
+SubType.prototype.getSubValue = function() {
+  return this.subproperty
+}
+// 重写超类型中的方法
+SubType.prototype.getSuperValue = function() {
+  return false
+}
+var instance = new SubType()
+console.log(instance.getSuperValue()) // false
+</div>
+
 ## 深入
 
 - `var`、`let`、`const`
