@@ -672,6 +672,7 @@ add_this_id: ra-5e3a8b23db295557
 # ---------------------------------------------------------------
 
 # Google Analytics
+# https://analytics.google.com/analytics/web/#/
 google_analytics:
   tracking_id: UA-158205277-1 # <app_id>
   # By default, NexT will load an external gtag.js script on your site.
