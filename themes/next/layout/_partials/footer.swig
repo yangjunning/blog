@@ -70,4 +70,8 @@
   </div>
 {%- endif %}
 
+{%- if theme.runkit.enable %}
+<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}></script>
+{%- endif %}
+
 {{- next_inject('footer') }}

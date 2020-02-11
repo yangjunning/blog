@@ -779,6 +779,11 @@ tidio:
 # See: https://theme-next.org/docs/tag-plugins/
 # ---------------------------------------------------------------
 
+# runkit
+runkit:
+  enable: true
+  data_element_id: runkit
+
 # Note tag (bs-callout)
 note:
   # Note tag style values:

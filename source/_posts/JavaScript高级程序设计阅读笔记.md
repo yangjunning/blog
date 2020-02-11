@@ -295,29 +295,30 @@ ECMAScript 描述了原型链的概念，并将原型链作为实现继承的主
 
 实现原型链有一种基本模式，其代码大致如下：
 
-```js
-function SuperType = function() {
+<div id="runkit">
+function SuperType(){
   this.property = true
 }
 
 SuperType.prototype.getSuperValue = function() {
-  return this.property
+return this.property
 }
 
-function SubType = function() {
-  this.property = false
+function SubType() {
+this.property = false
 }
 
 // 继承了 SuperType
 SubType.prototype = new SuperType()
 
 SubType.prototype.getSubValue = function() {
-  return this.property
+return this.property
 }
 
 var instance = new SubType()
 console.log(instance.getSuperValue) // true
-```
+
+</div>
 
 以上代码定义了两个类型：`SuperType` 和 `SubType`。每个类型分别有一个属性和一个方法。它们的主要区别是 `SubType` 继承了 `SuperType`，而继承是通过创建 `SuperType` 的实例，并将该实例赋给 `SubType.prototype` 实现的。实现的本质是重写原型对象，代之以一个新类型的实例。换句话说，原来存在于 `SuperType` 的实例中的所有属性和方法，现在也存在于 `SubType.prototype` 中了。在确定了继承关系之后，我们给 `SubType.prototype` 添加了一个方法，这样就在继承了 `SuperType` 的属性和方法的基础上又添加了一个新方法。
 
