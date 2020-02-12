@@ -203,8 +203,9 @@ links_settings:
   layout: block
 
 links:
-  runkit: https://runkit.com/youngjuning
-  掘金: https://juejin.im/user/5a3f85db6fb9a0450909b98a
+  我的runkit: https://runkit.com/youngjuning
+  我的掘金: https://juejin.im/user/5a3f85db6fb9a0450909b98a
+  图灵社区: https://www.ituring.com.cn/
   正则大全: https://any86.github.io/any-rule/
   陈锋个人博客: https://chenyuhu.js.org/
   LLstar的个人博客: https://llstar.github.io/
