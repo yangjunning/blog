@@ -298,7 +298,7 @@ follow_me:
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
   enable: true
-  title: # Custom header, leave empty to use the default one
+  title: 相关文章 # Custom header, leave empty to use the default one
   display_in_home: true
   params:
     maxCount: 5

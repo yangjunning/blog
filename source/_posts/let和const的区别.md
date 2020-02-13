@@ -2,6 +2,8 @@
 title: let和const的区别
 date: 2020-02-07 18:49:11
 categories: javascript
+tags:
+  - ES6
 ---
 
 `let` 与 `const` 都是只在声明所在的块级作用域内有效。
