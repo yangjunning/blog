@@ -4,13 +4,11 @@ date: 2020-02-13 22:34:10
 type: books
 ---
 
-- 《Web 全栈工程师的自我修养》
+- 《Web全栈工程师的自我修养》
 - 《卓越程序员密码》
-- 《只是为了好玩 Linux 之父林纳斯自传》
+- 《只是为了好玩 Linux之父林纳斯自传》
 
 ## 前端类
-
-- 《JSON必知必会》
 
 ### 架构
 
@@ -18,24 +16,24 @@ type: books
 
 ### JavaScript
 
-- 《JavaScript 框架设计》
-- 《JavaScript 高级程序设计》
+- 《JavaScript框架设计》
+- 《JavaScript高级程序设计》
 - 《JavaScript面向对象编程指南》
 - 《JavaScript函数式编程指南》
-- 《学习 JavaScript 数据结构与算法》
+- 《学习JavaScript数据结构与算法》
 - 《JavaScript设计模式与开发实践》
-- 《ES6 标准入门》
-- 《深入理解 ES6》
-- 《你不知道的 JavaScript》
-- 《JavaScript 语言精粹》
+- 《ES6标准入门》
+- 《深入理解ES6》
+- 《你不知道的JavaScript》
+- 《JavaScript语言精粹》
 - 《JavaScript DOM 编程艺术》
-- 《移动 Web 前端高效开发实战》
+- 《移动Web前端高效开发实战》
 - 《编写可维护的JavaScript》
-- 《编写高质量代码 改善 JavaScript 程序的 188 个建议》
+- 《编写高质量代码 改善JavaScript程序的188个建议》
 - 《精通JavaScript开发》
-- 《精通 D3.js》
-- 《深入浅出 Node.js》
-- 《深入理解 TypeScript》
+- 《精通D3.js》
+- 《深入浅出Node.js》
+- 《深入理解TypeScript》
 
 ### HTML
 
@@ -43,14 +41,15 @@ type: books
 
 ### CSS
 
-- 《CSS 揭秘》
-- 《CSS 世界》
-- 《CSS 权威指南》
+- 《CSS揭秘》
+- 《CSS世界》
+- 《CSS权威指南》
 
 ## 工具类
 
-- 《GitHub 入门与实践》
+- 《GitHub入门与实践》
 - 《正则表达式必知必会》
+- 《JSON必知必会》
 
 ## 计算机基础
 
