@@ -26,6 +26,7 @@
           <div class="content">
             {% block content %}{% endblock %}
           </div>
+          <a target="_blank" href="https://www.aliyun.com/minisite/goods?userCode=s7fxsvww" style="display: block;margin-top: 12px;border-bottom: 0px"><img src="/images/aliyun.jpg"></a>
           {% include '_partials/comments.swig' %}
         </div>
         {%- if theme.sidebar.display !== 'remove' %}
