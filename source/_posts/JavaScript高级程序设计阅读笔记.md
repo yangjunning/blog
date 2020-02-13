@@ -1,8 +1,10 @@
 ---
 title: 《JavaScript高级程序设计》阅读笔记
 date: 2020-02-06 14:33:23
-categories: javascript
-tags: 阅读笔记
+categories:
+  - javascript
+tags:
+  - 笔记
 ---
 
 <img src="https://i.loli.net/2020/02/06/nKlMCA4agtzHc6R.png" height="300">
