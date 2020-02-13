@@ -119,7 +119,7 @@ scheme: Gemini
 menu:
   首页: / || home
   关于: /about/ || user
-  书单: /2020/02/杨俊宁的书单/ || book
+  书单: /books/ || book
   标签: /tags/ || tags
   分类: /categories/ || th
   归档: /archives/ || archive
