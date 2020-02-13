@@ -6,8 +6,8 @@
   </div>
   <aside class="sidebar">
     <a target="_blank" href="https://juejin.im/book/5bdc715fe51d454e755f75ef?referrer=5a3f85db6fb9a0450909b98a" style="display: block;margin-bottom: 10px;border-bottom: 0px"><img src="/images/juejin1.png"></a>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=4862268163&auto=0&height=32"></iframe>
     <!--<a target="_blank" href="http://gk.link/a/10g1m" style="display: block;margin-bottom: 10px;border-bottom: 0px"><img src="/images/ios.png"></a>-->
-    <!--<div style="margin-bottom: 10px; background: #ffffff; text-align: center; padding: 5px;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09)">广告位招租</div>-->
     <div class="sidebar-inner">
       {%- set display_toc = page.toc.enable and display_toc %}
       {%- if display_toc %}
