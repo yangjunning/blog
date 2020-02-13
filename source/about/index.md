@@ -2,7 +2,6 @@
 title: 杨俊宁的简历
 date: 2020-02-11 18:52:37
 type: 'about'
-comments: false
 ---
 
 # 联系方式
