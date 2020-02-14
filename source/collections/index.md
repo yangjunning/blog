@@ -19,6 +19,7 @@ date: 2020-02-14 14:09:06
 - [MDN Web 文档](https://developer.mozilla.org/zh-CN/)
 - [木易杨前端进阶](https://muyiy.cn/)
 - [HelloGitHUb](https://hellogithub.com/)
+- [前端面试手册](https://bre.is/THbxnbf7)
 
 ## 社区
 
