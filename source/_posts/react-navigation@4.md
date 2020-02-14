@@ -1,5 +1,5 @@
 ---
-title: React Navigation 4 完全指南
+title: React Navigation 4
 date: 2020-01-10 10:29:14
 categories:
   - [移动开发, React Native]

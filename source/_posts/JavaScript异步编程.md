@@ -1,5 +1,5 @@
 ---
-title: javascript-async-programming
+title: JavaScript异步编程
 date: 2020-01-30 17:15:25
 categories:
   - [前端开发, JavaScript]
