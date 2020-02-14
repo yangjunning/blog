@@ -54,11 +54,11 @@ footer:
   icon:
     # Icon name in Font Awesome. See: https://fontawesome.com/v4.7.0/icons/
     # `heart` is recommended with animation in red (#ff0000).
-    name: user
+    name: heart
     # If you want to animate the icon, set it to true.
     animated: true
     # Change the color of icon, using Hex Code.
-    color: '#808080'
+    color: '#ff0000'
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright: 杨俊宁的博客
@@ -117,12 +117,12 @@ scheme: Gemini
 # When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
-  首页: / || home
-  关于: /about/ || user
+  home: / || home
+  about: /about/ || user
   书单: /books/ || book
-  标签: /tags/ || tags
-  分类: /categories/ || th
-  归档: /archives/ || archive
+  tag: /tags/ || tags
+  category: /categories/ || th
+  archive: /archives/ || archive
   #schedule: /schedule/ || calendar
   # sitemap: /sitemap.xml || sitemap
   # baidusitemap: /baidusitemap.xml || sitemap
@@ -265,8 +265,8 @@ post_meta:
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
 symbols_count_time:
   separated_meta: true
-  item_text_post: false
-  item_text_total: false
+  item_text_post: true
+  item_text_total: true
   awl: 4
   wpm: 275
 
@@ -298,7 +298,7 @@ follow_me:
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
 related_posts:
   enable: true
-  title: 相关文章 # Custom header, leave empty to use the default one
+  title: # Custom header, leave empty to use the default one
   display_in_home: true
   params:
     maxCount: 5
