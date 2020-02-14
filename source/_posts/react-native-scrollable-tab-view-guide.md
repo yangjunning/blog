@@ -4,7 +4,7 @@ date: 2020-01-30 15:19:19
 categories:
   - [移动开发, React Native]
 tags:
-  - tab-view
+  - 插件
   - 指南
 ---
 
