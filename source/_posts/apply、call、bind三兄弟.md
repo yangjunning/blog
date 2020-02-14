@@ -1,5 +1,5 @@
 ---
-title: 'apply,call,bind三兄弟'
+title: 'apply、call、bind三兄弟'
 date: 2020-02-09 16:07:05
 categories:
   - [前端开发, JavaScript]
