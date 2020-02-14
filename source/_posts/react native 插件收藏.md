@@ -1,5 +1,5 @@
 ---
-title: react native 插件收藏
+title: React Native 插件收藏
 date: 2020-02-14 15:36:00
 categories:
   - [移动开发, React Native]

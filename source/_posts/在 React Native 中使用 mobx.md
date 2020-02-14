@@ -1,5 +1,5 @@
 ---
-title: 在 react-native 中使用 mobx
+title: 在 React Native 中使用 mobx
 date: 2020-01-29 20:46:38
 categories:
   - [前端开发, JavaScript]
