@@ -592,7 +592,7 @@ comments:
 disqus:
   enable: true
   shortname: youngjuning
-  count: false
+  count: true
   #post_meta_order: 0
 
 # DisqusJS
@@ -871,7 +871,7 @@ three:
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
 # For more information: https://github.com/hustcc/canvas-nest.js
 canvas_nest:
-  enable: true
+  enable: false
   onmobile: true # Display on mobile or not
   color: '0,0,255' # RGB values, use `,` to separate
   opacity: 0.5 # The opacity of line: 0~1
@@ -1016,10 +1016,10 @@ vendors:
   # canvas_sphere:
 
   # Internal version: 1.0.0
-  canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
-  canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
-  # canvas_nest:
-  # canvas_nest_nomobile:
+  # canvas_nest: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js
+  # canvas_nest_nomobile: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js
+  canvas_nest:
+  canvas_nest_nomobile:
 
   # Internal version: 1.0.0
   # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
