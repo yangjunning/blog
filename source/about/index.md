@@ -17,3 +17,5 @@ type: 'about'
 - 工作年限：3.5年
 - 技术博客：https://youngjuning.js.org
 - Github：https://github.com/youngjuning
+- runkit：https://runkit.com/youngjuning
+- 我的掘金：https://juejin.im/user/5a3f85db6fb9a0450909b98a

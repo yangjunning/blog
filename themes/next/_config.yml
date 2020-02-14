@@ -118,14 +118,15 @@ scheme: Gemini
 # External url should start with http:// or https://
 menu:
   home: / || home
-  about: /about/ || user
-  书单: /books/ || book
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
+  about: /about/ || user
+  书单: /books/ || book
+  收藏: /collections/ || star
   #schedule: /schedule/ || calendar
-  sitemap: /sitemap.xml || sitemap
-  commonweal: /404.html || heartbeat
+  #sitemap: /sitemap.xml || sitemap
+  #commonweal: /404.html || heartbeat
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
@@ -206,16 +207,6 @@ links:
   LLstar的个人博客: https://llstar.github.io/
   张煜的个人博客: https://www.cnblogs.com/Grewer/
   Mirari's Blog: https://mirari.cc/
-  # 我的runkit: https://runkit.com/youngjuning
-  # 我的掘金: https://juejin.im/user/5a3f85db6fb9a0450909b98a
-  # 木易杨前端进阶: https://muyiy.cn/
-  # HelloGitHUb: https://hellogithub.com/
-  # MDN Web 文档: https://developer.mozilla.org/zh-CN/
-  # npm: https://www.npmjs.com/
-  # 图灵社区: https://www.ituring.com.cn/
-  # 正则大全: https://any86.github.io/any-rule/
-  # RunJS: https://runjs.dev/
-  # JSRUN: http://jsrun.pro/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).

@@ -18,7 +18,8 @@
     <i class="fa fa-{{ theme.footer.icon.name }}"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright or author }}</span>
-
+  <span class="post-meta-divider">|</span>
+  <a target="_blank" href="/sitemap.xml" style="border-bottom: 0px"><span style="color: #999;"><i class="fa fa-sitemap"> 站点地图</i></span></a>
   {%- if config.symbols_count_time.total_symbols %}
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
