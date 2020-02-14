@@ -120,13 +120,12 @@ menu:
   home: / || home
   about: /about/ || user
   书单: /books/ || book
-  tag: /tags/ || tags
-  category: /categories/ || th
-  archive: /archives/ || archive
+  tags: /tags/ || tags
+  categories: /categories/ || th
+  archives: /archives/ || archive
   #schedule: /schedule/ || calendar
-  # sitemap: /sitemap.xml || sitemap
-  # baidusitemap: /baidusitemap.xml || sitemap
-  # commonweal: /404.html || heartbeat
+  sitemap: /sitemap.xml || sitemap
+  commonweal: /404.html || heartbeat
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
