@@ -123,6 +123,7 @@ menu:
   archives: /archives/ || archive
   about: /about/ || user
   书单: /books/ || book
+  歌单: /music/ || music
   收藏: /collections/ || star
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
