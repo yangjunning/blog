@@ -2,11 +2,10 @@
 title: react-native-scrollable-tab-view 指南
 date: 2020-01-30 15:19:19
 categories:
-  - ReactNative
+  - [移动开发, React Native]
 tags:
   - tab-view
-  - guide
-  - react-native
+  - 指南
 ---
 
 ## 安装

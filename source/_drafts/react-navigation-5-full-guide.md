@@ -2,7 +2,9 @@
 title: React Navigation 5 完全指南
 date: 2020-01-17 10:29:14
 categories:
-  - ReactNative
+  - [移动开发, React Native]
+tags:
+  - 指南
 ---
 
 ## 适用范围

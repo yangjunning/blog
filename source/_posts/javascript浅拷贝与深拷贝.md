@@ -1,7 +1,8 @@
 ---
 title: javascript浅拷贝与深拷贝
 date: 2020-02-07 12:00:57
-categories: javascript
+categories:
+  - [前端开发, JavaScript]
 ---
 
 ## 基础类型值和引用类型值的区别

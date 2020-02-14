@@ -1,7 +1,8 @@
 ---
 title: ES标准中相等比较算法SameValue和SameValueZero
 date: 2020-02-05 10:35:30
-categories: javascript
+categories:
+  - [前端开发, JavaScript]
 tags: SameValueZero
 ---
 

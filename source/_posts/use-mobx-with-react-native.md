@@ -1,10 +1,11 @@
 ---
 title: 在 react-native 中使用 mobx
 date: 2020-01-29 20:46:38
-categories: 状态管理
+categories:
+  - [前端开发, JavaScript]
+  - [移动开发, React Native]
 tags:
   - mobx
-  - react-native
 ---
 
 Mobx 是简单、可扩展的状态管理，React 和 MobX 是一对强力组合。React 通过提供机制把应用状态转换为可渲染组件树并对其进行渲染。而 MobX 提供机制来存储和更新应用状态供 React 使用。

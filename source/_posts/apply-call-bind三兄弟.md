@@ -1,7 +1,8 @@
 ---
 title: 'apply,call,bind三兄弟'
 date: 2020-02-09 16:07:05
-categories: javascript
+categories:
+  - [前端开发, JavaScript]
 ---
 
 这三个函数的存在意义是什么？答案是**改变函数执行时的上下文**，再具体一点就是改变函数运行时的 `this` 指向。

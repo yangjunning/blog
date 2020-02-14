@@ -1,7 +1,8 @@
 ---
 title: javascript浅比较和深比较
 date: 2020-02-05 14:33:23
-categories: javascript
+categories:
+  - [前端开发, JavaScript]
 ---
 
 ## 基本类型和引用类型的值

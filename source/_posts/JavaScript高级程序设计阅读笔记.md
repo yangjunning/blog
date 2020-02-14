@@ -2,7 +2,7 @@
 title: 《JavaScript高级程序设计》阅读笔记
 date: 2020-02-06 14:33:23
 categories:
-  - javascript
+  - [前端开发, JavaScript]
 tags:
   - 笔记
 ---

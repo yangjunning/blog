@@ -1,7 +1,8 @@
 ---
 title: 'slice,substring和substr的区别'
 date: 2020-02-09 21:14:53
-categories: javascript
+categories:
+  - [前端开发, JavaScript]
 ---
 
 | 方法                    | 参数                                                         | 返回值                                 |
