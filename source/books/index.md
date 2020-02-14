@@ -24,6 +24,7 @@ type: books
 - 《JavaScript函数式编程指南》
 - 《学习JavaScript数据结构与算法》
 - 《JavaScript设计模式与开发实践》
+- 《JavaScript编程精解》
 - 《ES6标准入门》
 - 《深入理解ES6》
 - 《你不知道的JavaScript》
