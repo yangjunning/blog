@@ -7,6 +7,8 @@ type: books
 - 《Web全栈工程师的自我修养》
 - 《卓越程序员密码》
 - 《只是为了好玩 Linux之父林纳斯自传》
+- 《读懂一本书》
+- 《结构思考力》
 
 ## 前端类
 
@@ -22,6 +24,7 @@ type: books
 - 《JavaScript函数式编程指南》
 - 《学习JavaScript数据结构与算法》
 - 《JavaScript设计模式与开发实践》
+- 《JavaScript编程精解》
 - 《ES6标准入门》
 - 《深入理解ES6》
 - 《你不知道的JavaScript》
