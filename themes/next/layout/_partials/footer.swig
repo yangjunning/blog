@@ -64,7 +64,7 @@
     {%- if theme.footer.theme.version %} v{{ next_version }}{%- endif %}
   </div>
 {%- endif %}
-
+<a href="https://travis-ci.org/youngjuning/blog" target="_blank" rel="noopener" data-pjax-state=""><img src="https://travis-ci.org/youngjuning/blog.svg?branch=master" alt="Build Status"></a>
 {%- if theme.add_this_id %}
   <div class="addthis_inline_share_toolbox">
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ theme.add_this_id }}" async="async"></script>
