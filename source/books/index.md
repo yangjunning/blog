@@ -18,16 +18,21 @@ type: books
 
 ### JavaScript
 
-- 《JavaScript框架设计》
 - 《JavaScript高级程序设计》
+- 《你不知道的JavaScript 上卷》
+  - [读书笔记](https://mubu.com/doc/13bnYs-Mq0r)
+- 《你不知道的JavaScript 中卷》
+- 《你不知道的JavaScript 下卷》
+- 《ES6标准入门》
+- 《深入理解ES6》
+- 《现代JavaScript教程》
+  - [在线地址](https://zh.javascript.info/)
+- 《JavaScript框架设计》
 - 《JavaScript面向对象编程指南》
 - 《JavaScript函数式编程指南》
 - 《学习JavaScript数据结构与算法》
 - 《JavaScript设计模式与开发实践》
 - 《JavaScript编程精解》
-- 《ES6标准入门》
-- 《深入理解ES6》
-- 《你不知道的JavaScript》
 - 《JavaScript语言精粹》
 - 《JavaScript DOM 编程艺术》
 - 《移动Web前端高效开发实战》
