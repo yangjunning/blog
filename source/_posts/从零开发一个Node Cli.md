@@ -1,6 +1,5 @@
 ---
 title: 从零开发一个Node Cli
-categories: 前端开发
 date: 2020-02-17 15:23:35
 categories:
   - [大前端, NodeJs]
