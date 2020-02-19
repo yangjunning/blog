@@ -204,11 +204,12 @@ links_settings:
   layout: block
 
 links:
+  余果的博客: https://yuguo.us/
+  私塾国际学府: http://techblog.sishuxuefu.com/
   陈锋个人博客: https://chenyuhu.js.org/
   LLstar的个人博客: https://llstar.github.io/
   张煜的个人博客: https://www.cnblogs.com/Grewer/
   Mirari's Blog: https://mirari.cc/
-  私塾国际学府: http://techblog.sishuxuefu.com/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
