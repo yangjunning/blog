@@ -7,29 +7,63 @@ tags:
   - 收藏
 ---
 
-- [react-native-confirmation-code-field](https://www.npmjs.com/package/react-native-confirmation-code-field): A react-native confirmation code field compatible with iOS, Android
-
-# UI 套件
-
-| Package               | Star                                                                                                                                                 | 特色组件                                   |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| react-native-elements | [![GitHub stars](https://img.shields.io/github/stars/react-native-training/react-native-elements.svg?style=social&label=Stars)](http://t.cn/R6EV6iY) | Avatar、ToolTip、Image、SearchBar、Tile    |
-| beeshell              | [![GitHub stars](https://img.shields.io/github/stars/Meituan-Dianping/beeshell.svg?style=social&label=Stars)](http://t.cn/Ai9nrwri)                  | 美团点评 React Native 组件库               |
-| antd-mobile-rn        | [![GitHub stars](https://img.shields.io/github/stars/sishuguojixuefu/antd-mobile-rn.svg?style=social&label=Stars)](http://t.cn/AiKJmVe2)             | 一个基于 Ant Design Mobile RN 的 UI 组件库 |
+<img src="https://i.loli.net/2020/02/19/6Vnx84tSCOP2XcE.jpg" alt="c8150d863e584ed42ccfbdc3f3f1aa3a.jpg" style="zoom:50%;" />
 
 <!-- more -->
 
-# 组件
+## 官方
+
+- [React Navigation FeedBack](https://react-navigation.canny.io)
+- [metro](https://github.com/facebook/metro):  🚇 The JavaScript bundler for React Native
+
+## 核心
+
+- [ant-design/ant-design-mobile-rn](https://github.com/ant-design/ant-design-mobile-rn): Ant Design for React Native
+- [react-navigation](https://reactnavigation.org/zh-Hans/): React Native 应用程序的路由和导航
+- [react-native-code-push](https://github.com/Microsoft/react-native-code-push) React Native module for CodePush
+
+## 表单
+
+- [react-native-confirmation-code-field](https://www.npmjs.com/package/react-native-confirmation-code-field): A react-native confirmation code field compatible with iOS, Android
+
+## 动画
+
+- [react-native-animatable](https://github.com/oblador/react-native-animatable): React Native 标准易用的动画集和声明性过渡
+- [lottie-react-native](https://github.com/react-native-community/lottie-react-native): Lottie wrapper for React Native
+
+## 数据可视化
+
+- [react-native-echarts-wrapper](https://github.com/tomLadder/react-native-echarts-wrapper): ECharts Wrapper for React Native
+- [react-native-user-avatar](https://github.com/avishayil/react-native-user-avatar): React Native 的头像组件
+
+# 工具
+
+- [visualize-bundle](https://github.com/JonnyBurger/npx-visualize-bundle): `npx visualize-bundle` allows you to inspect your React Native bundle in just one command and to diagnose big modules.
+- [react-native-multibundler](https://github.com/smallnew/react-native-multibundler): react native 可视化 bundle 拆包，支持官方的 0.57~0.59 版本，使用官方的 metro 拆包，适用于 Android、iOS
+- [AndResGuard](https://github.com/shwenzhang/AndResGuard): Android 资源混淆工具
+- [jadx](https://github.com/skylot/jadx): 反编译工具
+
+# 第三方服务
+
+- [nimbledroid](https://nimbledroid.com/): 适用于 Android 和 iOS 的实用的性能测试
+- [bugly](http://t.cn/R6GbJNK): 腾讯 Bugly，为移动开发者提供专业的异常上报和运营统计，帮助开发者快速发现并解决异常，同时掌握产品运营动态，及时跟进用户反馈。
+- [网易云捕](http://crash.163yun.com/): 高效的质量跟踪平台
+
+## 其他
+
+- LeancloudPushDemo: React native + leancloud push notification demo
+- react-native-code-push-dialog: CodePush Custom Dialog，注意：苹果 App、中国的 android 市场必须采用静默更新
+
+# 数据来源
+
+- [React Native Example](http://t.cn/Ai9ljKm7)
+- [react-native-app-intro](https://github.com/FuYaoDe/react-native-app-intro)
+- [react-native-screens](https://github.com/kmagiera/react-native-screens)
+
+## 待整理
 
 | Package                                       | Star                                                         | Description                                                  |
 | --------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| react-navigation                              | [![GitHub stars](https://img.shields.io/github/stars/react-navigation/react-navigation.svg?style=social&label=Stars)](http://t.cn/RsjPQAu) | React Native 应用程序的路由和导航                            |
-| lottie-react-native                           | [![GitHub stars](https://img.shields.io/github/stars/react-native-community/lottie-react-native.svg?style=social&label=Stars)](http://t.cn/AiC4RI61) | Lottie wrapper for React Native                              |
-| react-native-swiper                           | [![GitHub stars](https://img.shields.io/github/stars/leecade/react-native-swiper.svg?style=social&label=Stars)](http://t.cn/RAjlrYY) | React Native 的最佳 Swiper 组件                              |
-| react-native-animatable                       | [![GitHub stars](https://img.shields.io/github/stars/oblador/react-native-animatable.svg?style=social&label=Stars)](http://t.cn/RSSQH75) | React Native 标准易用的动画集和声明性过渡                    |
-| Microsoft/react-native-code-push              | [![GitHub stars](https://img.shields.io/github/stars/Microsoft/react-native-code-push.svg?style=social&label=Stars)](https://github.com/Microsoft/react-native-code-push) | React Native module for CodePush                             |
-| react-native-firebase                         | [![GitHub stars](https://img.shields.io/github/stars/invertase/react-native-firebase.svg?style=social&label=Stars)](http://t.cn/AiCnayN9) | 🔥 A well tested feature rich modular Firebase implementation for React Native. |
-| react-native-fs                               | [![GitHub stars](https://img.shields.io/github/stars/invertase/react-native-firebase.svg?style=social&label=Stars)](http://t.cn/AiCnayN9) | react-native 访问本地文件系统的插件                          |
 | react-community/react-native-image-picker     | [![GitHub stars](https://img.shields.io/github/stars/react-community/react-native-image-picker.svg?style=social&label=Stars)](http://t.cn/Ai9TPGeT) | 🌄 A React Native module that allows you to use native UI to select media from the device library or directly from the camera. |
 | react-native-snap-carousel                    | [![GitHub stars](https://img.shields.io/github/stars/archriss/react-native-snap-carousel.svg?style=social&label=Stars)](http://t.cn/Ai9YybZ6) | deck、layout、parallax images                                |
 | react-native-video                            | [![GitHub stars](https://img.shields.io/github/stars/react-native-community/react-native-video.svg?style=social&label=Stars)](http://t.cn/RVCLrdH) | A Video component for react-native                           |
@@ -70,43 +104,4 @@ tags:
 | react-native-amap-geolocation                 | [![GitHub stars](https://img.shields.io/github/stars/qiuxiang/react-native-amap-geolocation.svg?style=social&label=Stars)](http://t.cn/E9W1rwb) | React Native geolocation module for Android + iOS            |
 | react-native-dropdown-menu                    | [![GitHub stars](https://img.shields.io/github/stars/WheelerLee/react-native-dropdown-menu.svg?style=social&label=Stars)](http://t.cn/Ai9lsewP) | 易于使用的 React Native 下拉菜单组件                         |
 | @react-native-community/slider                | [![GitHub stars](https://img.shields.io/github/stars/react-native-community/react-native-slider.svg?style=social&label=Stars)](http://t.cn/Ai9YUTLL) | React Native 组件，用于从一系列值中选择单个值                |
-| react-native-user-avatar                      | [![GitHub stars](https://img.shields.io/github/stars/avishayil/react-native-user-avatar.svg?style=social&label=Stars)](http://t.cn/Ai9jv7PE) | React Native 的头像组件                                      |
 | react-native-app-shortcuts                    | [![GitHub stars](https://img.shields.io/github/stars/lokyoung/react-native-app-shortcuts.svg?style=social&label=Stars)](http://t.cn/AiCl5HTw) | 用于在 React Native 中创建 Android App 快捷方式的库          |
-| react-native-echarts-wrapper                  | [![GitHub stars](https://img.shields.io/github/stars/tomLadder/react-native-echarts-wrapper.svg?style=social&label=Stars)](http://t.cn/E9VgJEU) | ECharts Wrapper for React Native                             |
-| react-native-code-push-dialog                 | [![GitHub stars](https://img.shields.io/github/stars/strawferry/CodePushDialog.svg?style=social&label=Stars)](http://t.cn/Ai9T5Txb) | CodePush Custom Dialog，注意：苹果 App、中国的 android 市场必须采用静默更新 |
-| LeancloudPushDemo                             | [![GitHub stars](https://img.shields.io/github/stars/MudOnTire/LeancloudPushDemo.svg?style=social&label=Stars)](http://t.cn/AiChV8Aa) | React native + leancloud push notification demo              |
-| react-native-richeditor                       | [![GitHub stars](https://img.shields.io/github/stars/wwlxz22/react-native-richeditor.svg?style=social&label=Stars)](https://github.com/wwlxz22/react-native-richeditor) | react-native 富文本编辑器                                    |
-| sishuguojixuefu/react-native-form             | [![GitHub stars](https://img.shields.io/github/stars/sishuguojixuefu/react-native-form.svg?style=social&label=Stars)](http://t.cn/Ai9YDRcb) | 私塾 React Native 动态表单项目                               |
-
-# 工具
-
-| Package                   | Star                                                                                                                                         | Description                                                                                                                                  |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| reactotron                | [![GitHub stars](https://img.shields.io/github/stars/infinitered/reactotron.svg?style=social&label=Stars)](http://t.cn/EhzKUdI)              | 用于检查 React JS 和 React Native 项目的桌面应用程序。适用于 macOS，Linux 和 Windows。                                                       |
-| jadx                      | [![GitHub stars](https://img.shields.io/github/stars/skylot/jadx.svg?style=social&label=Stars)](http://t.cn/8sbB90B)                         | 反编译工具                                                                                                                                   |
-| AndResGuard               | [![GitHub stars](https://img.shields.io/github/stars/shwenzhang/AndResGuard.svg?style=social&label=Stars)](http://t.cn/RymVYS6)              | Android 资源混淆工具                                                                                                                         |
-| metro                     | [![GitHub stars](https://img.shields.io/github/stars/facebook/metro.svg?style=social&label=Stars)](http://t.cn/AiCnNOZU)                     | 🚇 The JavaScript bundler for React Native                                                                                                   |
-| CRN                       | [![GitHub stars](https://img.shields.io/github/stars/ctripcorp/CRN.svg?style=social&label=Stars)](http://t.cn/EXh4FRC)                       | CRN 是 Ctrip React Native 简称，由携程无线平台研发团队基于 React Native 框架优化，定制成稳定性和性能更佳、也更适合业务场景的跨平台开发框架。 |
-| react-native-multibundler | [![GitHub stars](https://img.shields.io/github/stars/smallnew/react-native-multibundler.svg?style=social&label=Stars)](http://t.cn/AiCBR11h) | react native 可视化 bundle 拆包，支持官方的 0.57~0.59 版本，使用官方的 metro 拆包，适用于 Android、iOS                                       |
-| visualize-bundle          | [![GitHub stars](https://img.shields.io/github/stars/JonnyBurger/npx-visualize-bundle.svg?style=social&label=Stars)](http://t.cn/AiC53mgh)   | `npx visualize-bundle` allows you to inspect your React Native bundle in just one command and to diagnose big modules.                       |
-
-# 服务
-
-| Server                                  |           |      | Description                                                                                                                  |
-| --------------------------------------- | --------- | ---- | ---------------------------------------------------------------------------------------------------------------------------- |
-| [nimbledroid](https://nimbledroid.com/) | APM       | 免费 | 适用于 Android 和 iOS 的实用的性能测试                                                                                       |
-| [bugly](http://t.cn/R6GbJNK)            | APM       | 免费 | 腾讯 Bugly，为移动开发者提供专业的异常上报和运营统计，帮助开发者快速发现并解决异常，同时掌握产品运营动态，及时跟进用户反馈。 |
-| [网易云捕](http://crash.163yun.com/)    | APM       | 收费 | 高效的质量跟踪平台                                                                                                           |
-| [pushy](http://t.cn/Ai9TxFxU)           | code-push | 收费 | 及时更新您的应用,更好的管理体验给您,更好的使用体验给用户                                                                     |
-
-## 相关网站
-
-| title                     | url                               |
-| ------------------------- | --------------------------------- |
-| React Navigation FeedBack | https://react-navigation.canny.io |
-
-# 数据来源
-
-- [React Native Example](http://t.cn/Ai9ljKm7)
-- [react-native-app-intro](https://github.com/FuYaoDe/react-native-app-intro)
-- [react-native-screens](https://github.com/kmagiera/react-native-screens)
