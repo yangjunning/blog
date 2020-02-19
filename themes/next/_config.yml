@@ -124,7 +124,7 @@ menu:
   about: /about/ || user
   书单: /books/ || book
   歌单: /music/ || music
-  收藏: /collections/ || star
+  收藏夹: /collections/ || star
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404.html || heartbeat

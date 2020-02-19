@@ -1,10 +1,10 @@
 ---
-title: React Native 插件收藏
+title: React Native 收藏夹
 date: 2020-02-14 15:36:00
 categories:
   - [移动开发, React Native]
 tags:
-  - 收藏
+  - 收藏夹
 ---
 
 <img src="https://i.loli.net/2020/02/19/6Vnx84tSCOP2XcE.jpg" alt="c8150d863e584ed42ccfbdc3f3f1aa3a.jpg" style="zoom:50%;" />
