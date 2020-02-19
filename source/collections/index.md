@@ -16,6 +16,11 @@ date: 2020-02-14 14:09:06
 
 - [react-native-shadow-generator](https://ethercreative.github.io/react-native-shadow-generator/)
 
+### 设计师工具
+
+- [pxcook](https://fancynode.com.cn/pxcook): 高效易用的自动标注工具, 生成前端代码, 设计研发协作利器
+- [cutterman](https://www.cutterman.cn/zh): 为设计更专注
+
 ## 前端进阶
 
 - [MDN Web 文档](https://developer.mozilla.org/zh-CN/)
