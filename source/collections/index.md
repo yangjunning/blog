@@ -14,7 +14,7 @@ date: 2020-02-14 14:09:06
 
 ### React Native
 
-- [wml](https://github.com/wix/wml): An alternative to symlinks that actually copies changed files from source to destination folders
+- [wml](https://github.com/wix/wml): 符号链接的替代方法，它实际上将已更改的文件从源文件夹复制到目标文件夹
 - [react-native-shadow-generator](https://ethercreative.github.io/react-native-shadow-generator/)
 
 ### 设计师工具
