@@ -20,6 +20,7 @@ date: 2020-02-14 14:09:06
 
 - [pxcook](https://fancynode.com.cn/pxcook): 高效易用的自动标注工具, 生成前端代码, 设计研发协作利器
 - [cutterman](https://www.cutterman.cn/zh): 为设计更专注
+- [图标工厂](https://icon.wuruihong.com/): 一键生成所有尺寸的应用图标/启动图
 
 ## 前端进阶
 
