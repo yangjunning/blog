@@ -7,6 +7,8 @@ tags:
   - 安卓
 ---
 
+![image.png](https://i.loli.net/2020/02/21/xUfw9Ib4TRsQGeM.png)
+
 <!--more-->
 
 ## 配置 App 名称
@@ -20,6 +22,8 @@ tags:
 ## 打包 APK
 
 ### 配置签名密钥
+
+> 该配置基于 `@sigmayun/react-native-template-typescript`
 
 1、在项目根目录执行 `yarn genkeypair` 生成密钥文件 `release.keystore`
 
@@ -189,9 +193,7 @@ defaultConfig {
 }
 ```
 
-## 必知必会
-
-### BuildConfig
+## BuildConfig
 
 > 在 react-native 中，我们可以借助 react-native-config-reader 来方便地读取这些属性
 
@@ -204,7 +206,7 @@ BuildConfig 是程序编译后，根据 buildType 生成在 `app\build\generated
 - VERSION_CODE：版本号(数字)
 - VERSION_NAME：版本号
 
-### 自定义 BuildConfig
+## 自定义 BuildConfig
 
 ```java
 defaultConfig {
@@ -216,7 +218,7 @@ defaultConfig {
 }
 ```
 
-### 在子模块中取主项目的 BuildConfig
+## 在子模块中取主项目的 BuildConfig
 
 ```java
 ...
