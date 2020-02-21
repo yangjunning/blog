@@ -215,11 +215,11 @@ export default App;
 
 > 跳转方法有 `navigate`、 `push` 、`goBack`、`popToTop`
 
-> 可以用 `props.navigation.setParams` 方法更新页面的参数
+> 可以用 `navigation.setParams` 方法更新页面的参数
 
 > 我们可以通过 `options={({ route, navigation }) => ({ headerTitle: route.params.name })}` 的方式在标题中使用参数
 
-> 我们可以用 `props.navigaiton.setOptions` 更新页面配置
+> 我们可以用 `navigation.setOptions` 更新页面配置
 
 - `Stack.Navigator`
   - `initialRouteName` : 用来配置 `Stack.Navigator` 的初始路由
@@ -240,7 +240,7 @@ export default App;
 </Stack.Screen>
 ```
 
-## 最佳实践
+## 嵌套导航最佳实践
 
 ```jsx
 import React from 'react'
