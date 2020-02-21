@@ -7,7 +7,6 @@ Please note the difference between **site config file** and **theme config file*
 ---
 
 # Sign up to LeanCloud and create an app
-
 - Go to LeanCloud website [leancloud.app](https://leancloud.app) and sign up to LeanCloud. Then login.
 - Click `1` to enter the console:
 
@@ -22,7 +21,6 @@ Please note the difference between **site config file** and **theme config file*
   ![3](https://lc-cqha0xyi.cn-n1.lcfile.com/649ccfc6f12015d1eefb.jpg)
 
 # Create Counter class and enable plugin in NexT
-
 - Click `1` (app name) to enter the app manage page:
 
   ![4](https://lc-cqha0xyi.cn-n1.lcfile.com/d0889df29841661e0b9e.jpg)
@@ -40,7 +38,6 @@ Please note the difference between **site config file** and **theme config file*
   ![8](https://lc-cqha0xyi.cn-n1.lcfile.com/9501a6372918dd9a8a92.jpg)
 
 - Paste `App ID` and `App Key` to **theme config file** `_config.yml` like this:
-
   ```yml
   leancloud_visitors:
     enable: true
@@ -53,10 +50,9 @@ Please note the difference between **site config file** and **theme config file*
 
 - Set domain whitelist: Click `1`, then type your domain into `2` (**protocol, domain and port should be exactly the same**):
 
-![9](https://lc-cqha0xyi.cn-n1.lcfile.com/0e537cc4bec2e185201d.jpg)
+ ![9](https://lc-cqha0xyi.cn-n1.lcfile.com/0e537cc4bec2e185201d.jpg)
 
 # Deploy web engine to avoid your data being changed illegally
-
 - Click `1 -> 2 -> 3` by order
 
   ![10](https://lc-cqha0xyi.cn-n1.lcfile.com/d7056dfeeef7c5d66318.jpg)
@@ -66,16 +62,15 @@ Please note the difference between **site config file** and **theme config file*
   ![11](https://lc-cqha0xyi.cn-n1.lcfile.com/2737841bbc2bdd572ae0.jpg)
 
 - In the pop up window, click `1` to choose type `Hook`, then choose`beforeUpdate` in `2`, choose `Counter` in `3`. Paste code below into `4`, then click `5` to save it:
-
   ```javascript
-  var query = new AV.Query('Counter')
+  var query = new AV.Query("Counter");
   if (request.object.updatedKeys.indexOf('time') !== -1) {
-    return query.get(request.object.id).then(function(obj) {
-      if (obj.get('time') > request.object.get('time')) {
-        throw new AV.Cloud.Error('Invalid update!')
-      }
-      return request.object.save()
-    })
+      return query.get(request.object.id).then(function (obj) {
+          if (obj.get("time") > request.object.get("time")) {
+              throw new AV.Cloud.Error('Invalid update!');
+          }
+          return request.object.save();
+      });
   }
   ```
 
@@ -94,9 +89,7 @@ Please note the difference between **site config file** and **theme config file*
   ![15](https://lc-cqha0xyi.cn-n1.lcfile.com/d2f50de6cefea9fd0ed3.jpg)
 
 # Set access control for your database
-
 - Open **theme config file** `_config.yml`, set `leancloud_visitors: security` to `true`:
-
   ```yml
   leancloud_visitors:
     enable: true
@@ -111,13 +104,11 @@ Please note the difference between **site config file** and **theme config file*
   Because the Leancloud developer's plan has limits in requst thread amount and running time, counter number may be very slow to load in some times. If set `betterPerformance` to true, counter number will be displayed quickly by assuming the request is accepted normally.
 
 - Open cmd then switch to **root path of site**, type commands to install `hexo-leancloud-counter-security` plugin:
-
   ```
   npm install hexo-leancloud-counter-security
   ```
 
 - Open **site config file** `_config.yml`, add those config:
-
   ```yml
   leancloud_counter_security:
     enable_sync: true
@@ -128,13 +119,10 @@ Please note the difference between **site config file** and **theme config file*
   ```
 
 - Type command:
-
   ```
   hexo lc-counter register <<username>> <<password>>
   ```
-
   or
-
   ```
   hexo lc-counter r <<username>> <<password>>
   ```
@@ -142,7 +130,6 @@ Please note the difference between **site config file** and **theme config file*
   Change `<<username>>` and `<<password>>` to your own username and password (no need to be the same as leancloud account). They will be used in the hexo deploying.
 
   - Open **site config file** `_config.yml`, change `<<username>>` and `<<password>>`to those you set above:
-
   ```yml
   leancloud_counter_security:
     enable_sync: true
@@ -153,7 +140,6 @@ Please note the difference between **site config file** and **theme config file*
   ```
 
 - Add the deployer in the `deploy` of **site config file** `_config.yml`:
-
   ```yml
   deploy:
     - type: git
@@ -184,7 +170,7 @@ Please note the difference between **site config file** and **theme config file*
 
 - Click `1` (delete), then choose `2`:
 
-![21](https://lc-cqha0xyi.cn-n1.lcfile.com/c37b6e20726cfb1d3197.jpg)
+ ![21](https://lc-cqha0xyi.cn-n1.lcfile.com/c37b6e20726cfb1d3197.jpg)
 
 Now the bug is fixed.
 

@@ -3,7 +3,6 @@
 Currently, it is not smooth to update NexT theme from pulling or downloading new releases. It is quite often running into conflict status when updating NexT theme via `git pull`, or need to merge configurations manually when upgrading to new releases.
 
 At present, NexT encourages users to store some options in site's `/_config.yml` and other options in theme's `/themes/next/_config.yml`. This approach is applicable, but has some drawbacks:
-
 1. Configurations are splitted into two pieces
 2. Users may be confused which place should be for options
 
@@ -24,8 +23,8 @@ If there are any new options in new releases, you just need to copy those option
 
 ### Useful links
 
-- [Hexo Configuration](https://hexo.io/docs/configuration.html)
-- [Hexo Pull #757](https://github.com/hexojs/hexo/pull/757)
+* [Hexo Configuration](https://hexo.io/docs/configuration.html)
+* [Hexo Pull #757](https://github.com/hexojs/hexo/pull/757)
 
 <h2 align="center">Option 2: NexT-Way</h2>
 
@@ -43,13 +42,13 @@ This method relies on Hexo [Data files](https://hexo.io/docs/data-files.html). B
 
 <p align="center">And after that steps there are <b>2 variants</b>, need to <b>choose only one</b> of them and <b>resume next steps</b>.</p>
 
-- **Variant 1: `override: false` (default)**:
+* **Variant 1: `override: false` (default)**:
 
   1. Check your `override` option in default NexT config, it must set on `false`.\
      In `next.yml` it must not be defined or set on `false` too.
   2. Copy needed options from both site's `/_config.yml` and theme's `/themes/next/_config.yml` into `/source/_data/next.yml`.
 
-- **Variant 2: `override: true`**:
+* **Variant 2: `override: true`**:
 
   1. In `next.yml` set `override` option on `true`.
   2. Copy **all** NexT theme options from theme's `/themes/next/_config.yml` into `/source/_data/next.yml`.
@@ -59,4 +58,4 @@ This method relies on Hexo [Data files](https://hexo.io/docs/data-files.html). B
 
 ### Useful links
 
-- [NexT Issue #328](https://github.com/iissnan/hexo-theme-next/issues/328)
+* [NexT Issue #328](https://github.com/iissnan/hexo-theme-next/issues/328)

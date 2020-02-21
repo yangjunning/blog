@@ -71,23 +71,4 @@
   </div>
 {%- endif %}
 
-{%- if theme.runkit.enable %}
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-0></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-1></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-2></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-3></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-4></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-5></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-6></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-7></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-8></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-9></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-10></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-11></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-12></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-13></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-14></script>
-<script src="https://embed.runkit.com" data-element-id={{ theme.runkit.data_element_id }}-15></script>
-{%- endif %}
-
 {{- next_inject('footer') }}

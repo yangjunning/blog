@@ -11,7 +11,7 @@
   «NexT» 是一款风格优雅的高质量 <a href="https://hexo.io">Hexo</a> 主题，自点点滴滴中用爱雕琢而成。
 <br>
 <br>
-  <a href="https://github.com/theme-next/hexo-theme-next/releases"><img src="https://img.shields.io/github/package-json/v/theme-next/hexo-theme-next?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/hexo-theme-next"><img src="https://img.shields.io/github/package-json/v/theme-next/hexo-theme-next?style=flat-square"></a>
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E=10.9.0-green?style=flat-square"></a>
   <a href="https://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E=3.5.0-blue?style=flat-square&logo=hexo"></a>
   <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu"></a>
@@ -72,7 +72,7 @@ vendors:
   mediumzoom: # Set or update mediumzoom CDN URL.
 ```
 
-通过设置 CDN  链接来代替通过[插件列表][official-plugins-url]项目进行升级。
+通过设置 CDN 链接来代替通过[插件列表][official-plugins-url]项目进行升级。
 
 ## 更新
 
@@ -90,13 +90,13 @@ $ git pull
 
 ## 反馈
 
-- 关注我们的 [Telegram Channel][t-news-url] 以获取最新消息。
-- 加入我们的 [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] 聊天。
-- 请花几秒钟来[添加或修正翻译][i18n-url]。
-- 浏览 [Awesome NexT][awesome-next-url] 列表。
-- 在 [GitHub Issues][issues-bug-url] 报告 Bug。
-- 在 [GitHub][issues-feat-url] 请求新的功能。
-- 为 [受欢迎的 Feature request][feat-req-vote-url] 投票。
+* 关注我们的 [Telegram Channel][t-news-url] 以获取最新消息。
+* 加入我们的 [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] 聊天。
+* 请花几秒钟来[添加或修正翻译][i18n-url]。
+* 浏览 [Awesome NexT][awesome-next-url] 列表。
+* 在 [GitHub Issues][issues-bug-url] 报告Bug。
+* 在 [GitHub][issues-feat-url] 请求新的功能。
+* 为 [受欢迎的 Feature request][feat-req-vote-url] 投票。
 
 ## 贡献你的代码
 
@@ -136,15 +136,18 @@ $ git pull
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/INSTALLATION.md
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/DATA-FILES.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/UPDATE-FROM-5.1.X.md
+
 [t-news-url]: https://t.me/theme_next_news
 [t-chat-url]: https://t.me/theme_next_chinese
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
 [i18n-url]: https://i18n.theme-next.org
+
 [awesome-next-url]: https://github.com/theme-next/awesome-next
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
 [issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22
+
 [contributing-document-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/CONTRIBUTING.md
 [official-plugins-url]: https://github.com/theme-next
 [contributors-image]: https://opencollective.com/theme-next/contributors.svg?width=890

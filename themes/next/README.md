@@ -11,7 +11,7 @@
   «NexT» is a high quality elegant <a href="https://hexo.io">Hexo</a> theme. It is crafted from scratch with love.
 <br>
 <br>
-  <a href="https://github.com/theme-next/hexo-theme-next/releases"><img src="https://img.shields.io/github/package-json/v/theme-next/hexo-theme-next?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/hexo-theme-next"><img src="https://img.shields.io/github/package-json/v/theme-next/hexo-theme-next?style=flat-square"></a>
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E=10.9.0-green?style=flat-square"></a>
   <a href="https://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E=3.5.0-blue?style=flat-square&logo=hexo"></a>
   <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu"></a>
@@ -90,13 +90,13 @@ However, you can bypass update errors by using the `Commit`, `Stash` or `Reset` 
 
 ## Feedback
 
-- Follow us with [Telegram Channel][t-news-url] for latest news.
-- Join our [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] chats.
-- [Add or improve translation][i18n-url] in few seconds.
-- Visit the [Awesome NexT][awesome-next-url] list.
-- Report a bug in [GitHub Issues][issues-bug-url].
-- Request a new feature on [GitHub][issues-feat-url].
-- Vote for [popular feature requests][feat-req-vote-url].
+* Follow us with [Telegram Channel][t-news-url] for latest news.
+* Join our [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] chats.
+* [Add or improve translation][i18n-url] in few seconds.
+* Visit the [Awesome NexT][awesome-next-url] list.
+* Report a bug in [GitHub Issues][issues-bug-url].
+* Request a new feature on [GitHub][issues-feat-url].
+* Vote for [popular feature requests][feat-req-vote-url].
 
 ## Contributing
 
@@ -139,15 +139,18 @@ Also, we welcome Issue or PR to [official-plugins][official-plugins-url].
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md
+
 [t-news-url]: https://t.me/theme_next_news
 [t-chat-url]: https://t.me/theme_next
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
 [i18n-url]: https://i18n.theme-next.org
+
 [awesome-next-url]: https://github.com/theme-next/awesome-next
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
 [issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22
+
 [contributing-document-url]: https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
 [official-plugins-url]: https://github.com/theme-next
 [contributors-image]: https://opencollective.com/theme-next/contributors.svg?width=890

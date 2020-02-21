@@ -18,18 +18,16 @@ And make sure that this PR does not cause more warning messages.
 -->
 
 ## PR Checklist <!-- 我确认我已经查看了 -->
-
 <!-- Change [ ] to [x] to select (将 [ ] 换成 [x] 来选择) -->
 
 - [ ] The commit message follows [guidelines for NexT](https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md).
 - [ ] Tests for the changes was maked (for bug fixes / features).
-  - [ ] Muse | Mist have been tested.
-  - [ ] Pisces | Gemini have been tested.
+   - [ ] Muse | Mist have been tested.
+   - [ ] Pisces | Gemini have been tested.
 - [ ] [Docs](https://github.com/theme-next/theme-next.org/tree/source/source/docs) in [NexT website](https://theme-next.org/docs/) have been added / updated (for features).
-  <!-- For adding Docs edit needed file here: https://github.com/theme-next/theme-next.org/tree/source/source/docs and create PR with this changes here: https://github.com/theme-next/theme-next.org/pulls -->
+<!-- For adding Docs edit needed file here: https://github.com/theme-next/theme-next.org/tree/source/source/docs and create PR with this changes here: https://github.com/theme-next/theme-next.org/pulls -->
 
 ## PR Type
-
 <!-- What kind of change does this PR introduce? -->
 
 - [ ] Bugfix.
@@ -42,27 +40,22 @@ And make sure that this PR does not cause more warning messages.
 - [ ] Other... Please describe:
 
 ## What is the current behavior?
-
 <!-- Please describe the current behavior that you are modifying, or link to a relevant issue -->
 
 Issue resolved: N/A
 
 ## What is the new behavior?
-
 <!-- Description about this pull, in several words -->
 
 - Screenshots with this changes: N/A
 - Link to demo site with this changes: N/A
 
 ### How to use?
-
 In NexT `_config.yml`:
-
 ```yml
 
 ```
 
 ## Does this PR introduce a breaking change?
-
 - [ ] Yes.
 - [ ] No.

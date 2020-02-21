@@ -1,7 +1,6 @@
 <h1 align="center">Обновление из-под NexT v5.1.x</h1>
 
 Между версией 5.1.x и последней версиями нет жёстких изменений. Версия сменилась на мажорную 6 по следующим причинам:
-
 1. Основной репозиторий перебазировался из профиля [iissnan'а](https://github.com/iissnan/hexo-theme-next) в [theme-next](https://github.com/theme-next) организацию.
 2. Большинство библиотек в `next/source/lib` директории были вынесены в [отдельные репозитории под организацией NexT](https://github.com/theme-next).
 3. 3rd-party плагин [`hexo-wordcount`](https://github.com/willin/hexo-wordcount) был заменён на [`hexo-symbols-count-time`](https://github.com/theme-next/hexo-symbols-count-time) т.к. `hexo-symbols-count-time` не имеет никаких сторонних nodejs зависимостей, не имеет [языкового фильтра](https://github.com/willin/hexo-wordcount/issues/7) что обеспечивает улучшенную производительность при генерации сайта.

@@ -3,7 +3,6 @@
 目前，通过 pull 或下载新的 release 版本来更新 NexT 主题的体验并不平滑。当用户使用 `git pull` 更新 NexT 主题时经常需要解决冲突问题，而在手动下载 release 版本时也经常需要手动合并配置。
 
 现在来说，NexT 推荐用户存储部分配置在 Hexo 站点配置文件（`/_config.yml`），而另一部分在主题配置文件（`/themes/next/_config.yml`）。这一方式固然可用，但也有一些缺点：
-
 1. 配置项被分裂为两部分；
 2. 用户难以弄清何处存放配置选项。
 
@@ -24,8 +23,8 @@
 
 ### 相关链接
 
-- [Hexo 配置](https://hexo.io/zh-cn/docs/configuration.html)
-- [Hexo Pull #757](https://github.com/hexojs/hexo/pull/757)
+* [Hexo 配置](https://hexo.io/zh-cn/docs/configuration.html)
+* [Hexo Pull #757](https://github.com/hexojs/hexo/pull/757)
 
 <h2 align="center">选择 2: NexT 方式</h2>
 
@@ -43,13 +42,13 @@
 
 <p align="center">以上步骤之后有 <b>两种选择</b>，请<b>任选其一</b>然后<b>继续后面的步骤</b>。</p>
 
-- **选择 1：`override: false`（默认）**：
+* **选择 1：`override: false`（默认）**：
 
   1. 检查默认 NexT 配置中的 `override` 选项，必须设置为 `false`。\
      在 `next.yml` 文件中，也要设置为 `false`，或者不定义此选项。
   2. 从站点配置文件（`/_config.yml`）与主题配置文件（`/themes/next/_config.yml`）中复制你需要的选项到 `/source/_data/next.yml` 中。
 
-- **选择 2：`override: true`**：
+* **选择 2：`override: true`**：
 
   1. 在 `next.yml` 中设置 `override` 选项为 `true`。
   2. 从 `/themes/next/_config.yml` 配置文件中复制**所有**的 NexT 主题选项到 `/source/_data/next.yml` 中。
@@ -59,4 +58,4 @@
 
 ### 相关链接
 
-- [NexT Issue #328](https://github.com/iissnan/hexo-theme-next/issues/328)
+* [NexT Issue #328](https://github.com/iissnan/hexo-theme-next/issues/328)

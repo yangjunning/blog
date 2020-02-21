@@ -7,7 +7,6 @@
 ---
 
 # 注册 LeanCloud 并创建应用
-
 - 首先，前往 LeanCloud 官网 [leancloud.cn](https://leancloud.cn) 进行注册，并登录。
 
   请注意，目前华东节点和华北节点创建应用需要先在账号设置完成实名认证，并且官方表明“[在国内市场将只服务于可验证的商业客户](https://leancloudblog.com/domain-incident/)”；美国节点暂无上述要求，并且账号系统与华东节点和华北节点是独立的，如需使用请前往 LeanCloud 国际版官网 [leancloud.app](https://leancloud.app) 注册登录。
@@ -20,14 +19,13 @@
 
   ![2](https://lc-cqha0xyi.cn-n1.lcfile.com/33a56b754753a5d34b01.jpg)
 
-- 在弹出窗口 `1` 处输入应用名称（可随意输入，可更改，为演示方便取名为 test），并选择 `2` 处“开发版”，然后点击 `3` 处创建：
+- 在弹出窗口 `1` 处输入应用名称（可随意输入，可更改，为演示方便取名为test），并选择 `2` 处“开发版”，然后点击 `3` 处创建：
 
   ![3](https://lc-cqha0xyi.cn-n1.lcfile.com/649ccfc6f12015d1eefb.jpg)
 
 到这里应用创建完成。
 
 # 建立 Counter 类并在 NexT 中启用插件
-
 - 点击 `1` 处应用名称进入应用管理界面：
 
   ![4](https://lc-cqha0xyi.cn-n1.lcfile.com/d0889df29841661e0b9e.jpg)
@@ -44,8 +42,7 @@
 
   ![8](https://lc-cqha0xyi.cn-n1.lcfile.com/9501a6372918dd9a8a92.jpg)
 
-- 粘贴 `App ID` 和 `App Key` 到 **NexT 主题配置文件** `_config.yml` 对应位置。此时配置文件应如下：
-
+- 粘贴 `App ID` 和 `App Key` 到 **NexT主题配置文件** `_config.yml` 对应位置。此时配置文件应如下：
 ```yml
 leancloud_visitors:
   enable: true
@@ -54,14 +51,13 @@ leancloud_visitors:
   app_key: <<your app key>>
 ```
 
-- 设置 Web 安全域名确保域名调用安全。点击 `1` 处进入安全中心，然后在 `2` 处填写自己博客对应的域名（**注意协议、域名和端口号需严格一致**）：
+- 设置Web安全域名确保域名调用安全。点击 `1` 处进入安全中心，然后在 `2` 处填写自己博客对应的域名（**注意协议、域名和端口号需严格一致**）：
 
-![9](https://lc-cqha0xyi.cn-n1.lcfile.com/0e537cc4bec2e185201d.jpg)
+ ![9](https://lc-cqha0xyi.cn-n1.lcfile.com/0e537cc4bec2e185201d.jpg)
 
-到这里内容均与 Doublemine 的[为 NexT 主题添加文章阅读量统计功能](https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud)这篇文章相同，只不过截图为新版的 Leancloud 的界面。
+到这里内容均与 Doublemine 的[为NexT主题添加文章阅读量统计功能](https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud)这篇文章相同，只不过截图为新版的Leancloud的界面。
 
 # 部署云引擎以保证访客数量不被随意篡改
-
 - 点击左侧 `1` 处云引擎，然后点击 `2` 处部署，再点击 `3` 处在线编辑：
 
   ![10](https://lc-cqha0xyi.cn-n1.lcfile.com/d7056dfeeef7c5d66318.jpg)
@@ -71,16 +67,15 @@ leancloud_visitors:
   ![11](https://lc-cqha0xyi.cn-n1.lcfile.com/2737841bbc2bdd572ae0.jpg)
 
 - 在弹出窗口选择 `1` 处 `Hook` 类型，然后 `2` 处选择 `beforeUpdate`，`3` 处选择刚才建立的 `Counter` 类。在 `4` 中粘贴下方代码后，点 `5` 处保存。
-
   ```javascript
-  var query = new AV.Query('Counter')
+  var query = new AV.Query("Counter");
   if (request.object.updatedKeys.indexOf('time') !== -1) {
-    return query.get(request.object.id).then(function(obj) {
-      if (obj.get('time') > request.object.get('time')) {
-        throw new AV.Cloud.Error('Invalid update!')
-      }
-      return request.object.save()
-    })
+      return query.get(request.object.id).then(function (obj) {
+          if (obj.get("time") > request.object.get("time")) {
+              throw new AV.Cloud.Error('Invalid update!');
+          }
+          return request.object.save();
+      });
   }
   ```
 
@@ -103,9 +98,7 @@ leancloud_visitors:
 至此云引擎已成功部署，任何非法的访客数量更改请求都将失败。
 
 # 进一步设置权限
-
-- 打开**NexT 主题配置文件** `_config.yml`，将 `leancloud_visitors` 下的 `security` 设置为 `true`（如没有则新增）：
-
+- 打开**NexT主题配置文件** `_config.yml`，将 `leancloud_visitors` 下的 `security` 设置为 `true`（如没有则新增）：
   ```yml
   leancloud_visitors:
     enable: true
@@ -120,13 +113,11 @@ leancloud_visitors:
   由于 LeanCloud 免费版的云引擎存在请求线程数和运行时间限制以及休眠机制，很多时候访客数量加载会很慢。如果设置 `betterPerformance` 为 `true`，则网页则会在提交请求之前直接显示访客人数为查询到的人数+1，以增加用户体验。
 
 - 打开 cmd 并切换至**博客根目录**，键入以下命令以安装 `hexo-leancloud-counter-security` 插件：
-
   ```
   npm install hexo-leancloud-counter-security
   ```
 
 - 打开**博客配置文件** `_config.yml`，新增以下配置：
-
   ```yml
   leancloud_counter_security:
     enable_sync: true
@@ -137,13 +128,10 @@ leancloud_visitors:
   ```
 
 - 在相同目录键入以下命令：
-
   ```
   hexo lc-counter register <<username>> <<password>>
   ```
-
   或
-
   ```
   hexo lc-counter r <<username>> <<password>>
   ```
@@ -151,7 +139,6 @@ leancloud_visitors:
   将 `<<username>>` 和 `<<password>>` 替换为你自己的用户名和密码（不必与 LeanCloud 的账号相同）。此用户名和密码将在 Hexo 部署时使用。
 
   - 打开**博客配置文件** `_config.yml`，将 `<<username>>` 和 `<<password>>` 替换为你刚刚设置的用户名和密码：
-
   ```yml
   leancloud_counter_security:
     enable_sync: true
@@ -162,7 +149,6 @@ leancloud_visitors:
   ```
 
 - 在**博客配置文件** `_config.yml` 的 `deploy` 下添加项：
-
   ```yml
   deploy:
     # other deployer
@@ -191,7 +177,7 @@ leancloud_visitors:
 
 - 点击 `1` `delete` 后选择 `2` 指定用户， 并将下两栏留空：
 
-![21](https://lc-cqha0xyi.cn-n1.lcfile.com/c37b6e20726cfb1d3197.jpg)
+ ![21](https://lc-cqha0xyi.cn-n1.lcfile.com/c37b6e20726cfb1d3197.jpg)
 
 至此权限已设置完成，数据库记录只能在本地增删。
 

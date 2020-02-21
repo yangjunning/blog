@@ -11,7 +11,7 @@
   «NexT» — элегантная высококачественная тема под <a href="https://hexo.io">Hexo</a>. Сделана с нуля, с любовью.
 <br>
 <br>
-  <a href="https://github.com/theme-next/hexo-theme-next/releases"><img src="https://img.shields.io/github/package-json/v/theme-next/hexo-theme-next?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/hexo-theme-next"><img src="https://img.shields.io/github/package-json/v/theme-next/hexo-theme-next?style=flat-square"></a>
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/node-%3E=10.9.0-green?style=flat-square"></a>
   <a href="https://hexo.io"><img src="https://img.shields.io/badge/hexo-%3E=3.5.0-blue?style=flat-square&logo=hexo"></a>
   <a href="https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu"></a>
@@ -68,19 +68,19 @@ $ git pull
 ```
 
 А если всплывают ошибки во время обновления (что-то наподобии **«Commit your changes or stash them before you can merge»**), рекомендуется ознакомиться с особенностью хранения [дата-файлов в Hexo][docs-data-files-url].\
-Как бы то ни было, можно обойти ошибки при обновлении если «Закомитить», «Стэшнуть» или «Откатить» локальные изменения. Смотрим [здесь](https://stackoverflow.com/a/15745424/5861495) как это сделать.
+Как бы то ни было, можно обойти ошибки при обновлении если «Закомитить», «Стэшнуть» или «Откатить» локальные изменения. Смотрим  [здесь](https://stackoverflow.com/a/15745424/5861495) как это сделать.
 
 **Если нужно обновиться с версии v5.1.x на последней версиями, читаем [здесь][docs-update-5-1-x-url].**
 
 ## Обратная связь
 
-- Подписаться на новости через [канал Telegram'а][t-news-url].
-- Вступить в наши [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] чаты.
-- [Добавить или улучшить перевод][i18n-url] за несколько секунд.
-- Посетите [Awesome NexT][awesome-next-url] список.
-- Сообщить об ошибке в разделе [GitHub Issues][issues-bug-url].
-- Запросить новую возможность на [GitHub][issues-feat-url].
-- Голосовать за [популярные запросы возможностей][feat-req-vote-url].
+* Подписаться на новости через [канал Telegram'а][t-news-url].
+* Вступить в наши [Telegram][t-chat-url] / [Gitter][gitter-url] / [Riot][riot-url] чаты.
+* [Добавить или улучшить перевод][i18n-url] за несколько секунд.
+* Посетите [Awesome NexT][awesome-next-url] список.
+* Сообщить об ошибке в разделе [GitHub Issues][issues-bug-url].
+* Запросить новую возможность на [GitHub][issues-feat-url].
+* Голосовать за [популярные запросы возможностей][feat-req-vote-url].
 
 ## Содействие
 
@@ -116,15 +116,18 @@ $ git pull
 [docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/INSTALLATION.md
 [docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/DATA-FILES.md
 [docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ru/UPDATE-FROM-5.1.X.md
+
 [t-news-url]: https://t.me/theme_next_news
 [t-chat-url]: https://t.me/theme_next
 [gitter-url]: https://gitter.im/theme-next
 [riot-url]: https://riot.im/app/#/room/#theme-next:matrix.org
 [i18n-url]: https://i18n.theme-next.org
+
 [awesome-next-url]: https://github.com/theme-next/awesome-next
 [issues-bug-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
 [issues-feat-url]: https://github.com/theme-next/hexo-theme-next/issues/new?assignees=&labels=Feature+Request&template=feature-request.md
 [feat-req-vote-url]: https://github.com/theme-next/hexo-theme-next/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22
+
 [contributing-document-url]: https://github.com/theme-next/hexo-theme-next/blob/master/.github/CONTRIBUTING.md
 [official-plugins-url]: https://github.com/theme-next
 [contributors-image]: https://opencollective.com/theme-next/contributors.svg?width=890

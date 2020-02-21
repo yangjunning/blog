@@ -19,8 +19,8 @@ So, i suggest to update from version 5 to version 6 in this way:
 3. Go to Hexo main config and set theme parameter: `theme: next-reloaded`. So, your `next-reloaded` directory must loading with your generation. If you may see any bugs or you simply not like this version, you anytime can switch for 5.1.x version back.
 4. Update language configuration (For Chinese)
 
-   Since v6.0.3, `zh-Hans` has been renamed to `zh-CN`: https://github.com/theme-next/hexo-theme-next/releases/tag/v6.0.3
+    Since v6.0.3, `zh-Hans` has been renamed to `zh-CN`: https://github.com/theme-next/hexo-theme-next/releases/tag/v6.0.3
 
-   Users upgrading to v6.0.3 and later need to explicitly modify the `language` configuration in the Hexo main config file `_config.yml`, otherwise the language display is incorrect.
+    Users upgrading to v6.0.3 and later need to explicitly modify the `language` configuration in the Hexo main config file `_config.yml`, otherwise the language display is incorrect.
 
 And how to enable 3rd-party libraries see [here](https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md#plugins).

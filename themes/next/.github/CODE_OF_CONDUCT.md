@@ -9,7 +9,7 @@
 
 [NexT](https://theme-next.org) is an elegant and powerful theme for [Hexo](https://hexo.io/). With it, you can build a static blog hosted on [GitHub Pages](https://pages.github.com/) to share your life and communicate with new friends.
 
-A CODE_OF_CONDUCT dictates how conversation during code updates, issue communication, and pull requests should happen within [NexT](https://github.com/theme-next/hexo-theme-next) repository. We expect all users to show respect and courtesy to others through our repositories. Anyone violating these rules will not be reviewed and will be blocked and expelled from our repositories immediately upon discovery.
+A CODE_OF_CONDUCT dictates how conversation during code updates, issue communication, and pull requests should happen within [NexT](https://github.com/theme-next/hexo-theme-next) repository.  We expect all users to show respect and courtesy to others through our repositories. Anyone violating these rules will not be reviewed and will be blocked and expelled from our repositories immediately upon discovery.
 
 ## Table Of Contents
 
@@ -37,19 +37,19 @@ As a project on GitHub, this project is overed by the [GitHub Community Guidelin
 
 Examples of behavior that contributes to creating a positive environment include:
 
-- Using welcoming and inclusive language.
-- Being respectful of differing viewpoints and experiences.
-- Gracefully accepting constructive feedback.
-- Focusing on what is best for the community.
-- Showing empathy and kindness towards other community members.
+* Using welcoming and inclusive language.
+* Being respectful of differing viewpoints and experiences.
+* Gracefully accepting constructive feedback.
+* Focusing on what is best for the community.
+* Showing empathy and kindness towards other community members.
 
 Examples of unacceptable behavior by participants include:
 
-- The use of sexualized language or imagery and unwelcome sexual attention or advances
-- Trolling, insulting/derogatory comments, and personal or political attacks
-- Public or private harassment
-- Publishing others’ private information, such as a physical or electronic address, without explicit permission
-- Other conduct which could reasonably be considered inappropriate in a professional setting
+* The use of sexualized language or imagery and unwelcome sexual attention or advances
+* Trolling, insulting/derogatory comments, and personal or political attacks
+* Public or private harassment
+* Publishing others’ private information, such as a physical or electronic address, without explicit permission
+* Other conduct which could reasonably be considered inappropriate in a professional setting
 
 ## Scope
 
@@ -84,14 +84,13 @@ Project maintainers who do not follow or enforce the Code of Conduct in good fai
 
 You may get in touch with the maintainer team through any of the following methods:
 
-- Through Email:
+* Through Email:
+    * [support@theme-next.org](mailto:support@theme-next.org)
 
-  - [support@theme-next.org](mailto:support@theme-next.org)
-
-- Through Chat:
-  - [Gitter](https://gitter.im/theme-next)
-  - [Riot](https://riot.im/app/#/room/#NexT:matrix.org)
-  - [Telegram](https://t.me/joinchat/GUNHXA-vZkgSMuimL1VmMw)
+* Through Chat:
+    * [Gitter](https://gitter.im/theme-next)
+    * [Riot](https://riot.im/app/#/room/#NexT:matrix.org)
+    * [Telegram](https://t.me/joinchat/GUNHXA-vZkgSMuimL1VmMw)
 
 ## Attribution
 

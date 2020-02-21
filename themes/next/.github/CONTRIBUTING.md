@@ -13,21 +13,21 @@ First of all, thanks for taking your time to contribute and help make our projec
 
 [How Can I Contribute?](#how-can-i-contribute)
 
-- [Before Submitting An Issue](#before-submitting-an-issue)
-  - [Read the docs](#read-the-docs)
-  - [Quick debug instructions](quick-debug-instructions)
-- [Reporting Bugs](#reporting-bugs)
-  - [Reporting Security Bugs](#reporting-security-bugs)
-- [Suggesting Enhancements](#suggesting-enhancements)
-- [Submitting a Pull Request](#submitting-a-pull-request)
-- [Creating Releases](#creating-releases)
+  * [Before Submitting An Issue](#before-submitting-an-issue)
+    * [Read the docs](#read-the-docs)
+    * [Quick debug instructions](quick-debug-instructions)
+  * [Reporting Bugs](#reporting-bugs)
+    * [Reporting Security Bugs](#reporting-security-bugs)
+  * [Suggesting Enhancements](#suggesting-enhancements)
+  * [Submitting a Pull Request](#submitting-a-pull-request)
+  * [Creating Releases](#creating-releases)
 
 [Guides](#guides)
 
-- [Coding Rules](#coding-rules)
-- [Coding Standards](#coding-standards)
-- [Labels Rules](#labels-rules)
-- [Commit Messages Rules](#commit-messages-rules)
+  * [Coding Rules](#coding-rules)
+  * [Coding Standards](#coding-standards)
+  * [Labels Rules](#labels-rules)
+  * [Commit Messages Rules](#commit-messages-rules)
 
 ## How Can I Contribute?
 
@@ -43,10 +43,12 @@ Also, you can perform a [cursory search](https://github.com/theme-next/hexo-them
 
 Before submitting an Issue on GitHub, you can follow the steps below to debug:
 
-- Execute `hexo clean`, cleare the browser cache and disable all CDN services (e.g. Cloudflare Rocket Loader)
-- Switch to another theme and check if the bug still exists (e.g. default theme landscape). In other words, prove that this is a NexT issue, not a issue from Hexo.
-- Upgrade Hexo and Hexo plugins to the latest version.
-- Uninstall all non-essential Hexo plugins.
+* Execute `hexo clean`, cleare the browser cache and disable all CDN services (e.g. Cloudflare Rocket Loader)
+* Switch to another theme and check if the bug still exists (e.g. default theme landscape). In other words, prove that this is a NexT issue, not a issue from Hexo.
+* Upgrade theme NexT to the latest version.
+* Upgrade Hexo and Hexo plugins to the latest version.
+* Upgrade Node.js and `npm` to the latest version.
+* Uninstall all non-essential Hexo plugins, or reinstall all plugins using `npm install --save`.
 
 If you get an error message from Hexo or your browser, please search in Google / Stackoverflow / GitHub Issues, or report it to us when submitting a new Issue.
 
@@ -58,17 +60,17 @@ Before creating bug reports, please check [this list](#before-submitting-an-issu
 
 Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior, and find related reports:
 
-- Use a clear and descriptive title for the issue to identify the problem.
-- Provide more context by answering these questions:
-  - Can you reproduce the problem? Can you reliably reproduce the issue? If not, provide details about how often the problem happens and under which conditions it normally happens.
-  - Did the problem start happening recently or was this always a problem?
-  - If the problem started happening recently, can you reproduce the problem in an older version of Next? What's the most recent version in which the problem doesn't happen? You can download older versions of Next from [the releases page](https://github.com/theme-next/hexo-theme-next/releases).
-  - Which version of Node, Hexo and Next are you using? You can get the exact version by running `node -v`, `hexo version` in your terminal, or copy the contents in site's`package.json`.
-  - Which packages do you have installed? You can get that list by copying the contents in site's`package.json`.
-- Describe the exact steps which reproduce the problem in as many details as possible. When listing steps, don't just say what you did, but explain how you did it, e.g. which command exactly you used. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/) or [a permanent link to a code snippet](https://help.github.com/articles/creating-a-permanent-link-to-a-code-snippet/), or a [Gist link](https://gist.github.com/).
-- Provide specific examples to demonstrate the steps. Include links to files (screenshots or GIFs) or live demo.
-- Describe the behavior you observed after following the steps and point out what exactly is the problem with that behavior.
-- Explain which behavior you expected to see instead and why.
+* Use a clear and descriptive title for the issue to identify the problem.
+* Provide more context by answering these questions:
+    * Can you reproduce the problem? Can you reliably reproduce the issue? If not, provide details about how often the problem happens and under which conditions it normally happens.
+    * Did the problem start happening recently or was this always a problem?
+    * If the problem started happening recently, can you reproduce the problem in an older version of Next? What's the most recent version in which the problem doesn't happen? You can download older versions of Next from [the releases page](https://github.com/theme-next/hexo-theme-next/releases).
+    * Which version of Node, Hexo and Next are you using? You can get the exact version by running `node -v`, `hexo version` in your terminal, or copy the contents in site's`package.json`.
+    * Which packages do you have installed? You can get that list by copying the contents in site's`package.json`.
+* Describe the exact steps which reproduce the problem in as many details as possible. When listing steps, don't just say what you did, but explain how you did it, e.g. which command exactly you used. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/) or [a permanent link to a code snippet](https://help.github.com/articles/creating-a-permanent-link-to-a-code-snippet/), or a [Gist link](https://gist.github.com/).
+* Provide specific examples to demonstrate the steps. Include links to files (screenshots or GIFs) or live demo.
+* Describe the behavior you observed after following the steps and point out what exactly is the problem with that behavior.
+* Explain which behavior you expected to see instead and why.
 
 #### Reporting Security Bugs
 
@@ -82,9 +84,9 @@ Before creating enhancement suggestions, please check [this list](#before-submit
 
 Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions.
 
-- Use a clear and descriptive title for the issue to identify the suggestion.
-- Describe the current behavior and explain which behavior you expected to see instead and Explain why this enhancement would be useful to most users.
-- Provide specific examples to demonstrate the suggestion. Include links to files (screenshots or GIFs) or live demo.
+* Use a clear and descriptive title for the issue to identify the suggestion.
+* Describe the current behavior and explain which behavior you expected to see instead and Explain why this enhancement would be useful to most users.
+* Provide specific examples to demonstrate the suggestion. Include links to files (screenshots or GIFs) or live demo.
 
 ### Submitting a Pull Request
 
@@ -92,10 +94,10 @@ Before creating a Pull Request (PR), please check [this list](#before-submitting
 
 Following these guidelines helps maintainers and the community understand your pull request :pencil::
 
-- Follow our [Coding Rules](#coding-rules) and [commit message conventions](#commit-messages-rules).
-- Use a clear and descriptive title for the issue to identify the pull request. Do not include issue numbers in the PR title.
-- Fill in [the required template](PULL_REQUEST_TEMPLATE.md) as many details as possible.
-- All features or bug fixes must be tested in all schemes. And provide specific examples to demonstrate the pull request. Include links to files (screenshots or GIFs) or live demo.
+* Follow our [Coding Rules](#coding-rules) and [commit message conventions](#commit-messages-rules).
+* Use a clear and descriptive title for the issue to identify the pull request. Do not include issue numbers in the PR title.
+* Fill in [the required template](PULL_REQUEST_TEMPLATE.md) as many details as possible.
+* All features or bug fixes must be tested in all schemes. And provide specific examples to demonstrate the pull request. Include links to files (screenshots or GIFs) or live demo.
 
 ### Creating Releases
 
@@ -105,10 +107,10 @@ Releases are a great way to ship projects on GitHub to your users.
 2. Type a version number for your release. Versions are based on [Git tags](https://git-scm.com/book/en/Git-Basics-Tagging). We recommend naming tags that fit within [About Major and Minor NexT versions](https://github.com/theme-next/hexo-theme-next/issues/187).
 3. Select a branch that contains the project you want to release. Usually, you'll want to release against your `master` branch, unless you're releasing beta software.
 4. Type a title and description that describes your release.
-   - Use the version as the title.
-   - The types of changes include **Breaking Changes**, **Updates**, **Features**, and **Bug Fixes**. In the section of Breaking Changes, use multiple secondary headings, and use item list in other sections.
-   - Use the passive tense and subject-less sentences.
-   - All changes must be documented in release notes. If commits happen without pull request (minimal changes), just add this commit ID into release notes. If commits happen within pull request alreay, just add the related pull request ID including all possible commits.
+    - Use the version as the title.
+    - The types of changes include **Breaking Changes**, **Updates**, **Features**, and **Bug Fixes**. In the section of Breaking Changes, use multiple secondary headings, and use item list in other sections.
+    - Use the passive tense and subject-less sentences.
+    - All changes must be documented in release notes. If commits happen without pull request (minimal changes), just add this commit ID into release notes. If commits happen within pull request alreay, just add the related pull request ID including all possible commits.
 5. If you'd like to include binary files along with your release, such as compiled programs, drag and drop or select files manually in the binaries box.
 6. If the release is unstable, select **This is a pre-release** to notify users that it's not ready for production. If you're ready to publicize your release, click **Publish release**. Otherwise, click **Save draft** to work on it later.
 
@@ -131,22 +133,22 @@ If you are unsure what a label is about or which labels you should apply to a PR
 Issues related:
 
 - By types
-  - `Bug`: A detected bug that needs to be confirmed
-  - `Feature Request`: An issue that wants a new feature
-  - `Question`: An issue about questions
-  - `Meta`: Denoting a change of usage conditions
-  - `Support`: An issue labeled as support requests
-  - `Polls`: An issue that initiated a poll
+    - `Bug`: A detected bug that needs to be confirmed
+    - `Feature Request`: An issue that wants a new feature
+    - `Question`: An issue about questions
+    - `Meta`: Denoting a change of usage conditions
+    - `Support`: An issue labeled as support requests
+    - `Polls`: An issue that initiated a poll
 - By results
-  - `Duplicate`: An issue which had been mentioned
-  - `Irrelevant`: An irrelevant issue for Next
-  - `Invalid`: An issue that cannot be reproduced
-  - `Expected Behavior`: An issue that corresponds to expected behavior
-  - `Need More Info`: Need more information for solving the issue
-  - `Verified`: An issue that has been verified
-  - `Solved`: An issue that has been solved
-  - `Backlog`: An issue that is to be completed and later compensated
-  - `Stale`: This issue has been automatically marked as stale because lack of recent activity
+    - `Duplicate`: An issue which had been mentioned
+    - `Irrelevant`: An irrelevant issue for Next
+    - `Invalid`: An issue that cannot be reproduced
+    - `Expected Behavior`: An issue that corresponds to expected behavior
+    - `Need More Info`: Need more information for solving the issue
+    - `Verified`: An issue that has been verified
+    - `Solved`: An issue that has been solved
+    - `Backlog`: An issue that is to be completed and later compensated
+    - `Stale`: This issue has been automatically marked as stale because lack of recent activity
 
 Pull requests related:
 
@@ -180,16 +182,16 @@ We have very precise rules over how our git commit messages can be formatted. Ea
 readable messages that are easy to follow when looking through the project history.
 
 - `type` describes the meaning of this commit including but not limited to the following items, and capitalize the first letter.
-  - `Build`: Changes that affect the build system or external dependencies
-  - `Ci`: Changes to our CI configuration files and scripts
-  - `Docs`: Documentation only changes
-  - `Feat`: A new feature
-  - `Fix`: A bug fix
-  - `Perf`: A code change that improves performance
-  - `Refactor`: A code change that neither fixes a bug nor adds a feature
-  - `Style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-  - `Revert`: Revert some existing commits
-  - `Release`: Commit a release for a conventional changelog project
+    * `Build`: Changes that affect the build system or external dependencies
+    * `Ci`: Changes to our CI configuration files and scripts
+    * `Docs`: Documentation only changes
+    * `Feat`: A new feature
+    * `Fix`: A bug fix
+    * `Perf`: A code change that improves performance
+    * `Refactor`: A code change that neither fixes a bug nor adds a feature
+    * `Style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+    * `Revert`: Revert some existing commits
+    * `Release`: Commit a release for a conventional changelog project
 - The `subject` contains a succinct description of the change, like `Update code highlighting in readme.md`.
-  - No dot (.) at the end.
-  - Use the imperative, present tense: "change" not "changed" nor "changes".
+    * No dot (.) at the end.
+    * Use the imperative, present tense: "change" not "changed" nor "changes".
