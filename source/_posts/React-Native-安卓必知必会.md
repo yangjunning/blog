@@ -11,11 +11,11 @@ tags:
 
 <!--more-->
 
-## 配置 App 名称
+## 配置应用名
 
 很简单,我们直接打开 `android/app/src/main/res/values/strings.xml`，即可看到配置中的 `app_name`，修改为你想要的即可。
 
-## 修改 App 的图标
+## 配置图标
 
 也很简单，在 `android\app\src\main\res\mipmap-xxxxxx` 中直接覆盖图标就可以，注意图标的大小。
 
@@ -49,28 +49,6 @@ android{
             signingConfig signingConfigs.release
             ...
         }
-    }
-}
-```
-
-### 自定义安卓打包的后缀
-
-配置 `android/app/build.gradle`:
-
-```js
-...
-def releaseTime() {
-    return new Date().format("yyyyMMdd-HHmmss", TimeZone.getTimeZone("GMT+08:00"))
-}
-...
-android: {
-    applicationVariants.all { variant ->
-        ...
-    		variant.outputs.all {
-            // the apk name is e.g. galaxy_v1.0.1_2018-11-1_debug.apk
-           outputFileName = "galaxy_v${defaultConfig.versionName}_${releaseTime()}_${variant.buildType.name}.apk"
-        }
-        ...
     }
 }
 ```
@@ -206,7 +184,7 @@ BuildConfig 是程序编译后，根据 buildType 生成在 `app\build\generated
 - VERSION_CODE：版本号(数字)
 - VERSION_NAME：版本号
 
-## 自定义 BuildConfig
+### 自定义 BuildConfig
 
 ```java
 defaultConfig {
@@ -218,7 +196,7 @@ defaultConfig {
 }
 ```
 
-## 在子模块中取主项目的 BuildConfig
+### 在子模块中取主项目的 BuildConfig
 
 ```java
 ...
