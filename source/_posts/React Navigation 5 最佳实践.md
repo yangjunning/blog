@@ -111,7 +111,7 @@ const HomeScreen = ({navigation, route}) => {
     ),
   });
 
-	const {author} = route.params || {};
+  const {author} = route.params || {};
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
