@@ -470,7 +470,7 @@ export default {
 
 ## React Navigation 生命周期事件
 
-###addListener
+### addListener
 
 ```jsx
 function Profile({ navigation }) {
