@@ -7,6 +7,7 @@ date: 2020-02-14 14:09:06
 
 - [Just Shadow](https://www.justshadow.me/members/aff.php?aff=217)
 - [DefinitelyTyped](http://definitelytyped.org/)
+- [冷熊简历](http://cv.ftqq.com/)
 
 ### 正则表达式
 
