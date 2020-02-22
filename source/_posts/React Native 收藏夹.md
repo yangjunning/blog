@@ -36,6 +36,7 @@ tags:
 
 - [react-native-echarts-wrapper](https://github.com/tomLadder/react-native-echarts-wrapper): ECharts Wrapper for React Native
 - [react-native-user-avatar](https://github.com/avishayil/react-native-user-avatar): React Native 的头像组件
+- [react-native-icon-badge](https://www.npmjs.com/package/react-native-icon-badge): Icon badge is used to create icon badge on some element, such as avatar, icon, image...
 
 ## 工具
 

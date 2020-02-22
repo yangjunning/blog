@@ -5,12 +5,14 @@ date: 2020-02-14 14:09:06
 
 ## 工具
 
-- 科学上网: [Just Shadow](https://www.justshadow.me/members/aff.php?aff=217)
+- [Just Shadow](https://www.justshadow.me/members/aff.php?aff=217)
+- [DefinitelyTyped](http://definitelytyped.org/)
 
 ### 正则表达式
 
 - [iHateRegex](https://ihateregex.io/)
 - [正则大全](https://any86.github.io/any-rule/)
+- [Regexper](https://regexper.com/)
 
 ### React Native
 
@@ -23,17 +25,26 @@ date: 2020-02-14 14:09:06
 - [cutterman](https://www.cutterman.cn/zh): 为设计更专注
 - [图标工厂](https://icon.wuruihong.com/): 一键生成所有尺寸的应用图标/启动图
 
-## 前端进阶
+## 学习资源
 
+### TypeScript
+
+- [TypeScript安利指南](https://bre.is/hbqrN6Q4)
+- [TypeScript 入门教程](https://ts.xcatliu.com/)
+- [TypeScript 中文手册](https://typescript.bootcss.com/)
+
+## 社区与优质博客
+
+- [图灵社区](https://www.ituring.com.cn/)
 - [MDN Web 文档](https://developer.mozilla.org/zh-CN/)
 - [木易杨前端进阶](https://muyiy.cn/)
 - [HelloGitHUb](https://hellogithub.com/)
 - [前端面试手册](https://bre.is/THbxnbf7)
 
-## 社区
-
-- [图灵社区](https://www.ituring.com.cn/)
-
 ## 漫画
 
 - [神秘的程序预员们](https://code2048.com/)
+
+## 镜像
+
+- [阿里巴巴开源镜像站](https://developer.aliyun.com/mirror/)
