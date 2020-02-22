@@ -7,6 +7,8 @@ tags:
   - 最佳实践
 ---
 
+> 最佳实践: https://github.com/youngjuning/react-navigation-best-practice
+
 ## 安装依赖
 
 ```sh
@@ -45,47 +47,28 @@ const App = () => {
 export default App;
 ```
 
-## Header Button
-
-使用 `react-native-header-buttons` 组件搭配任意 Icon 组件可以自定义自己的 Header Button 组件：
+## App.js
 
 ```jsx
 import React from 'react';
 import {
-  HeaderButtons as RNHeaderButtons,
-  HeaderButton as RNHeaderButton,
-  Item,
-} from 'react-navigation-header-buttons';
-import {IconOutline} from '@ant-design/icons-react-native';
-
-const HeaderButton = props => {
-  return (
-    <RNHeaderButton
-      {...props}
-      IconComponent={IconOutline}
-      iconSize={props.iconSize || 23}
-      color={props.color || '#000000'}
-    />
-  );
-};
-
-const HeaderButtons = props => {
-  return <RNHeaderButtons HeaderButtonComponent={HeaderButton} {...props} />;
-};
-
-HeaderButtons.Item = Item;
-
-export default HeaderButtons;
-```
-
-## stack navigator
-
-```jsx
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  StatusBar,
+  BackHandler,
+} from 'react-native';
+import {NavigationContainer, useFocusEffect} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator, HeaderBackButton} from '@react-navigation/stack';
+import {IconOutline} from '@ant-design/icons-react-native';
+import {Button} from '@ant-design/react-native';
+import IconWithBadge from './IconWithBadge';
 import HeaderButtons from './HeaderButtons';
+import getActiveRouteName from './getActiveRouteName';
+import getScreenOptions from './getScreenOptions';
+import {navigationRef} from './NavigationService';
 
 const HomeScreen = ({navigation, route}) => {
   navigation.setOptions({
@@ -93,7 +76,7 @@ const HomeScreen = ({navigation, route}) => {
       <HeaderBackButton
         {...props}
         onPress={() => {
-          alert('不能再返回了！');
+          console.log('不能再返回了！');
         }}
       />
     ),
@@ -103,7 +86,7 @@ const HomeScreen = ({navigation, route}) => {
         <HeaderButtons.Item
           title="添加"
           iconName="plus"
-          onPress={() => alert('添加！')}
+          onPress={() => console.log('点击了添加按钮')}
           iconSize={24}
           color="#ffffff"
         />
@@ -111,26 +94,52 @@ const HomeScreen = ({navigation, route}) => {
     ),
   });
 
+  useFocusEffect(
+    React.useCallback(() => {
+      // Do something when the screen is focused
+      return () => {
+        // Do something when the screen is unfocused
+        // Useful for cleanup functions
+      };
+    }, []),
+  );
   const {author} = route.params || {};
   return (
-    <View style={styles.container}>
-      <Text>Home Screen</Text>
-      <Text>{author}</Text>
-      // 使用 setOptions 更新标题
-      <Button
-        title="Update the title"
-        onPress={() => navigation.setOptions({headerTitle: 'Updated!'})}
-      />
-      <Button
-        title="Go to DetailsScreen"
-        // 跳转到指定页面，并传递两个参数
-        onPress={() =>
-          navigation.navigate('DetailsScreen', {
-            otherParam: 'anything you want here',
-          })
-        }
-      />
-    </View>
+    <>
+      <StatusBar barStyle="dark-content" />
+      <View style={styles.container}>
+        <Text>Home Screen</Text>
+        <Text>{author}</Text>
+        <Button
+          type="warning"
+          // 使用 setOptions 更新标题
+          onPress={() => navigation.setOptions({headerTitle: 'Updated!'})}>
+          Update the title
+        </Button>
+        <Button
+          type="primary"
+          onPress={() =>
+            // 跳转到指定页面，并传递两个参数
+            navigation.navigate('DetailsScreen', {
+              otherParam: 'anything you want here',
+            })
+          }>
+          Go to DetailsScreen
+        </Button>
+        <Button
+          type="warning"
+          onPress={() => navigation.navigate('SafeAreaViewScreen')}>
+          Go SafeAreaViewScreen
+        </Button>
+        <Button
+          type="primary"
+          onPress={() =>
+            navigation.navigate('CustomAndroidBackButtonBehaviorScreen')
+          }>
+          Go CustomAndroidBackButtonBehavior
+        </Button>
+      </View>
+    </>
   );
 };
 
@@ -142,61 +151,147 @@ const DetailsScreen = ({navigation, route}) => {
       <Text>Details Screen</Text>
       <Text>itemId: {itemId}</Text>
       <Text>otherParam: {otherParam}</Text>
-      // 返回上一页
-      <Button title="Go back" onPress={() => navigation.goBack()} />
-      // 如果返回上一个页面需要传递参数，请使用 navigate 方法
       <Button
-        title="Go back with Params"
-        onPress={() =>
-          navigation.navigate('HomeScreen', {author: '杨俊宁'})
-        }
-      />
+        type="primary"
+        // 返回上一页
+        onPress={() => navigation.goBack()}>
+        Go back
+      </Button>
+      <Button
+        type="primary"
+        // 如果返回上一个页面需要传递参数，请使用 navigate 方法
+        onPress={() => navigation.navigate('HomeScreen', {author: '杨俊宁'})}>
+        Go back with Params
+      </Button>
+    </View>
+  );
+};
+
+const SettingsScreen = ({navigation, route}) => {
+  return (
+    <SafeAreaView
+      style={{flex: 1, justifyContent: 'space-between', alignItems: 'center'}}>
+      <Text>This is top text.</Text>
+      <Text>This is bottom text.</Text>
+    </SafeAreaView>
+  );
+};
+
+const SafeAreaViewScreen = () => {
+  return (
+    <SafeAreaView
+      style={{flex: 1, justifyContent: 'space-between', alignItems: 'center'}}>
+      <Text>This is top text.</Text>
+      <Text>This is bottom text.</Text>
+    </SafeAreaView>
+  );
+};
+
+const CustomAndroidBackButtonBehaviorScreen = ({navigation, route}) => {
+  useFocusEffect(
+    React.useCallback(() => {
+      const onBackPress = () => {
+        alert('物理返回键被拦截了！');
+        return true;
+      };
+
+      BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+      return () =>
+        BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+    }, []),
+  );
+  return (
+    <View style={styles.container}>
+      <Text>AndroidBackHandlerScreen</Text>
     </View>
   );
 };
 
 const Stack = createStackNavigator();
-
+const BottomTab = createBottomTabNavigator();
+const BottomTabScreen = () => (
+  <BottomTab.Navigator
+    screenOptions={({route}) => ({
+      tabBarIcon: ({focused, color, size}) => {
+        let iconName;
+        if (route.name === 'HomeScreen') {
+          iconName = focused ? 'apple' : 'apple';
+          return (
+            <IconWithBadge badgeCount={90}>
+              <IconOutline name={iconName} size={size} color={color} />
+            </IconWithBadge>
+          );
+        } else if (route.name === 'SettingsScreen') {
+          iconName = focused ? 'twitter' : 'twitter';
+        }
+        return <IconOutline name={iconName} size={size} color={color} />;
+      },
+    })}
+    tabBarOptions={{
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    }}>
+    <Stack.Screen
+      name="HomeScreen"
+      component={HomeScreen}
+      options={{tabBarLabel: '首页'}}
+    />
+    <Stack.Screen
+      name="SettingsScreen"
+      component={SettingsScreen}
+      options={{tabBarLabel: '设置'}}
+    />
+  </BottomTab.Navigator>
+);
 const App = () => {
+  const routeNameRef = React.useRef();
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="HomeScreen"
-        // 页面共享的配置
-        screenOptions={{
-          // 一个应用于 header 的最外层 View 的 样式对象， 如果你设置 backgroundColor ，他就是header 的颜色。
-          headerStyle: {
-            backgroundColor: '#f4511e',
-          },
-          // 返回按钮和标题都使用这个属性作为它们的颜色
-          headerTintColor: '#ffffff',
-          // 如果我们想为标题定制fontFamily，fontWeight和其他Text样式属性，我们可以用它来完成。
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-          headerBackTitleVisible: false,
-          headerTitleAlign: 'center',
-          // 页面公用样式
-          cardStyle: {
-            flex: 1,
-            backgroundColor: '#f5f5f9',
-          },
-          ...TransitionPresets.SlideFromRightIOS,
+    <>
+      <NavigationContainer
+        ref={navigationRef}
+        onStateChange={state => {
+          const previousRouteName = routeNameRef.current;
+          const currentRouteName = getActiveRouteName(state);
+          if (previousRouteName !== currentRouteName) {
+            console.log('[onStateChange]', currentRouteName);
+            if (currentRouteName === 'HomeScreen') {
+              StatusBar.setBarStyle('dark-content'); // 修改 StatusBar
+            } else {
+              StatusBar.setBarStyle('dark-content'); // 修改 StatusBar
+            }
+          }
+          // Save the current route name for later comparision
+          routeNameRef.current = currentRouteName;
         }}>
-      >
-        <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{headerTitle: '首页'}}
-        />
-        <Stack.Screen
-          name="DetailsScreen"
-          component={DetailsScreen}
-          options={{headerTitle: '详情'}} // headerTitle 用来设置标题栏
-          initialParams={{itemId: 42}} // 默认参数
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="HomeScreen"
+          // 页面共享的配置
+          screenOptions={getScreenOptions()}>
+          <Stack.Screen
+            name="BottomTabScreen"
+            component={BottomTabScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="DetailsScreen"
+            component={DetailsScreen}
+            options={{headerTitle: '详情'}} // headerTitle 用来设置标题栏
+            initialParams={{itemId: 42}} // 默认参数
+          />
+          <Stack.Screen
+            name="SafeAreaViewScreen"
+            component={SafeAreaViewScreen}
+            options={{headerTitle: 'SafeAreaView'}}
+          />
+          <Stack.Screen
+            name="CustomAndroidBackButtonBehaviorScreen"
+            component={CustomAndroidBackButtonBehaviorScreen}
+            options={{headerTitle: '拦截安卓物理返回键'}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 };
 
@@ -240,89 +335,291 @@ export default App;
 </Stack.Screen>
 ```
 
-## 嵌套导航最佳实践
+## HeaderButtons.js
+
+使用 `react-native-header-buttons` 组件搭配任意 Icon 组件可以自定义自己的 Header Button 组件：
 
 ```jsx
-import React from 'react'
-import { Text, View } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { createStackNavigator } from '@react-navigation/stack'
+import React from 'react';
+import {
+  HeaderButtons as RNHeaderButtons,
+  HeaderButton as RNHeaderButton,
+  Item,
+} from 'react-navigation-header-buttons';
+import {IconOutline} from '@ant-design/icons-react-native';
 
-function HomeScreen() {
+const HeaderButton = props => {
+  return (
+    <RNHeaderButton
+      {...props}
+      IconComponent={IconOutline}
+      iconSize={props.iconSize || 23}
+      color={props.color || '#000000'}
+    />
+  );
+};
+
+const HeaderButtons = props => {
+  return <RNHeaderButtons HeaderButtonComponent={HeaderButton} {...props} />;
+};
+
+HeaderButtons.Item = Item;
+
+export default HeaderButtons;
+```
+
+## IconWithBadge.js
+
+```jsx
+import React from 'react';
+import {View} from 'react-native';
+import {Badge} from '@ant-design/react-native';
+
+const IconWithBadge = ({children, badgeCount, ...props}) => {
+  return (
+    <View style={{width: 24, height: 24, margin: 5}}>
+      {children}
+      <Badge
+        {...props}
+        style={{position: 'absolute', right: -6, top: -3}}
+        text={badgeCount}
+      />
+    </View>
+  );
+};
+
+export default IconWithBadge;
+```
+
+## getActiveRouteName.js
+
+```js
+/**
+ * Gets the current screen from navigation state
+ * @param state
+ */
+const getActiveRouteName = state => {
+  const route = state.routes[state.index];
+
+  if (route.state) {
+    // Dive into nested navigators
+    return getActiveRouteName(route.state);
+  }
+
+  return route.name;
+};
+
+export default getActiveRouteName;
+
+```
+
+## getScreenOptions.js
+
+```js
+import {TransitionPresets} from '@react-navigation/stack';
+
+const getScreenOptions = () => {
+  return {
+    headerStyle: {
+      backgroundColor: '#ffffff',
+    }, // 一个应用于 header 的最外层 View 的 样式对象
+    headerTintColor: '#000000', // 返回按钮和标题都使用这个属性作为它们的颜色
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+    headerBackTitleVisible: false,
+    headerTitleAlign: 'center',
+    cardStyle: {
+      flex: 1,
+      backgroundColor: '#f5f5f9',
+    },
+    ...TransitionPresets.SlideFromRightIOS,
+  };
+};
+
+export default getScreenOptions;
+
+```
+
+## NavigationService.js
+
+```js
+import React from 'react';
+
+export const navigationRef = React.createRef();
+
+const navigate = (name, params) => {
+  navigationRef.current && navigationRef.current.navigate(name, params);
+};
+
+const getNavigation = () => {
+  return navigationRef.current && navigationRef.current;
+};
+
+export default {
+  navigate,
+  getNavigation,
+};
+```
+
+## 页面生命周期与React Navigation
+
+一个包含 页面 A 和 B 的 StackNavigator ，当跳转到 A 时，`componentDidMount` 方法会被调用； 当跳转到 B 时，`componentDidMount` 方法也会被调用，但是 A 依然在堆栈中保持 被加载状态，他的 `componentWillUnMount` 也不会被调用。
+
+当从 B 跳转到 A，B的 `componentWillUnmount` 方法会被调用，但是 A 的 `componentDidMount`方法不会被调用，应为此时 A 依然是被加载状态。
+
+## React Navigation 生命周期事件
+
+###addListener
+
+```jsx
+function Profile({ navigation }) {
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      // Screen was focused
+      // Do something
+    });
+
+    return unsubscribe;
+  }, [navigation]);
+
+  return <ProfileContent />;
+}
+```
+
+### useFocusEffect
+
+```jsx
+useFocusEffect(
+    React.useCallback(() => {
+      // Do something when the screen is focused
+      return () => {
+        // Do something when the screen is unfocused
+        // Useful for cleanup functions
+      };
+    }, []),
+  );
+```
+
+## 隐藏 Header/TabBar
+
+- `headerMode:"none"`: hide Header for `Stack.Navigator`
+- `headerShown:false`: hide Header for `Stack.Screen`
+- `tabBar={() => null}`: hide TabBar for `BottomTab.Navigator`
+
+```jsx
+import {NavigationContainer, useFocusEffect} from '@react-navigation/native';
+import {createStackNavigator, TransitionPresets, HeaderBackButton} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
+const Stack = createStackNavigator();
+const BottomTab = createBottomTabNavigator();
+
+export default App = () => {
+  <NavigationContainer>
+  	<Stack.Navigator headerMode="none">
+      <Stack.Screen
+        ...
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen ...>
+        {() => (
+          <BottomTab.Navigator
+            ...
+           	tabBar={() => null}
+          >
+            ...
+          </BottomTab.Navigator>
+        )}
+      </Stack.Screen>
+    </Stack.Navigator>
+  </NavigationContainer>
+}
+```
+
+## TabBar 的 StatusBar 不同
+
+一般我们会对特殊的那个TabBar进行处理。
+
+```jsx
+const getActiveRouteName = state => {
+  const route = state.routes[state.index];
+
+  if (route.state) {
+    // Dive into nested navigators
+    return getActiveRouteName(route.state);
+  }
+
+  return route.name;
+};
+
+const App = () => {
+  const ref = React.useRef(null);
+	return (
+    <>
+    	{/* 访问 ref.current?.navigate */}
+      <NavigationContainer
+        ref={ref}
+        onStateChange={state => {
+          const previousRouteName = ref.current;
+          const currentRouteName = getActiveRouteName(state);
+          if (previousRouteName !== currentRouteName) {
+            console.log('[onStateChange]', currentRouteName);
+            if (currentRouteName === 'HomeScreen') {
+              StatusBar.setBarStyle('dark-content');  // 修改 StatusBar
+            } else {
+              StatusBar.setBarStyle('dark-content');  // 修改 StatusBar
+            }
+          }
+        }}
+      >
+      </NavigationContainer>
+    </>
+	)
+}
+```
+
+## 监听安卓物理返回键
+
+```jsx
+import {View, Text, BackHandler} from 'react-native';
+const CustomAndroidBackButtonBehaviorScreen = ({navigation, route}) => {
+  useFocusEffect(
+    React.useCallback(() => {
+      const onBackPress = () => {
+        alert('物理返回键被拦截了！');
+        return true;
+      };
+      BackHandler.addEventListener('hardwareBackPress', onBackPress);
+      return () =>
+        BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+    }, []),
+  );
   return (
     <View style={styles.container}>
-      <Text>Home!</Text>
+      <Text>AndroidBackHandlerScreen</Text>
     </View>
-  )
-}
+  );
+};
+```
 
-function SettingsScreen() {
+## 在子组件中访问 `navigation`
+
+我们可以通过 `useNavigation()` hook 来访问 navigation，再也不用传递多层 `navigation`
+
+```jsx
+import React from 'react';
+import { Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+function GoToButton({ screenName }) {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.container}>
-      <Text>Settings!</Text>
-    </View>
-  )
+    <Button
+      title={`Go to ${screenName}`}
+      onPress={() => navigation.navigate(screenName)}
+    />
+  );
 }
-
-// 为了方便设置title
-const Stack = createStackNavigator()
-const HomeStackScreen = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={{
-          headerTitle: '首页',
-        }}
-      />
-    </Stack.Navigator>
-  )
-}
-const SettingsStackScreen = () => {
-  return (
-    // @ts-ignore
-    <Stack.Navigator screenOptions={getScreenOptions()}>
-      <Stack.Screen
-        name="SettingsScreen"
-        component={SettingsScreen}
-        options={{
-          headerTitle: '设置',
-        }}
-      />
-    </Stack.Navigator>
-  )
-}
-
-const BottomTab = createBottomTabNavigator()
-
-const App = () =>{
-  const routeNameRef = React.useRef(null)
-  return (
-    <NavigationContainer
-    	ref={navigationRef}
-      onStateChange={state => {
-        const previousRouteName = routeNameRef.current
-        const currentRouteName = getActiveRouteName(state)
-        if (previousRouteName !== currentRouteName) {
-          console.log('[onStateChange]', currentRouteName)
-        }
-      }}
-    >
-      <BottomTab.Navigator>
-        <BottomTab.Screen name="HomeStackScreen" component={HomeStackScreen} options={{ tabBarLabel: '首页' }}/>
-        <BottomTab.Screen name="SettingsStackScreen" component={SettingsStackScreen} options={{ tabBarLabel: '设置' }}/>
-      </BottomTab.Navigator>
-    </NavigationContainer>
-  )
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 ```
