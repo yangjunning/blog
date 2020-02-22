@@ -7,7 +7,11 @@ tags:
   - 最佳实践
 ---
 
-> 最佳实践: https://github.com/youngjuning/react-navigation-best-practice
+![](https://i.loli.net/2020/02/23/caAngkCQdUxlp8L.png)
+
+> 文章示例源码: https://github.com/youngjuning/react-navigation-best-practice
+
+<!--more-->
 
 ## 安装依赖
 
@@ -325,16 +329,6 @@ export default App;
   - `options`: 页面配置对象
   - `initialParams`: 默认参数
 
-给页面传递额外的属性：
-
-```jsx
-<Stack.Screen
-  name="HomeScreen"
-  options={{headerTitle: '首页'}}>
-  {props => <HomeScreen {...props} extraData={{author: '杨俊宁'}} />}
-</Stack.Screen>
-```
-
 ## HeaderButtons.js
 
 使用 `react-native-header-buttons` 组件搭配任意 Icon 组件可以自定义自己的 Header Button 组件：
@@ -622,4 +616,27 @@ function GoToButton({ screenName }) {
     />
   );
 }
+```
+
+## 给页面传递额外的属性
+
+```jsx
+<Stack.Screen
+  name="HomeScreen"
+  options={{headerTitle: '首页'}}>
+  {props => <HomeScreen {...props} extraData={{author: '杨俊宁'}} />}
+</Stack.Screen>
+```
+
+## 获取 Header Height
+
+```jsx
+import { useHeaderHeight } from '@react-navigation/stack'
+
+const App = () => {
+    const HeaderHeight = useHeaderHeight() // 获取Header Height
+    return(...)
+}
+
+export default App
 ```
