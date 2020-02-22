@@ -26,6 +26,8 @@ tags:
 ## 表单
 
 - [react-native-confirmation-code-field](https://www.npmjs.com/package/react-native-confirmation-code-field): A react-native confirmation code field compatible with iOS, Android
+- [react-native-validator](https://www.npmjs.com/package/react-native-validator)
+- [rc-form](https://www.npmjs.com/package/rc-form)
 
 ## 动画
 
