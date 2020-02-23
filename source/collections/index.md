@@ -42,7 +42,6 @@ date: 2020-02-14 14:09:06
 - [飞蛾](https://feie.work/): 井然有序的测试协同方式
 - [WeTest](https://wetest.qq.com/): 腾讯质量开放平台
 - [Charles](https://www.charlesproxy.com/): HTTP 抓包工具
-- [蓝湖](https://lanhuapp.com/): 高效的产品设计协作平台
 
 ### 设计师工具
 
@@ -52,6 +51,7 @@ date: 2020-02-14 14:09:06
 - [Unsplash](https://unsplash.com/): Photos for everyone
 - [Pinterest](https://www.pinterest.jp/): 找图
 - [UI中国](http://www.ui.cn/)
+- [蓝湖](https://lanhuapp.com/): 高效的产品设计协作平台
 
 ### BaaS
 
