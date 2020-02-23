@@ -107,6 +107,7 @@ date: 2020-02-14 14:09:06
 - [百度前端技术学院](http://ife.baidu.com/)
 - [百度EFE](https://efe.baidu.com/)
 - [Bugly技术团队博客](https://buglydevteam.github.io/)
+- [有赞技术团队](https://tech.youzan.com/)
 
 ## 开源API
 
