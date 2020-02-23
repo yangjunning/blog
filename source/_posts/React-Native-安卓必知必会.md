@@ -21,11 +21,7 @@ tags:
 
 ## 打包 APK
 
-### 配置签名密钥
-
-> 该配置基于 `@sigmayun/react-native-template-typescript`
-
-1、在项目根目录执行 `yarn genkeypair` 生成密钥文件 `release.keystore`
+1、在项目根目录执行 `keytool -genkeypair -v -keystore release.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000` 生成密钥文件 `release.keystore`
 
 2、把 `release.keystore` 文件放到你工程中的 `android/app` 文件夹下。
 
