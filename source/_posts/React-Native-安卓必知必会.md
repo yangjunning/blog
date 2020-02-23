@@ -116,8 +116,6 @@ packagingOptions {
 
 ### Failed to read PNG signature: file does not start with PNG signature
 
-> 原文：http://t.cn/EwQnc12
-
 有时从网上下载的 Demo 资源文件不规范，会出现直接将 jpg 文件改为 png 后缀名的情况，gradle 打包检查时报错编译通不过的。我们通过 `aaptOptions.cruncherEnabled=false` 来禁止 Gradle 检查 png 的合法性：
 
 ```diff
