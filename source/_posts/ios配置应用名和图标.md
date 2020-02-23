@@ -3,6 +3,7 @@ title: ios配置应用名和图标
 date: 2020-02-21 15:28:28
 categories:
   - [移动开发, ios]
+  - [移动开发, React Native]
 ---
 
 ## 配置应用名
@@ -16,4 +17,4 @@ categories:
 
 把准备好的图标拖到图中箭头指向的位置：
 
-![image.png](https://i.loli.net/2020/02/21/Sy3OjWBKbMdYgoH.png)
+![](https://i.loli.net/2020/02/21/Sy3OjWBKbMdYgoH.png)

@@ -331,7 +331,7 @@ export default App;
 
 ## HeaderButtons.js
 
-使用 `react-native-header-buttons` 组件搭配任意 Icon 组件可以自定义自己的 Header Button 组件：
+使用 `react-navigation-header-buttons` 组件搭配任意 Icon 组件可以自定义自己的 Header Button 组件，我这里为了演示方便，使用了 `@ant-design/icons-react-native`：
 
 ```jsx
 import React from 'react';

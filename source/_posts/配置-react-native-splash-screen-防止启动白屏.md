@@ -7,7 +7,11 @@ tags:
   - 启动屏
 ---
 
+<img src="https://i.loli.net/2020/02/23/2nHZARhIstQDmji.png" style="zoom:50%;" />
+
 <!--more-->
+
+如果你有设计师，请让设计师给你要的所有尺寸图，如果没有请自行使用 [图标工厂](https://icon.wuruihong.com/) 意见生成所有尺寸的图标/启动图。
 
 ## Android
 
@@ -56,7 +60,7 @@ public class MainActivity extends ReactActivity {
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <!--设置透明背景-->
-        + <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 </resources>
 ```
