@@ -206,11 +206,13 @@ links_settings:
 links:
   余果的博客: https://yuguo.us/
   贾鹏辉的技术博客官网: https://www.devio.org/
+  阮一峰的网络日志: http://www.ruanyifeng.com/blog/
   私塾国际学府: http://techblog.sishuxuefu.com/
   陈锋个人博客: https://chenyuhu.js.org/
   LLstar的个人博客: https://llstar.github.io/
   张煜的个人博客: https://www.cnblogs.com/Grewer/
   Mirari's Blog: https://mirari.cc/
+  DefinitelyTyped: http://definitelytyped.org/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
