@@ -11,13 +11,13 @@ tags:
 
 ## Android
 
-1、通过创建 launch_screen.png 文件并把它们放到 mipmap- 文件夹下来自定义你的启动图。安卓会自动选择合适的分辨率，因此你不是必须为所有手机分辨率提供图片。不过，你可以为以下所有分辨率提供启动图：
+1、通过创建 `launch_screen.png` 文件并把它们放到 `mipmap-` 文件夹下来自定义你的启动图。安卓会自动选择合适的分辨率，因此你不是必须为所有手机分辨率提供图片。不过，你可以为以下所有分辨率提供启动图：
 
-- mipmap-mdpi
-- mipmap-hdpi
-- mipmap-xhdpi
-- mipmap-xxhdpi
-- mipmap-xxxhdpi
+- `mipmap-mdpi`
+- `mipmap-hdpi`
+- `mipmap-xhdpi`
+- `mipmap-xxhdpi`
+- `mipmap-xxxhdpi`
 
 2、更新你的 `MainActivity.java` 文件如下：
 
@@ -35,7 +35,7 @@ public class MainActivity extends ReactActivity {
 }
 ```
 
-2、创建一个名为 launch_screen.xml 的布局文件来自定义你的启动屏幕。
+2、创建一个名为 `launch_screen.xml` 的布局文件来自定义你的启动屏幕。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -72,9 +72,9 @@ public class MainActivity extends ReactActivity {
 
 ## iOS
 
-1、配置LaunchImage: https://bre.is/7xYzrkhs
+1、配置 `LaunchImage`: https://bre.is/7xYzrkhs
 
-2、更新你的AppDelegate.m 文件如下：
+2、更新你的 `AppDelegate.m` 文件如下：
 
 ```obj-c
 #import "AppDelegate.h"
