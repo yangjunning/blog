@@ -35,7 +35,6 @@
 
         {{- next_inject('sidebar') }}
       </div>
-      <a target="_blank" href="http://gk.link/a/10g1m" style="display: block;border-bottom: 0px"><img src="/images/ios.png"></a>
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
