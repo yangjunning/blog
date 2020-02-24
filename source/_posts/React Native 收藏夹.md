@@ -25,6 +25,7 @@ tags:
 - [ant-design/ant-design-mobile-rn](https://github.com/ant-design/ant-design-mobile-rn): Ant Design for React Native
 - [react-navigation](https://reactnavigation.org/zh-Hans/): React Native 应用程序的路由和导航
 - [react-native-code-push](https://github.com/Microsoft/react-native-code-push) React Native module for CodePush
+  - [react-native-code-push-dialog](https://github.com/strawferry/CodePushDialog)
 - [react-native-splash-screen](http://t.cn/RM8Gg7q)): React Native 启动屏，解决 iOS，Android 启动白屏问题，支持 Android 和 iOS
 - [react-native-simple-store](https://github.com/jasonmerino/react-native-simple-store): https://github.com/jasonmerino/react-native-simple-store
 - [react-native-device-info](https://github.com/react-native-community/react-native-device-info): Device Information for React Native iOS and Android
@@ -36,6 +37,8 @@ tags:
 - [react-native-confirmation-code-field](https://www.npmjs.com/package/react-native-confirmation-code-field): A react-native confirmation code field compatible with iOS, Android
 - [react-native-textinput-effects](https://github.com/halilb/react-native-textinput-effects): Text inputs with custom label and icon animations for iOS and android. Built with react native and inspired by Codrops.
 - [react-native-hide-show-password-input](https://www.npmjs.com/package/react-native-hide-show-password-input): React Native Hide Show Password InputText Component
+- [react-native-community/react-native-datetimepicker](https://github.com/react-native-community/react-native-datetimepicker): React Native date & time picker component for iOS and Android
+- [react-native-search-bar](https://github.com/umhan35/react-native-search-bar): The high-quality iOS native search bar for react native.
 
 ## 动画/手势/进度
 
@@ -45,6 +48,7 @@ tags:
 - [react-native-gesture-handler](http://t.cn/AiKMLWNy): 声明性 API 将平台原生触摸和手势系统暴露给 React Native
 - [react-native-spinkit](http://t.cn/AiC4H5l3): React Native 的动画加载指示符集合
 - [react-native-progress](https://github.com/oblador/react-native-progress): Progress indicators and spinners for React Native using ReactART
+- [react-native-image-progress](https://github.com/oblador/react-native-image-progress): 	Progress indicator for networked images in React Native
 
 ## UI
 
@@ -52,7 +56,7 @@ tags:
 - [react-native-user-avatar](https://github.com/avishayil/react-native-user-avatar): React Native 的头像组件
 - [react-native-icon-badge](https://www.npmjs.com/package/react-native-icon-badge): Icon badge is used to create icon badge on some element, such as avatar, icon, image...
 - [react-native-signature-capture](https://www.npmjs.com/package/react-native-signature-capture): React Native library for capturing signature
-- [react-native-blur](http://t.cn/AiC4Tgcw): React Native Blur component
+- [@react-native-community/blur](http://t.cn/AiC4Tgcw): React Native Blur component
 - [react-native-viewpager](https://github.com/react-native-community/react-native-viewpager): This component allows the user to swipe left and right through pages of data
 - [react-native-looped-carousel](http://t.cn/Ai9YU5QM): 🎠ReactNative 的循环旋转木马
 - [react-native-snap-carousel](http://t.cn/Ai9YybZ6): deck、layout、parallax images
@@ -64,6 +68,11 @@ tags:
 - [react-native-easy-toast](https://github.com/crazycodeboy/react-native-easy-toast): A react native module to show toast like android, it works on iOS and Android.
 - [react-native-popover](https://github.com/jeanregisser/react-native-popover): A `<Popover />` component for react-native
 - [react-native-contacts](https://github.com/morenoh149/react-native-contacts): 通讯录
+- [react-native-slider](https://github.com/jeanregisser/react-native-slider): React Native 的纯 JavaScript Slider 组件
+- [react-native-sortable-listview](https://github.com/deanmcpherson/react-native-sortable-listview): Drag drop capable wrapper of ListView for React Native
+- [react-native-deck-swiper](https://github.com/alexbrillant/react-native-deck-swiper): react-native deck swiper
+- [react-native-dropdown-menu](https://github.com/WheelerLee/react-native-dropdown-menu): 易于使用的 React Native 下拉菜单组件
+- [react-native-sortable-list](https://github.com/gitim/react-native-sortable-list): React Native Sortable List component
 
 ## System
 
@@ -71,14 +80,18 @@ tags:
 - [react-native-push-notification](http://t.cn/AiC5uTiP): React Native Local and Remote Notifications
 - [react-native-quick-actions](https://github.com/jordanbyron/react-native-quick-actions): A react-native interface for Touch 3D home screen quick actions
 - [react-native-orientation](http://t.cn/RsYAuMA): 在 react-native 中监听设备方向更改
+- [react-native-permissions](https://github.com/react-native-community/react-native-permissions):	An unified permissions API for React Native on iOS and Android
+- [react-native-keyboard-manager](https://github.com/douglasjunior/react-native-keyboard-manager): ⚛ Library to prevent issues of keyboard sliding up and cover inputs on React-Native iOS projects.
 
 ## 多媒体
 
-- [react-native-image-picker](http://t.cn/Ai9TPGeT): 🌄 A React Native module that allows you to use native UI to select media from the device library or directly from the camera.
 - [react-native-image-crop-picker](http://t.cn/RcqvN9z): iOS/Android image picker with support for camera, video, configurable compression, multiple images and cropping
 - [react-native-file-opener](https://github.com/huangzuizui/react-native-file-opener): A React Native module that allows you to open a file (mp3, mp4, pdf, word, excel, dwg etc.) on your device with its default application
+- [react-native-audio-toolkit](https://github.com/react-native-community/react-native-audio-toolkit): Cross-platform audio library for React Native
 - [react-native-video](https://github.com/react-native-community/react-native-video): A Video component for react-native
 - [react-native-camera](https://github.com/react-native-community/react-native-camera): A Camera component for React Native. Also supports barcode scanning!
+- [react-native-fast-image](https://github.com/DylanVann/react-native-fast-image): 	🚩 FastImage, performant React Native image component.
+- [react-native-video-processing](https://github.com/shahen94/react-native-video-processing): React Native 的原生视频编辑/修剪/压缩 🎥 库
 
 ## Utils
 
@@ -119,3 +132,6 @@ tags:
 
 - LeancloudPushDemo: React native + leancloud push notification demo
 - react-native-code-push-dialog: CodePush Custom Dialog，注意：苹果 App、中国的 android 市场必须采用静默更新
+- react-native-dropdown		这是下拉菜单的简单实现
+- react-native-baidu-map		百度地图 React Native 模块，支持 react native 0.57+，已更新到最新的百度地图 SDK 版本。
+- react-native-search-box		A simple search box with animation, inspired from ios search bar. Lightweight, fast, flexible.

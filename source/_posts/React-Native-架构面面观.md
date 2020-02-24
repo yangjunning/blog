@@ -40,7 +40,7 @@ declare const global: {
 
 > 该部分示例代码：https://bre.is/3GD7cHKn
 
-### Npm Scripts
+## Npm Scripts
 
 善用 NPM Scripts 能帮助改善工作流程！！！
 
@@ -93,6 +93,7 @@ declare const global: {
 
 - [react-native-simple-storage](https://www.npmjs.com/package/react-native-simple-store):  AsyncStorage 的一个简单包装器
 - [rxdb](https://github.com/pubkey/rxdb):  JavaScript 即时数据库，如果有复杂的缓存业务可以考虑使用
+- [watermelonDB](https://github.com/Nozbe/WatermelonDB): 一个专为 React、React Native 服务的响应式数据库框架
 
 ## 启动屏
 
@@ -111,6 +112,9 @@ declare const global: {
 ## UI框架
 
 - [@ant-design/react-native](https://rn.mobile.ant.design/index-cn):  Ant Design 出品的一个基于 React Native 的 UI 组件库
+- [beeshell](https://github.com/Meituan-Dianping/beeshell): 美团 React Native 组件库
+- [react-native-elements](https://react-native-elements.github.io/react-native-elements/): 跨平台React Native UI工具包
+- [react-native-ui-lib](https://github.com/wix/react-native-ui-lib): 没有体验过，看起来很强大
 
 > 其他组件收藏请查看：https://bre.is/jWUGvPrK
 
@@ -132,10 +136,18 @@ declare const global: {
 - [React Native Custom Fonts](https://bre.is/N2NqkX4N)
 - [react-native-responsive-fontSize](https://github.com/heyman333/react-native-responsive-fontSize): 响应式fontSize基于React Native中设备的屏幕尺寸
 - [React Native 配置字体大小不随字体设置变化](https://bre.is/WTxnrfPV)
+- [React Native字体问题解决方案指北](https://juejin.im/post/5ce66c26e51d4555fd20a2a0)
+- [react-native-responsive-fontsize](https://www.npmjs.com/package/react-native-responsive-fontsize)
+
+## 工具
+
+- [react-native-shadow-generator](https://ethercreative.github.io/react-native-shadow-generator/): 在线生成 React Native 阴影代码
+- [visualize-bundle](https://github.com/JonnyBurger/npx-visualize-bundle): `npx visualize-bundle` 允许你一键检查你的 React Native bundle 包 并且找到大的依赖
+- [图标工厂](https://icon.wuruihong.com/): 一键生成所有尺寸的应用图标/启动图
 
 ## React Hooks
 
-这个新语法是2019年得明星，React Navigation、Mobx这些常用库都内置支持了，还没有学习的同学快去补课吧！！！
+这个新语法是2019年的明星，React Navigation、Mobx这些常用库都内置支持了，还没有学习的同学快去补课吧！！！
 
 ### 推荐阅读
 
@@ -257,6 +269,15 @@ $ git update-index --add --chmod=+x android/gradlew
 ### 自动 remove console 语句
 
 准确地说，是在正式环境下删除 `console` 语句，配置方式请参考 [自动 remove console 语句](https://bre.is/2CTUZyUj)
+
+### 推荐阅读
+
+- [React Native 性能优化指南【全网最全，值得收藏】](https://juejin.im/post/5e1676e16fb9a04847095b12)
+
+## 应用内测
+
+- [fir](https://fir.im/): 免费应用内测托管平台
+- [蒲公英](https://www.pgyer.com/): 免费的苹果ios应用app内测分发托管、android安卓app内测分发托管、ios企业签名、ios专属签名、ios超级签名、ios企业账号
 
 ## 安卓必知必会
 
