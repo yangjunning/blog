@@ -7,7 +7,7 @@ tags:
   - 安卓
 ---
 
-![image.png](https://i.loli.net/2020/02/21/xUfw9Ib4TRsQGeM.png)
+<img src="https://i.loli.net/2020/02/21/xUfw9Ib4TRsQGeM.png" style="zoom:70%;" />
 
 <!--more-->
 

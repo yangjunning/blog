@@ -640,3 +640,21 @@ const App = () => {
 
 export default App
 ```
+
+## 继续使用类组件
+
+考虑到对于不适应 Hooks 的但是业务又很紧急的场景，我们可以再类组件之上封装一层来支持 React Navigation 的 Hooks 组件，之所以这么做，起因是因为 React Navigation 5 中我们只能通过 `useHeaderHeight()` 方法获取标题栏高度。
+
+```jsx
+class Albums extends React.Component {
+  render() {
+    return <ScrollView ref={this.props.scrollRef}>{/* content */}</ScrollView>;
+  }
+}
+// 封装并导出
+export default function(props) {
+  const ref = React.useRef(null);
+  useScrollToTop(ref);
+  return <Albums {...props} scrollRef={ref} />;
+}
+```
