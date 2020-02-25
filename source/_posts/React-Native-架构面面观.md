@@ -209,7 +209,11 @@ Sentry提供自托管和基于云的错误监控，可帮助所有软件团队�
 
 极光推送服务，可以免费使用，但限制较多。官方SDK, React Native 集成容易
 
-### 分享
+#### [U-Push](https://www.umeng.com/push)
+
+和极光属于一类，限制级免费，友盟的产品胜在生态，公司产品考虑，后期用户上来之后方便扩展。
+
+### 社会化分享
 
 #### [ShareSDK](http://www.mob.com/mobService/sharesdk)
 
@@ -228,6 +232,13 @@ Sentry提供自托管和基于云的错误监控，可帮助所有软件团队�
 - 第三放登录
 - 社会化统计
 - 官方 React Native SDK 集成方便
+
+### [U-Share](https://bre.is/LM3eaCsL)
+
+- 全面覆盖国内外社交平台
+- 集成成本低、速度快
+- 自由定制分享界面
+- 权威、实时的大数据分析
 
 ### 其他
 
