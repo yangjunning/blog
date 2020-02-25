@@ -178,6 +178,10 @@ export default function(props) {
 }
 ```
 
+## Metro
+
+- [利用Metro配置React Native端口](https://juejin.im/post/5e54d910f265da571671090d)
+
 ## 第三放服务
 
 > 这里尽量为大家推荐了免费的服务，当然选择自行搭建服务也是一个很棒的选择！！
