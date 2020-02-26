@@ -300,6 +300,8 @@ $ git update-index --add --chmod=+x android/gradlew
 
 很简单,我们直接打开 `android/app/src/main/res/values/strings.xml`，即可看到配置中的 `app_name`，修改为你想要的即可。
 
+> 你可以在初始化项目的时候指定应用的名字，像这样：`npx react-native init MyApp --title 掘金`
+
 ### 配置图标
 
 1、使用[图标工厂](https://icon.wuruihong.com/)、[react-native-svg-app-icon](https://www.npmjs.com/package/react-native-svg-app-icon) 或者让设计师给图片
@@ -560,6 +562,8 @@ defaultConfig {
 2. 找到右侧菜单 `Info` 选项
 3. 添加 `Bundle display name` 并把 `value` 设置成 "应用名称"
 4. 最后重新再 `Run`一次，即可看到最新的效果
+
+> 你可以在初始化项目的时候指定应用的名字，像这样：`npx react-native init MyApp --title 掘金`
 
 ### 配置图标
 
