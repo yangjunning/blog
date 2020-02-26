@@ -1,10 +1,9 @@
 ---
 title: '基于travis-ci实现vuepress自动部署'
-author: '杨俊宁'
 date: '2018-09-26 22:27'
 categories:
 	- [工具]
-- tags
+tags:
 	- Vue.js
 ---
 
