@@ -43,19 +43,32 @@ date: 2020-02-14 14:09:06
 - [WeTest](https://wetest.qq.com/): 腾讯质量开放平台
 - [Charles](https://www.charlesproxy.com/): HTTP 抓包工具
 
+
+### BaaS
+
+- [知晓云](https://cloud.minapp.com/): 简单易用的小程序 Serverless 云服务
+
+## 设计师
+
 ### 设计师工具
 
 - [pxcook](https://fancynode.com.cn/pxcook): 高效易用的自动标注工具, 生成前端代码, 设计研发协作利器
 - [cutterman](https://www.cutterman.cn/zh): 为设计更专注
 - [图标工厂](https://icon.wuruihong.com/): 一键生成所有尺寸的应用图标/启动图
-- [Unsplash](https://unsplash.com/): Photos for everyone
-- [Pinterest](https://www.pinterest.jp/): 找图
-- [UI中国](http://www.ui.cn/)
 - [蓝湖](https://lanhuapp.com/): 高效的产品设计协作平台
 
-### BaaS
+### 设计师社区
 
-- [知晓云](https://cloud.minapp.com/): 简单易用的小程序 Serverless 云服务
+- [UI中国](http://www.ui.cn/)
+- [优设](https://www.uisdc.com/)
+
+### 设计师资源
+
+- [Unsplash](https://unsplash.com/): Photos for everyone
+- [Pinterest](https://www.pinterest.jp/): 找图
+- [我整理了200款免费商用字体，放心下载不会侵权！](https://www.uisdc.com/200-models-free-commercial-fonts)
+- [免费可商用，最值得收藏的10个插画素材网站](http://liujinkai.com/2019/10/18/10-best-free-illustration/)
+- [你要的20个免费精美图片站都在这里了](http://liujinkai.com/2019/07/25/free-image-website/)
 
 ## 镜像仓库
 
@@ -95,6 +108,7 @@ date: 2020-02-14 14:09:06
 - [冷熊简历](http://cv.ftqq.com/)
 - [程序员简历模板](https://github.com/geekcompany/ResumeSample)
 - [前端面试手册](https://bre.is/THbxnbf7)
+- [React Native面试题](https://www.jianshu.com/p/af455071a6b8)
 
 ## 漫画
 

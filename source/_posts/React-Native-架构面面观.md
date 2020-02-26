@@ -57,8 +57,8 @@ declare const global: {
     "gradle:clean": "cd android && ./gradlew clean",
     "an:release": "yarn gradle:clean && cd android && ./gradlew app:assembleRelease",
     "an:installRelease": "yarn gradle:clean && cd android && ./gradlew app:installRelease",
-    "an:releaseStaging": "yarn gradle:clean && cd android && ./gradlew assembleReleaseStaging",
-    "an:installReleaseStaging": "yarn gradle:clean && cd android && ./gradlew installReleaseStaging",
+    "an:releaseStaging": "yarn gradle:clean && cd android && ./gradlew app:assembleReleaseStaging",
+    "an:installReleaseStaging": "yarn gradle:clean && cd android && ./gradlew app:installReleaseStaging",
     "an:genkeypair": "keytool -genkeypair -v -keystore release.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000",
     "an:key-debug": "keytool -list -v -keystore ./android/app/debug.keystore",
     "an:key-release": "keytool -v -list -keystore ./android/app/release.keystore",
@@ -568,11 +568,13 @@ defaultConfig {
 
 <img src="https://i.loli.net/2020/02/21/Sy3OjWBKbMdYgoH.png" style="zoom:36%;" />
 
+###  获取BUILD_TYPE
+
+在 `Info.plist` 中添加 `BUILD_TYPE`，取值为 `$(CONFIGURATION)`
+
 ### 获取构建时间
 
-1、添加 `BUILD_TYPE`，取值为 `$(CONFIGURATION)`
-
-2、添加 `BUILD_TIME`,取值为空，并通过脚本在每次编译的时候对其更新，脚本添加步骤 `Target`-> `Build Phases` -> `+` -> `New Run Script Phase`, Shell 代码如下：
+在 `Info.plist` 中添加 `BUILD_TIME`,取值为空，并通过脚本在每次编译的时候对其更新，脚本添加步骤 `Target`-> `Build Phases` -> `+` -> `New Run Script Phase`, Shell 代码如下：
 
 ```shell
 #!/bin/bash
