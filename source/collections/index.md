@@ -56,6 +56,9 @@ date: 2020-02-14 14:09:06
 - [cutterman](https://www.cutterman.cn/zh): 为设计更专注
 - [图标工厂](https://icon.wuruihong.com/): 一键生成所有尺寸的应用图标/启动图
 - [蓝湖](https://lanhuapp.com/): 高效的产品设计协作平台
+- [Canva](https://www.canva.cn/): 创建精彩设计
+- [图怪兽](https://818ps.com/): 会打字就能用的作图神器
+- [稿定设计](https://www.gaoding.com/): 做图做视频必备
 
 ### 设计师社区
 
