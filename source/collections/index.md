@@ -72,6 +72,7 @@ date: 2020-02-14 14:09:06
 - [我整理了200款免费商用字体，放心下载不会侵权！](https://www.uisdc.com/200-models-free-commercial-fonts)
 - [免费可商用，最值得收藏的10个插画素材网站](http://liujinkai.com/2019/10/18/10-best-free-illustration/)
 - [你要的20个免费精美图片站都在这里了](http://liujinkai.com/2019/07/25/free-image-website/)
+- [字体下载（300款）可商用中文免费字体整理不用但心字体侵权](http://www.ziticq.com/Article/444)
 
 ## 镜像仓库
 
