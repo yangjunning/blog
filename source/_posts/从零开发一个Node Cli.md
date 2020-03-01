@@ -2,7 +2,7 @@
 title: 从零开发一个Node Cli
 date: 2020-02-17 15:23:35
 categories:
-  - [大前端, NodeJs]
+  - [大前端, Node.js]
 tags:
   - cli
 ---
