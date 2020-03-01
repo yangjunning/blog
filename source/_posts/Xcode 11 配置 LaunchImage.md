@@ -1,5 +1,5 @@
 ---
-title: ios配置LaunchImage
+title: Xcode 11 配置 LaunchImage
 date: 2020-02-21 13:19:26
 categories:
   - [移动开发, ios]
@@ -7,6 +7,10 @@ tags:
   - LaunchImage
   - 启动图
 ---
+
+![image.png](https://i.loli.net/2020/03/01/NF3TuSW7Pn8irGs.png)
+
+<!--more-->
 
 如果有设计师资源，请 ui 同学提供以下尺寸的图片
 
@@ -18,8 +22,6 @@ tags:
 - 1242x2436
 
 如果你没有设计师资源，可以使用 [图标工厂](https://icon.wuruihong.com/) 自行生成
-
-<!--more-->
 
 1、添加 LaunchImage
 
