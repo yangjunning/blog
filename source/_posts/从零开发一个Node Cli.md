@@ -7,16 +7,18 @@ tags:
   - cli
 ---
 
+![](https://i.loli.net/2020/03/04/IZEm27KSLcz3h9r.png)
+
 Node.js用途很广，常用来开发服务、桌面应用等被开发者熟知，Node.js还有另外一个非常实用的场景 - 命令行应用（后文统称CLI）。
 
 <!--more-->
 
 ## HelloWorld
 
-创建一个 young-cli 目录，并使用进入该目录:
+创建一个`youngjuning` 目录，并使用进入该目录:
 
 ```sh
-$ mkdir young-cli && cd young-cli
+$ mkdir youngjuning && cd youngjuning
 ```
 
 在该目录下新建 index.js:
@@ -26,32 +28,32 @@ $ mkdir young-cli && cd young-cli
 console.log('Hello World')
 ```
 
-使用 package.json bin 项是用来指定各个内部命令对应的可执行文件的位置：
+使用 `package.json` 的 `bin` 项是用来指定各个内部命令对应的可执行文件的位置：
 
 ```json
 "bin": {
-  "young": "./bin/young-cli.js"
+  "youngjuning": "./bin/cli.js"
 }
 ```
 
-在命令行输入 `npn link` 或 `npm install -g` 将当前项目安装到全局环境，这样就可以直接使用 `young` 来运行文件了：
+在命令行输入 `npn link` 或 `npm install -g` 将当前项目安装到全局环境，这样就可以直接使用 `youngjuning` 来运行文件了：
 
-![](https://i.loli.net/2019/12/18/Uv6d49cu3LSRB5e.png)
+![](https://user-gold-cdn.xitu.io/2020/3/4/170a17b2cce16b08?w=608&h=62&f=png&s=4058)
 
 ## commander.js
 
 node 为我们提供了 `process.argv` 来读取命令行参数，这里我们对此不作介绍，有兴趣可以自行研究，我选择了 tj 大神的 [commander](https://www.npmjs.com/package/commander)：
 
-- command: 定义命令行指令，后面可跟上一个 name，用空格隔开，如 `.command( 'app [name]')`
-- alias: 定义一个更短的命令行指令
-- description: 描述，它会在 help 里面展示
-- option: 定义参数。它接受四个参数
+- `command`: 定义命令行指令，后面可跟上一个 name，用空格隔开，如 `.command( 'app [name]')`
+- `alias`: 定义一个更短的命令行指令
+- `description`: 描述，它会在 help 里面展示
+- `option`: 定义参数。它接受四个参数
   - 在第一个参数中，它可输入短名字 `-a` 和长名字 `–app`，使用 `|` 或者 `,` 分隔，在命令行里使用时，这两个是等价的，区别是后者可以在程序里通过回调获取到
-  - 第二个为描述, 会在 help 信息里展示出来
-  - 第三个参数为回调函数，他接收的参数为一个 string，有时候我们需要一个命令行创建多个模块，就需要一个回调来处理
+  - 第二个为描述, 会在 `help` 信息里展示出来
+  - 第三个参数为回调函数，他接收的参数为一个 `string`，有时候我们需要一个命令行创建多个模块，就需要一个回调来处理
   - 第四个参数为默认值
-- action: 注册一个 callback 函数,这里需注意目前回调不支持 let 声明变量
-- parse: 解析命令行
+- `action`: 注册一个 `callback` 函数,这里需注意目前回调不支持 let 声明变量
+- `parse`: 解析命令行
 
 ## inquire.js
 
@@ -66,24 +68,24 @@ console.log(answers)
 
 ### 参数详解
 
-- type: 表示提问的类型，包括：input, confirm, list, rawlist, expand, - checkbox, password, editor；
-- name: 存储当前问题回答的变量；
-- message: 问题的描述；
-- default: 默认值；
-- choices: 列表选项，在某些 type 下可用，并且包含一个分隔符(separator)；
-- validate: 对用户的回答进行校验；
-- filter: 对用户的回答进行过滤处理，返回处理后的值；
-- transformer: 对用户回答的显示效果进行处理(如：修改回答的字体或背景颜色)，但不会影响最终的答案的内容；
-- when: 根据前面问题的回答，判断当前问题是否需要被回答；
-- pageSize: 修改某些 type 类型下的渲染行数；
-- prefix: 修改 message 默认前缀；
-- suffix: 修改 message 默认后缀。
+- `type`: 表示提问的类型，包括：`input`, `confirm`, `list`, `rawlist`, `expand`, `checkbox`, `password`, `editor`；
+- `name`: 存储当前问题回答的变量；
+- `message`: 问题的描述；
+- `default`: 默认值；
+- `choices`: 列表选项，在某些 type 下可用，并且包含一个分隔符(separator)；
+- `validate`: 对用户的回答进行校验；
+- `filter`: 对用户的回答进行过滤处理，返回处理后的值；
+- `transformer`: 对用户回答的显示效果进行处理(如：修改回答的字体或背景颜色)，但不会影响最终的答案的内容；
+- `when`: 根据前面问题的回答，判断当前问题是否需要被回答；
+- `pageSize`: 修改某些 `type` 类型下的渲染行数；
+- `prefix`: 修改 `message` 默认前缀；
+- `suffix`: 修改 `message` 默认后缀。
 
 ## 实现动态模板
 
-- 利用 recursive-readdir 库递归读取项目所有文件
-- 利用 handlebars 进行模板替换
-- 利用 fs 模块进行读文件和写文件操作
+- 利用 `recursive-readdir` 库递归读取项目所有文件
+- 利用 `handlebars` 进行模板替换
+- 利用 `fs` 模块进行读文件和写文件操作
 
 ```js
 const fs = require('fs')
@@ -120,13 +122,8 @@ module.exports = (meta, src) => {
 - [cmd-open](https://blog.ihaiu.com/cmd-open/): 扩展 Windows 命令 open
 - [shx](https://github.com/shelljs/shx): shx is a wrapper around ShellJS Unix commands, providing an easy solution for simple Unix-like, cross-platform commands in npm package scripts.
 
-## 学习资料
+## 联系作者
 
-- [用一次就会爱上的 cli 工具开发](https://juejin.im/post/5cc160b2f265da03452bdf5b)
-- [Node.js 命令行程序开发教程](https://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html)
-- [跟着老司机玩转 Node 命令行](https://aotu.io/notes/2016/08/09/command-line-development/index.html)
-- [前端如何搭建一个成熟的脚手架](https://juejin.im/post/5c98dc71e51d4501806d0a98)
-- [前端如何搭建一个简单的脚手架](https://juejin.im/post/5c8f9dbfe51d45279e268e3b)
-- [基于 nodejs 的脚手架工具开发经历](https://zhuanlan.zhihu.com/p/31988855)
-- [使用 Node.js 开发简单的脚手架工具](https://zhuanlan.zhihu.com/p/37929333)
-- [用 Node.js 开发一个 Command Line Interface (CLI)](https://juejin.im/entry/5b3e1a805188251aff213e5f)
+|                           作者微信                           |                           知识星球                           |                           赞赏作者                           |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="https://user-gold-cdn.xitu.io/2020/2/24/17074acbb24c7412?w=200&h=200&f=jpeg&s=17183" style="width:200px"/> | <img src="https://user-gold-cdn.xitu.io/2020/2/24/17074acbb26af8e1?w=200&h=200&f=png&s=39093" style="width:200px"/> | <img src="https://user-gold-cdn.xitu.io/2020/2/24/17074acbb338c643?w=698&h=700&f=png&s=315492" style="width:200px"/> |
