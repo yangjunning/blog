@@ -1,6 +1,6 @@
 ---
 title: React Navigation 5 最佳实践
-date: 2020-01-17 10:29:14
+date: 2020-02-17 10:29:14
 categories:
   - [移动开发, React Native]
 tags:
