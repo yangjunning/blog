@@ -21,16 +21,14 @@ tags:
 以笔者的经验来看，Ant Design 设计体系下的产品设计理念、使用方式、底层技术、周边工具都保持着高度一致，工具不是越多越好，有一套好用顺手的就行，UI框架千千万，你不可能都学一遍。Ant Design 无疑能够减少你的学习成本。
 
 - 设计
-
   - 设计价值观
   - 全局样式
   - 设计模式
 - 组件库
-
   - [Ant Design of React](https://ant.design/docs/react/introduce-cn): 基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。
-- [Ant Design Mobile of React](https://mobile.ant.design/docs/react/introduce-cn): `antd-mobile` 是 Ant Design 的移动规范的 React 实现，服务于蚂蚁及口碑无线业务。
+  - [Ant Design Mobile of React](https://mobile.ant.design/docs/react/introduce-cn): `antd-mobile` 是 Ant Design 的移动规范的 React 实现，服务于蚂蚁及口碑无线业务。
   - [Ant Design Mobile RN of React](https://rn.mobile.ant.design/docs/react/introduce-cn): `@ant-design/react-native` 是 [Ant Design](http://ant.design/) 的移动规范的 React 实现，服务于蚂蚁及口碑无线业务。
-- [Ant Design of Angular](https://ng.ant.design/docs/introduce/zh): 这里是 Ant Design 的 Angular 实现，开发和服务于企业级后台产品。
+  - [Ant Design of Angular](https://ng.ant.design/docs/introduce/zh): 这里是 Ant Design 的 Angular 实现，开发和服务于企业级后台产品。
   - [Ant Design Mobile of Angular](https://ng.mobile.ant.design/#/docs/introduce/zh): 这里是 **Ant Design** 移动规范的 **Angular** 实现，服务于阿里巴巴集团数据无线业务。
   - [Ant Design of Vue](https://www.antdv.com/docs/vue/introduce-cn/): 这里是 Ant Design 的 Vue 实现，开发和服务于企业级后台产品。
 - [Icons](https://ant.design/components/icon-cn/): 一整套优质的图标集
@@ -47,15 +45,15 @@ tags:
 
 如果拿 antd 和 element-ui、iview 这些老牌 Vue.js UI 框架对比，遥遥领先啊有没有：
 
-![](https://i.loli.net/2020/03/04/DN9hmEHKVGSeRZd.png)
+![](https://user-gold-cdn.xitu.io/2020/3/4/170a4939e1919973?w=1103&h=458&f=png&s=59582)
 
 如果拿 ant-design-vue 来和 element-ui、iview这些老牌 vue UI框架对比，也是很有竞争力的：
 
-![](https://i.loli.net/2020/03/04/O8i6qkyNYjbmQRd.png)
+![](https://user-gold-cdn.xitu.io/2020/3/4/170a4939e21c45c6?w=1115&h=454&f=png&s=76675)
 
 ### GitHub Star
 
-![](https://i.loli.net/2020/03/04/mFuhjbZgaysNUcS.png)
+![](https://user-gold-cdn.xitu.io/2020/3/4/170a4939e23e1d0b?w=1119&h=207&f=png&s=36028)
 
 ## 特性
 

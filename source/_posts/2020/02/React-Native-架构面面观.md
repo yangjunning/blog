@@ -125,7 +125,7 @@ declare const global: {
 
 ## 图标
 
-- [react-native-iconfont-cli](https://www.npmjs.com/package/react-native-iconfont-cli): 【推荐】用纯JS把iconfont.cn的图标转换成RN组件，不依赖字体，支持多色彩，支持热更新
+- [react-native-iconfont-cli](https://www.npmjs.com/package/react-native-iconfont-cli): 【推荐】用纯JS把图标转换成RN组件，不依赖字体，支持多色彩，支持热更新
 - [@ant-design/icons-react-native](https://bre.is/dfCDM2Kw): Ant Design Icons for React Native
 - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons): Perfect for buttons, logos and nav/tab bars. Easy to extend, style and integrate into your project.
 
@@ -265,6 +265,49 @@ Sentry提供自托管和基于云的错误监控，可帮助所有软件团队�
 
 ```shell
 $ git update-index --add --chmod=+x android/gradlew
+```
+
+### 动态设置 package.json 的版本
+
+set-version.sh:
+
+```sh
+#!/bin/bash
+
+# current_git_branch_latest_id=`git rev-parse HEAD`
+current_git_branch_latest_short_id=`git rev-parse --short HEAD`
+current_os=`uname -s`
+
+# echo current git branch latest commit id=$current_git_branch_latest_id
+echo current git branch latest commit short id=$current_git_branch_latest_short_id
+echo current os=$current_os
+
+if [ "$current_os" == "Darwin" ]
+  then
+  sed -i '' 's/"version".*/"version": "1.0.0-'$current_git_branch_latest_short_id'",/g' package.json
+else
+  echo windows
+  sed -i 's/"version".*/"version": "'$current_git_branch_latest_short_id'",/g' package.json
+fi
+```
+
+package.json:
+
+```json
+{
+  // 依赖 husky
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": [
+        "./scripts/set-version.sh",
+        "git add .",
+        "git commit -m bump version",
+        "git push"
+      ]
+    }
+  },
+}
 ```
 
 ## 官方组件缺陷处理
