@@ -8,6 +8,9 @@ tags:
   - 开发环境
 ---
 
+
+![](https://i.loli.net/2020/03/07/dPCm6qwpsZn8k1o.png)
+
 <!--more-->
 
 ## Homebrew
