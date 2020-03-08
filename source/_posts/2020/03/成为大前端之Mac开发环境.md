@@ -8,7 +8,6 @@ tags:
   - 开发环境
 ---
 
-
 ![](https://i.loli.net/2020/03/07/dPCm6qwpsZn8k1o.png)
 
 <!--more-->
@@ -130,9 +129,145 @@ $ nrm use sigma
 
 ## Navicat Premium
 
-Navicat Premium 是一套数据库开发工具，让你从单一应用程序中同时连接 MySQL、MariaDB、MongoDB、SQL Server、Oracle、PostgreSQL 和 SQLite 数据库。它与 Amazon RDS、Amazon Aurora、Amazon Redshift、Microsoft Azure、Oracle Cloud、MongoDB Atlas、阿里云、腾讯云和华为云等云数据库兼容。你可以快速轻松地创建、管理和维护数据库。
+Navicat Premium 是一套数据库开发工具，让你从单一应用程序中同时连接 MySQL、MariaDB、MongoDB、SQL Server、Oracle、PostgreSQL 和 SQLite 数据库。它与 Amazon RDS、Amazon Aurora、Amazon Redshift、Microsoft Azure、Oracle Cloud、MongoDB Atlas、腾讯云和华为云等云数据库兼容。你可以快速轻松地创建、管理和维护数据库。
 
 > Mac破解版: 链接:https://pan.baidu.com/s/1SlL1_bd4qirMnF0sLwRLhA  密码:4jq6
+
+## MySql
+
+```shell
+$ brew install mysal
+```
+
+### 修改配置文件
+
+```shell
+$ nano /usr/local/etc/my.cnf
+```
+
+### 启动服务
+
+```shell
+brew services start mysql
+# 重启
+brew services restart mysql
+# 停止
+brew services stop mysql
+```
+
+> Or, if you don't want/need a background service you can just run: `mysql.server start`
+
+### 安全设置
+
+```shell
+$ mysql_secure_installation
+```
+
+1. 建立密码验证插件
+
+   ```shell
+   Securing the MySQL server deployment.
+
+   Connecting to MySQL using a blank password.
+
+   VALIDATE PASSWORD PLUGIN can be used to test passwords and improve security. It checks the strength of password and allows the users to set only those passwords which are secure enough. Would you like to setup VALIDATE PASSWORD plugin?
+
+   Press y|Y for Yes, any other key for No: y
+   ```
+
+2. 选择密码规则
+
+   ```shell
+   There are three levels of password validation policy:
+
+   LOW    Length >= 8
+   #长度大于等于8
+   MEDIUM Length >= 8, numeric, mixed case, and special characters
+   #长度大于等于8，数字、大小写字母、特殊符号
+   STRONG Length >= 8, numeric, mixed case, special characters and dictionary                  file
+   #长度大于等于8，数字、大小写字母、特殊符号和字典文件（慎选！）
+
+   Please enter 0 = LOW, 1 = MEDIUM and 2 = STRONG: 1
+   Please set the password for root here.
+
+   New password: （输入你的密码）
+   Re-enter new password: （再次输入你的密码）
+   ```
+
+3. 创建符合规则的新密码
+
+   ```shell
+   Estimated strength of the password: 50 		#密码强度
+   Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y
+   ```
+
+4. 删除匿名用户
+
+   ```
+   By default, a MySQL installation has an anonymous user, allowing anyone to log into MySQL without having to have a user account created for them. This is intended only for testing, and to make the installation go a bit smoother.
+   You should remove them before moving into a production environment.
+
+   Remove anonymous users? (Press y|Y for Yes, any other key for No) : y
+   Success.
+   ```
+
+5. 禁止远程登录
+
+   ```shell
+   Normally, root should only be allowed to connect from 'localhost'. This ensures that someone cannot guess at the root password from the network.
+
+   Disallow root login remotely? (Press y|Y for Yes, any other key for No) : y
+   Success.
+   ```
+
+6. 删除测试数据表
+
+   ```shell
+   By default, MySQL comes with a database named 'test' that anyone can access. This is also intended only for testing, and should be removed before moving into a production environment.
+
+   Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y
+    - Dropping test database...
+   Success.
+
+    - Removing privileges on test database...
+   Success.
+   ```
+
+7. Done
+
+   ```shell
+   Reloading the privilege tables will ensure that all changes made so far will take effect immediately.
+
+   Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
+   #是否重新加载权限表
+   Success.
+
+   All done!
+   ```
+
+#### Your password does not satisfy the current policy requirements.
+
+如果你在选择密码规则的时候不小心选择了2，也就是数字、大小写字母、特殊符号和字典文件的组合。这时你会发现 `mysql_secure_installation`不会再给你机会重新设置了。手动微笑，mmp。方法还是有的：
+
+```shell
+SHOW VARIABLES LIKE 'validate_password%';
+```
+
+![](https://i.loli.net/2020/03/09/m2GRbrPeHDkC7pQ.png)
+
+使用命令 `mysql -u root` 登陆，执行：
+
+```shell
+set global validate_password.policy=0;
+set global validate_password.length=4;
+#将密码规则设置为LOW，就可以使用纯数字纯字母密码
+```
+
+### 登陆
+
+```shell
+$ mysql -u root -p
+```
 
 ## natapp
 
@@ -151,3 +286,9 @@ Navicat Premium 是一套数据库开发工具，让你从单一应用程序中�
 ```bash
 $ ssh-keygen -t rsa -C "young_email@aliyun.com"
 ```
+
+## 联系作者
+
+|                           作者微信                           |                           知识星球                           |                           赞赏作者                           |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="https://user-gold-cdn.xitu.io/2020/2/24/17074acbb24c7412?w=200&h=200&f=jpeg&s=17183" style="width:200px"/> | <img src="https://user-gold-cdn.xitu.io/2020/2/24/17074acbb26af8e1?w=200&h=200&f=png&s=39093" style="width:200px"/> | <img src="https://user-gold-cdn.xitu.io/2020/2/24/17074acbb338c643?w=698&h=700&f=png&s=315492" style="width:200px"/> |

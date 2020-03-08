@@ -351,37 +351,39 @@ export default codePush(codePushOptions)(App);
 1. 打开项目的应用程序级别`build.gradle`文件（例如标准 React Native 项目中的 `android/app/build.gradle`）
 
 2. 查找此`android { buildTypes {} }`部分，并`resValue`为您`debug`和`release`构建类型定义条目，分别引用您的密钥`Staging`和`Production`部署密钥。
-
-   ```groovy
-   android {
-       ...
-       buildTypes {
-           debug {
-               ...
-               // Note: CodePush updates should not be tested in Debug mode as they are overriden by the RN packager. However, because CodePush checks for updates in all modes, we must supply a key.
-               resValue "string", "CodePushDeploymentKey", '""'
-               ...
-           }
-         	// NOTE: The naming convention for releaseStaging is significant due to http://t.cn/EAnyAzi
-           releaseStaging {
-               resValue "string", "CodePushDeploymentKey", '""'
-               // Note: It is a good idea to provide matchingFallbacks for the new buildType you create to prevent build issues（http://t.cn/EAex4XH）
-               // Add the following line if not already there
-               matchingFallbacks = ['release']
-           }
-           release {
-               ...
-               resValue "string", "CodePushDeploymentKey", '"<INSERT_PRODUCTION_KEY>"'
-               ...
-           }
-       }
-       ...
-   }
+    ```groovy
+    android {
+      ...
+      buildTypes {
+        debug {
+          signingConfig signingConfigs.debug
+          // Note: CodePush updates should not be tested in Debug mode as they are overriden by the RN packager. However, because CodePush checks for updates in all modes, we must supply a key.
+          resValue "string", "CodePushDeploymentKey", '""'
+        }
+        release {
+          // Caution! In production, you need to generate your own keystore file.
+          // see https://facebook.github.io/react-native/docs/signed-apk-android.
+          signingConfig signingConfigs.release
+          minifyEnabled enableProguardInReleaseBuilds
+          proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+          resValue "string", "CodePushDeploymentKey", '""'
+        }
+        // NOTE: The naming convention for releaseStaging is significant due to http://t.cn/EAnyAzi
+        releaseStaging.initWith(release)
+        releaseStaging {
+            resValue "string", "CodePushDeploymentKey", '""'
+            // Note: It is a good idea to provide matchingFallbacks for the new buildType you create to prevent build issues（http://t.cn/EAex4XH）
+            // Add the following line if not already there
+            matchingFallbacks = ['release']
+        }
+      }
+    ...
+    }
    ```
 
-   > 如果要在构建过程中配置部署密钥，请记住从`strings.xml`中删除密钥。
+  > 如果要在构建过程中配置部署密钥，请记住从`strings.xml`中删除密钥。
 
-   > `releaseStaging`由于[此行](https://github.com/facebook/react-native/blob/e083f9a139b3f8c5552528f8f8018529ef3193b9/react.gradle#L79)，的命名约定，这不能改。
+  > `releaseStaging`由于[此行](https://github.com/facebook/react-native/blob/e083f9a139b3f8c5552528f8f8018529ef3193b9/react.gradle#L79)，的命名约定，这不能改。
 
 ### iOS
 
@@ -398,8 +400,7 @@ Xcode 允许你为每个**配置** (如 `debug`, `release`) 自定义构建设�
 3. 选择 `Info` 标签
 
 4. 点击 `+` 的内部按钮`Duplicate "Release" Configuration`
-
-   ![](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/images/rn-ios-8.png)
+  ![](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/images/rn-ios-8.png)
 
 5. 将新配置命名为 `Staging`（或您喜欢的任何名称）
 
@@ -407,9 +408,9 @@ Xcode 允许你为每个**配置** (如 `debug`, `release`) 自定义构建设�
 
 7. 单击工具栏上的 `+` 按钮，创建一个名为  `CONFIGURATION_BUILD_DIR` 的 `User-Defined Setting`, 使用相同的 `per-configuration` 配置。
 
-   ![](https://i.stack.imgur.com/Sodu3.png)
+  ![](https://i.stack.imgur.com/Sodu3.png)
 
-   > 注意：每次创建这个 Xcode 都会崩溃，只能先把值写入之后，在 `project.pbxproj` 中新建。
+  > 注意：每次创建这个 Xcode 都会崩溃，只能先把值写入之后，在 `project.pbxproj` 中新建。
 
 8. 点击工具栏的 `+`  并选择 `Add User-Defined Setting`
 
