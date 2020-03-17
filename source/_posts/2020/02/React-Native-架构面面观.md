@@ -444,7 +444,7 @@ org.gradle.parallel=true
 # 让gradle在需要的时候才配置
 org.gradle.configureondemand=true
 # 增加gradle运行的java虚拟机的大小
-org.gradle.jvmargs=-Xmx3072m -XX:MaxPermSize=1024m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+org.gradle.jvmargs=-Xmx4096m -XX:MaxPermSize=4096m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
 ```
 
 ### BuildConfig
