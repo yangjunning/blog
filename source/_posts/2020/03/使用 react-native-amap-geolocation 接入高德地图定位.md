@@ -26,7 +26,7 @@ react-native-amap-geolocation这款插件接入了高德地图定位模块。支
     "an:key-release": "keytool -v -list -keystore ./android/app/release.keystore"
   }
   ```
-  
+
 - [获取 iOS App Key](https://lbs.amap.com/api/ios-location-sdk/guide/create-project/get-key)
 
   > ios 只需要 `Bundle Identifier` 即可
@@ -38,10 +38,6 @@ $ yarn add react-native-amap-geolocation
 ```
 
 ## ios 配置
-
-1. `Project navigator` ➜ 右击 `Libraries` ➜ 选择 `Add Files to "XXXX"...`
-3. 选择并添加 `node_modules/react-native-amap-geolocation/lib/ios/AMapGeolocation.xcodeproj`（或从文件浏览器里将该文件拖拽到 `Libraries`）
-3. `Build Phases` ➜ `Link Binary With Libraries` 中选择并添加 `libAMapGeolocation.a`
 
 ### 下载和安装高德IOS SDK
 
