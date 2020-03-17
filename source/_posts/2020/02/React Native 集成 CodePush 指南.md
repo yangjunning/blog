@@ -576,9 +576,6 @@ const codePushStatusDidChange = async syncStatus => {
       break;
     case codePush.SyncStatus.UPDATE_INSTALLED:
       // 6 - 安装了一个可用的更新，它将根据 SyncOptions 中的 InstallMode指定在 syncStatusChangedCallback 函数返回后立即或在下次应用恢复/重新启动时立即运行。
-
-      // 由于安装了CodePush更新，暂时禁止任何程序性重启。这是高级API，当您应用中的组件（例如，入职流程）需要确保在其生命周期内不会出现最终用户中断时，此功能非常有用。
-      // codePush.disallowRestart();
       console.info('[CodePush] Installed update.');
       break;
     case codePush.SyncStatus.SYNC_IN_PROGRESS:
@@ -642,7 +639,6 @@ export const checkForUpdate = async () => {
 };
 
 export const codePushSync = () => {
-  syncImmediate();
   AppState.addEventListener('change', newState => {
     newState === 'active' && syncImmediate();
   });
