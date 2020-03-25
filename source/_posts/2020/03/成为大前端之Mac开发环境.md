@@ -35,6 +35,13 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/t
    - 进入：终端 > 偏好设置 > 字体修改为 ：`Meslo LG S DZ Regular for Powerline`。
       ![](https://i.loli.net/2020/03/25/wHBrfAs2kScPjYR.png)
 
+### 插件
+
+#### zsh-syntax-highlighting
+
+- 安装: `brew install zsh-syntax-highlighting`
+- 启用: `source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh`
+
 ## Homebrew
 
 访问 [brew.sh](https://brew.sh/index_zh-cn) 安装。使用 Homebrew 安装 Apple（或您的 Linux 系统）没有预装但 [你需要的东西](https://formulae.brew.sh/formula/)。Homebrew
