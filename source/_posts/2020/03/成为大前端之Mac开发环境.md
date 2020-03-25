@@ -169,7 +169,7 @@ Navicat Premium 是一套数据库开发工具，让你从单一应用程序中�
 ## MySql
 
 ```shell
-$ brew install mysal
+$ brew install mysql
 ```
 
 ### 修改配置文件
