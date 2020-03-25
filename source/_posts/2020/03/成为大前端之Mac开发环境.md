@@ -12,6 +12,29 @@ tags:
 
 <!--more-->
 
+## ohmysh
+
+```sh
+# 切换 shell 为 zsh
+$ chsh -s /bin/zsh
+# 通过 curl 安装 ohmysh
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### Agnoster 主题配置
+
+- 终端执行 `open ~/.zshrc`
+- 找到 ZSH_THEME 修改为: `ZSH_THEME="agnoster"`
+- `source ~/.zshrc`
+- 安装 Powerline 对应的字体库
+   - `git clone https://github.com/powerline/fonts.git`
+   - `cd fonts`
+   - `install.sh`
+   - `cd ..`
+   - `rm -rf fonts`
+   - 进入：终端 > 偏好设置 > 字体修改为 ：`Meslo LG S DZ Regular for Powerline`。
+      ![](https://i.loli.net/2020/03/25/wHBrfAs2kScPjYR.png)
+
 ## Homebrew
 
 访问 [brew.sh](https://brew.sh/index_zh-cn) 安装。使用 Homebrew 安装 Apple（或您的 Linux 系统）没有预装但 [你需要的东西](https://formulae.brew.sh/formula/)。Homebrew
@@ -286,6 +309,10 @@ $ mysql -u root -p
 ```bash
 $ ssh-keygen -t rsa -C "young_email@aliyun.com"
 ```
+
+## 参考
+
+- [oh-my-zsh,让你的终端从未这么爽过](https://www.jianshu.com/p/d194d29e488c)
 
 ## 联系作者
 
