@@ -12,12 +12,12 @@ tags:
 
 <!--more-->
 
-## ohmysh
+## ohmyzsh
 
 ```sh
 # 切换 shell 为 zsh
 $ chsh -s /bin/zsh
-# 通过 curl 安装 ohmysh
+# 通过 curl 安装 ohmyzsh
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
