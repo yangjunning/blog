@@ -12,6 +12,12 @@ tags:
 
 <!--more-->
 
+## Pock
+
+让 Touch Bar 「变废为宝」的免费小工具，点击图片进入官网了解详情：
+
+[![](https://i.loli.net/2020/03/26/vGRUVX5ACxfasTi.png)](https://pock.dev/)
+
 ## ohmyzsh
 
 ```sh
@@ -44,6 +50,17 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/t
    - `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
    - `plugins=( [plugins...] zsh-syntax-highlighting)`
    - `source ~/.zshrc`
+
+#### WakaTime for Terminal
+
+- `sudo easy_install pip`
+- `sudo pip install wakatime`
+- `cd ~/.oh-my-zsh/custom/plugins`
+- `git clone https://github.com/sobolevn/wakatime-zsh-plugin.git wakatime`
+-  在你的 `~/.zshrc` 文件的 [list of plugins](https://github.com/robbyrussell/oh-my-zsh/wiki/External-plugins) 添加 `wakatime`
+- `source ~/.zshrc`
+- 确保你的  [~/.wakatime.cfg](https://github.com/wakatime/wakatime#configuring) 文件中配置了 [API key](https://wakatime.com/settings/api-key) 。
+
 
 ## Homebrew
 
