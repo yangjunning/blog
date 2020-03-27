@@ -38,6 +38,7 @@ type: books
 - 《高性能响应式Web开发实战》
 - 《Web性能权威指南》
 - 《高性能网站建设指南》
+- [《Swagger 从入门到精通》](https://huangwenchao.gitbooks.io/swagger/content/)
 
 ### JavaScript
 
