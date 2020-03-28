@@ -638,6 +638,21 @@ fi
 - `Privacy - Photo Library Usage Description`
 - `Privacy - Microphone Usage Description`
 
+## Lean Core
+
+| COMPONENT            | DEPRECATED? | NEW HOME                                                     |
+| :------------------- | :---------- | :----------------------------------------------------------- |
+| **AsyncStorage**     | 0.59        | [@react-native-community/react-native-async-storage](https://github.com/react-native-community/react-native-async-storage) |
+| **ImageStore**       | 0.59        | [expo-file-system](https://github.com/expo/expo/tree/master/packages/expo-file-system) or [react-native-fs](https://github.com/itinance/react-native-fs) |
+| **MaskedViewIOS**    | 0.59        | [@react-native-community/react-native-masked-view](https://github.com/react-native-community/react-native-masked-view) |
+| **NetInfo**          | 0.59        | [@react-native-community/react-native-netinfo](https://github.com/react-native-community/react-native-netinfo) |
+| **Slider**           | 0.59        | [@react-native-community/react-native-slider](https://github.com/react-native-community/react-native-slider) |
+| **ViewPagerAndroid** | 0.59        | [@react-native-community/react-native-viewpager](https://github.com/react-native-community/react-native-viewpager) |
+| **WebView**          | 0.60        | [react-native-webview](https://github.com/react-native-community/react-native-webview) |
+| **NetInfo**          | 0.60        | [@react-native-community/netinfo](https://github.com/react-native-community/react-native-netinfo) |
+| **Geolocation**      | 0.60        | [@react-native-community/geolocation](https://github.com/react-native-community/react-native-geolocation) |
+| **Apple TV Support** | 0.62        | [react-native-community/react-native-tvos](https://github.com/react-native-community/react-native-tvos) |
+
 ## 联系作者
 
 |                           作者微信                           |                           知识星球                           |                           赞赏作者                           |
