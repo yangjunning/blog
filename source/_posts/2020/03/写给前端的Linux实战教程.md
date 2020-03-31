@@ -627,6 +627,7 @@ $ apt install htop -y
 #### 实例
 
 > 一定要换行，不换行不会生效的
+> 重启 cron 服务：`systemctl cron.service restart`
 
 **每1分钟执行一次command**
 
