@@ -626,94 +626,111 @@ $ apt install htop -y
 
 #### 实例
 
+> 一定要换行，不换行不会生效的
+
 **每1分钟执行一次command**
 
 ```shell
 * * * * * command
+
 ```
 
 **每小时的第3和第15分钟执行**
 
 ```shell
 3,15 * * * * command
+
 ```
 
 **在上午8点到11点的第3和第15分钟执行**
 
 ```shell
 3,15 8-11 * * * command
+
 ```
 
 **每隔两天的上午8点到11点的第3和第15分钟执行**
 
 ```shell
 3,15 8-11 */2 * * command
+
 ```
 
 **每个星期一的上午8点到11点的第3和第15分钟执行**
 
 ```shell
 3,15 8-11 * * 1 command
+
 ```
 
 **每晚的21:30重启smb**
 
 ```shell
 30 21 * * * /etc/init.d/smb restart
+
 ```
 
 **每月1、10、22日的4 : 45重启smb**
 
 ```shell
 45 4 1,10,22 * * /etc/init.d/smb restart
+
 ```
 
 **每周六、周日的1:10重启smb**
 
 ```shell
 10 1 * * 6,0 /etc/init.d/smb restart
+
 ```
 
 **每天18 : 00至23 : 00之间每隔30分钟重启smb**
 
 ```shell
 */30 18-23 * * * /etc/init.d/smb restart
+
 ```
 
 **每星期六的晚上11:00 pm重启smb**
 
 ```shell
 0 23 * * 6 /etc/init.d/smb restart
+
 ```
 
 **每一小时重启smb**
 
 ```shell
 * */1 * * * /etc/init.d/smb restart
+
 ```
 
 **晚上11点到早上7点之间，每隔一小时重启smb**
 
 ```shell
 * 23-7/1 * * * /etc/init.d/smb restart
+
 ```
 
 **每月的4号与每周一到周三的11点重启smb**
 
 ```shell
 0 11 4 * mon-wed /etc/init.d/smb restart
+
 ```
 
 **一月一号的4点重启smb**
 
 ```shell
 0 4 1 jan * /etc/init.d/smb restart
+
 ```
 
 **每小时执行`/etc/cron.hourly`目录内的脚本**
 
 ```shell
 01 * * * * root run-parts /etc/cron.hourly
+
 ```
 
 ## SSH
