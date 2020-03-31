@@ -12,7 +12,7 @@ tags:
 
 <!--more-->
 
-笔者使用的是阿里云服务器ECS，镜像选择的是 Ubuntu，Ubuntu的详细版本信息是：`Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-91-generic x86_64)`，如何购买云服务器不在本文讨论范围内，如果只是学习，那你完全可以使用 virtualbox 安装 Ubuntu。
+笔者使用的是 AliYun 服务器 ECS，镜像选择的是 Ubuntu，Ubuntu的详细版本信息是：`Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-91-generic x86_64)`，如何购买云服务器不在本文讨论范围内，如果只是学习，那你完全可以使用 virtualbox 安装 Ubuntu。
 
 ```shell
 # 连接服务器
@@ -31,6 +31,24 @@ $ apt upgrade
 # 安装 git
 $ apt install git
 ```
+
+#### 命令行配置
+
+```bash
+# 1、初始化设置
+$ git config --global user.name 'your_name'
+$ git config --global user.email 'your_email@aliyun.com'
+# 2、将 `color.ui` 设置为 `auto` 可以让命令的输出拥有更高的可读性。
+$ git config --global color.ui auto
+# 3、git 记住用户名和密码
+$ git config --global credential.helper store
+# 4、core.autocrlf
+$ git config --global core.autocrlf input
+```
+
+> Linux或Mac系统使用LF作为行结束符，因此你不想 Git 在签出文件时进行自动的转换；当一个以 `CRLF` 为行结束符的文件不小心被引入时你肯定想进行修正，把 `core.autocrlf` 设置成 `input` 来告诉 Git 在提交时把 `CRLF` 转换成 `LF`，签出时不转换：
+> 这样会在 Windows 系统上的签出文件中保留 `CRLF`，会在 Mac 和 Linux 系统上，包括仓库中保留 `LF`。
+
 
 ### Java
 

@@ -18,6 +18,18 @@ tags:
 
 [![](https://i.loli.net/2020/03/26/vGRUVX5ACxfasTi.png)](https://pock.dev/)
 
+## vim
+
+> 建议使用：https://github.com/amix/vimrc
+
+```shell
+$ git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+$ sh ~/.vim_runtime/install_awesome_vimrc.sh
+$ echo "set number" >> ~/.vimrc
+$ echo "set showcmd" >> ~/.vimrc
+$ source ~/.vimrc
+```
+
 ## ohmyzsh
 
 ```sh
@@ -92,42 +104,20 @@ $ brew install git
 
 ### 命令行配置
 
-1、初始化设置
-
 ```bash
+# 1、初始化设置
 $ git config --global user.name 'your_name'
 $ git config --global user.email 'your_email@aliyun.com'
-```
-
-2、提高命令输出的可读性
-
-将 `color.ui` 设置为 `auto` 可以让命令的输出拥有更高的可读性。
-
-```bash
+# 2、将 `color.ui` 设置为 `auto` 可以让命令的输出拥有更高的可读性。
 $ git config --global color.ui auto
-```
-
-3、git 记住用户名和密码
-
-```bash
+# 3、git 记住用户名和密码
 $ git config --global credential.helper store
-```
-
-4、git 文件名区分大小写
-
-```bash
-$ git config --global core.ignorecase false
-```
-
-5、core.autocrlf
-
-Linux或Mac系统使用LF作为行结束符，因此你不想 Git 在签出文件时进行自动的转换；当一个以 `CRLF` 为行结束符的文件不小心被引入时你肯定想进行修正，把 `core.autocrlf` 设置成 `input` 来告诉 Git 在提交时把 `CRLF` 转换成 `LF`，签出时不转换：
-
-```sh
+# 4、core.autocrlf
 $ git config --global core.autocrlf input
 ```
 
-这样会在 Windows 系统上的签出文件中保留 `CRLF`，会在 Mac 和 Linux 系统上，包括仓库中保留 `LF`。
+> Linux或Mac系统使用LF作为行结束符，因此你不想 Git 在签出文件时进行自动的转换；当一个以 `CRLF` 为行结束符的文件不小心被引入时你肯定想进行修正，把 `core.autocrlf` 设置成 `input` 来告诉 Git 在提交时把 `CRLF` 转换成 `LF`，签出时不转换：
+> 这样会在 Windows 系统上的签出文件中保留 `CRLF`，会在 Mac 和 Linux 系统上，包括仓库中保留 `LF`。
 
 ### 学习资料
 
@@ -336,10 +326,6 @@ $ mysql -u root -p
 ```bash
 $ ssh-keygen -t rsa -C "young_email@aliyun.com"
 ```
-
-## 参考
-
-- [oh-my-zsh,让你的终端从未这么爽过](https://www.jianshu.com/p/d194d29e488c)
 
 ## 联系作者
 
