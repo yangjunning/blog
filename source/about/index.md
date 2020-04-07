@@ -19,8 +19,7 @@ type: 'about'
 * Github：https://github.com/youngjuning、https://github.com/sishuguojixuefu、
 * 我的掘金：https://juejin.im/user/5a3f85db6fb9a0450909b98a
 * 期望职位：前端开发工程师，React 开发工程师、React Native 开发工程师
-* 期望薪资：税前月薪13k~16k
-* 期望城市：郑州
+* 期望薪资：税前月薪12k~16k
 
 # 工作经历
 
