@@ -36,8 +36,8 @@ $ apt install git
 
 ```bash
 # 1、初始化设置
-$ git config --global user.name 'your_name'
-$ git config --global user.email 'your_email@aliyun.com'
+$ git config --global user.name 'youngjuning'
+$ git config --global user.email 'youngjuning@aliyun.com'
 # 2、将 `color.ui` 设置为 `auto` 可以让命令的输出拥有更高的可读性。
 $ git config --global color.ui auto
 # 3、git 记住用户名和密码
@@ -839,6 +839,10 @@ wget支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。所谓的自动下
 ```
 $ scp file.txt root@192.168.2.195
 ```
+
+### netstat -ntulp | grep 9001
+
+查看端口占用情况
 
 ### rsync：远程数据同步工具
 
