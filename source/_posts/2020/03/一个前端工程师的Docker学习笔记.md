@@ -328,9 +328,7 @@ FROM alpine
 
 LABEL version="1.0" maintainer="youngjuning<youngjuning@aliyun.com>"
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
-    apk update && apk upgrade && \
-    apk add --no-cache nodejs yarn
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 ```
 
 构建：
@@ -516,7 +514,7 @@ $ docker run -d -p 9000:9000 \
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		-v portainer_data:/data \
 		--name portainer \
-		--restart=always \
+		--restart always \
 		portainer/portainer
 ```
 
@@ -587,25 +585,153 @@ $ docker run -d -P \
 
 > 如果直接挂载一个文件到容器，使用文件编辑工具，包括 vi 或者 `sed --in-place` 的时候，可能会造成文件 inode 的改变，从 Docker 1.1 起，这会导致报错误信息。所以推荐的方式是直接挂载文件所在的目录到容器内。
 
-## 常见应用安装
+## Dockerfile
 
-### Jenkins
+> 详细指令详解请查看：[Dockerfile 指令详解](https://vuepress.mirror.docker-practice.com/image/dockerfile/)
 
+![](https://i.loli.net/2020/04/11/hmlMV4QA2opON9j.png)
 
+# 应用安装
 
-## Docker 相关的定时任务
+## Jenkins: CI/CD平台
+
+### 安装Jenkins
+
+```shell
+$ docker run -d \
+	 -u root \
+	 -p 8080:8080 -p 50000:50000 \
+	 -v jenkins_home:/var/jenkins_home \
+	 -e PLUGINS_FORCE_UPGRADE=true \
+	 -e TRY_UPGRADE_IF_NO_MARKER=true \
+	 --name jenkins \
+	 --restart always \
+	 jenkins/jenkins
+```
+
+需要更多定制参数你可以参考 [https://github.com/jenkinsci/docker](https://github.com/jenkinsci/docker)
+
+### Nginx 反向代理
+
+我没有域名，所以我的配置是基于端口的，你可以查看[官方文档](https://github.com/jenkinsci/docker/blob/master/README.md) 获取更多方案：
+
+```nginx
+server {
+	listen 8882;
+	server_name _;
+
+	location / {
+		proxy_set_header        Host $host:$server_port;
+		proxy_set_header        X-Real-IP $remote_addr;
+		proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header        X-Forwarded-Proto $scheme;
+
+		# Fix the "It appears that your reverse proxy set up is broken" error.
+		proxy_pass          http://127.0.0.1:8080;
+		proxy_read_timeout  90;
+
+		# Required for new HTTP-based CLI
+		proxy_http_version 1.1;
+		proxy_request_buffering off;
+	}
+}
+```
+
+### 初始化jenkins
+
+1、执行`cat /var/lib/docker/volumes/jenkins_home/_data/secrets/initialAdminPassword`，获取**管理员密码**
+
+2、启动完jenkins后通过浏览器输入地址`http://部署jenkins主机IP:端口`
+
+<img src="https://i.loli.net/2020/04/10/YtRrWTZVQc7Mma3.png" style="zoom:50%;" />
+
+3、选择安装插件方式，这里我是默认第一个：
+
+<img src="https://i.loli.net/2020/04/10/IBlrbMFusXmdeA5.png" style="zoom:50%;" />
+
+4、进入插件安装界面，连网等待插件安装：
+
+<img src="https://i.loli.net/2020/04/10/gimNZtUID5YjK9f.png" style="zoom:50%;" />
+
+5、安装完插件后，进入创建管理员界面：
+
+<img src="https://i.loli.net/2020/04/10/SxvtAW3McBCqTEX.png" style="zoom:50%;" />
+
+### 基于角色的认证策略
+
+1. 请确保在 **系统管理** -> **插件管理** 中安装了**Role-based Authorization Strategy**  插件！！
+
+2. 在 **系统管理** -> **安全** -> **全局安全设置** 中的 **授权策略** 配置项中选择 **Role-Based Strategy**
+
+   ![image.png](https://i.loli.net/2020/04/10/hs7tMvl6uRSxqC4.png)
+
+3. 然后就可以在 `Manage and Assign Roles` 中管理角色
+
+## GitLab 及其官方镜像
+
+> 特别耗CPU，我的服务器太辣鸡带不动！！！
+
+### docker-compose.yml
+
+```yaml
+web:
+  image: 'gitlab/gitlab-ce:latest'
+  restart: always
+  hostname: 'gitlab.yangjunning.pro'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'http://gitlab.yangjunning.pro:8929'
+      gitlab_rails['gitlab_shell_ssh_port'] = 2224
+  ports:
+    - '8929:8929'
+    - '2224:22'
+  volumes:
+    - 'gitlab_config:/etc/gitlab'
+    - 'gitlab_logs:/var/log/gitlab'
+    - 'gitlab_data:/var/opt/gitlab'
+```
+
+### 运行容器
+
+```
+$ docker-compose up -d
+```
+
+### 更新 gitlab
+
+```shell
+$ docker-compose pull
+$ docker-compose up -d
+```
+
+## 待实践
+
+- SonarQube
+- Nexus Repository Manager
+- ShowDoc
+- Verdaccio
+- EasyMock
+- Sentry
+- Ansible
+- code-push-server
+- BugOut
+
+# Docker 相关的定时任务
 
 ```
 # crontab -e
 # 每天凌晨强制删除无用镜像，不光是临时镜像；每天凌晨清理无用的数据卷
-59 23 * * * docker image prune -af && docker volume prune -f
+00 00 * * * docker image prune -af && docker volume prune -f && rsync -arv /var/lib/docker/volumes /backups/docker
 ```
 
-## 扩展阅读
+> qshell 同步文件到七牛云的配置请参考[备份到七牛云](https://juejin.im/post/5e81e2db518825737b4ad911#heading-59)
+
+# 扩展阅读
 
 - [DevOps 知识平台 Ledge](https://devops.phodal.com/)
+- [jenkins+docker 持续集成](https://juejin.im/post/5b6af759e51d451951138eb4#heading-7)
 
-## 联系作者
+# 联系作者
 
 |                           作者微信                           |                           知识星球                           |                           赞赏作者                           |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |

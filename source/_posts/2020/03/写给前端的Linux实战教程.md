@@ -401,7 +401,7 @@ x\{m,n\}  # 重复字符x，至少m次，不多于n次，如：'o\{5,10\}'匹配
 
 - `-c`：仅显示行中指定范围的字符，`cut -c 2-4 file`
 - `-d`：指定字段的分隔符，默认的字段分隔符为“TAB”。
-- `-f`：显示指定字段的内容。`cut -d , -f 1,3 notes.csv`；`cut -d , -f 2- notes.csv`
+- 
 
 ## 输出重定向
 
@@ -864,6 +864,45 @@ $ rsync -arv Images/ backups
 
 ```shell
 $ rsync -arvz --progress --delete ~/Desktop/blog root@47.98.152.68:/home/yangjunning/
+```
+
+## 备份到七牛云
+
+### 安装命令行工具(qshell)
+
+1. 进入家目录：`cd ~`
+2. 下载压缩包：`wget http://devtools.qiniu.com/qshell-linux-x86-v2.4.1.zip`
+3. 解压压缩包：`unzip ~/qshell-linux-x86-v2.4.1.zip` 
+4. 任何位置运行：`mv ~/qshell-linux-x86-v2.4.1 /usr/local/bin/qshell`
+5. 权限：`chmod +x /usr/local/bin/qshell`
+6. 删除压缩包：`rm -rf ~/qshell-linux-x86-v2.4.1.zip`
+
+### 密钥设置
+
+需要鉴权的命令都需要依赖七牛账号下的 `AccessKey` 和 `SecretKey`。所以这类命令运行之前，需要使用 `account` 命令来设置下 `AccessKey` ，`SecretKey` 。
+
+```sh
+$ qshell account -- ak sk name
+```
+
+> 注意：`ak`、`sk` 在七牛云**控制台** -> **个人中心** - > **密钥管理**内。
+
+可以连续使用 `qshell account` 添加账号`ak`, `sk`, `name`信息，qshell会保存这些账号的信息， 可以使用`qshell user`命令列举账号信息，在各个账号之间切换, 删除账号等
+
+### 账户管理
+
+使用qshell user子命令可以用来管理记录的多账户信息。
+
+1. `qshell user ls`可以列举账户下所有的账户信息
+2. `qshell user cu` 可以用来切换账户
+3. `qshell user cu` 不携带的话会切换到最近的上个账户；比如我在A账户做完操作后，使用`qshell user cu B`到了B 账户，那么使用`qshell user cu`可以切回到A账户
+
+### qupload2
+
+同步数据到七牛空间， 带同步进度信息，和数据上传完整性检查（命令式），详情请查看[文档](http://github.com/qiniu/qshell/blob/master/docs/qupload2.md)
+
+```sh
+$ qshell qupload2 --src-dir=/root --bucket=aliyun-server-backup
 ```
 
 ## 联系作者
