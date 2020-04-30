@@ -18,7 +18,7 @@ const b = 2
 b = 3 // Uncaught TypeError: Assignment to constant variable.
 ```
 
-对于复杂类型的变量，如数组和对象，变量名不指向数据，而是指向数据所在的地址。`const` 命令只是保证变量名指向的地址不变，并不保证该地址的数据不变。
+对于引用类型的值，如数组和对象，变量保存的是值的引用。`const` 命令只是保证引用不变，并不保证值不变。
 
 ```js
 const names = []
