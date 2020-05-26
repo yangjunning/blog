@@ -318,6 +318,30 @@ console.log(carryBricks([{ name: 'brick1' }])) // "brick1"
 console.log(carryBricks([])) // ""
 ```
 
+## ES2015/ES6
+
+- `Array.from`：用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）
+
+- `Array.of`：用于将一组值，转换为数组
+
+- `arr.fill(value[, start[, end]])`：用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引
+
+- `find()`：用于找出第一个符合条件的数组成员
+
+- `findIndex()`：返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回`-1`
+
+- `entries()`，`keys()` 和 values()：`keys()`是对键名的遍历、`values()`是对键值的遍历，`entries()`是对键值对的遍历
+
+## ES2016/ES7
+
+- `copyWithin()`： 方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。
+- `includes()`：返回一个布尔值，表示某个数组是否包含给定的值
+
+## ES2019/ES10
+
+- `flat()`：会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
+- `flatMap()`： 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) 连着深度值为1的 [flat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat) 几乎相同，但 `flatMap` 通常在合并成一种方法的效率稍微高一些
+
 ## lodash
 
 ### 数组并集
