@@ -1,7 +1,7 @@
 ---
 title: react-native-create-library 中文文档
 categories:
-  - [前端开发, React Native]
+  - [移动开发, React Native]
 tags:
   - bridge
 date: 2019-06-09 14:41:14

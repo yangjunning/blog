@@ -2,7 +2,7 @@
 title: '基于travis-ci实现vuepress自动部署'
 date: '2018-09-26 22:27'
 categories:
-	- [工具]
+	- [教程]]
 tags:
 	- Vue.js
 ---

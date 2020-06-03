@@ -1,7 +1,7 @@
 ---
 title: react-native-exception-handler 中文文档
 categories:
-  - [前端开发, React Native]
+  - [移动开发, React Native]
 tags:
   - [exception]
   - [error]

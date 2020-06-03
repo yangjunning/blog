@@ -1,8 +1,7 @@
 ---
 title: 【译】在 React Native TypeScript 项目中使用 defaultProps
 categories:
-  - [前端开发, React Native]
-  - [前端开发, TypeScript]
+  - [移动开发, React Native]
 tags:
   - 翻译
   - defaultProps

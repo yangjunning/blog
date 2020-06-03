@@ -2,7 +2,7 @@
 title: 初探 Nest.js
 date: 2020-03-02 04:05:36
 categories:
-  - [大前端, Node.js]
+  - [Node.js]
 tags:
   - Nest.js
   - server
