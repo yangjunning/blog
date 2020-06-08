@@ -2,7 +2,7 @@
 title: 大前端之Mac开发环境
 date: 2020-03-05 01:06:42
 categories:
-  - [大前端]
+  - [杂谈]
 tags:
   - Mac
   - 开发环境

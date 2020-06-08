@@ -2,7 +2,7 @@
 title: Typora基于PicGo-Core实现粘贴上传图片
 date: 2020-04-10 17:57:41
 categories:
-  - [教程]
+  - [杂谈]
 tags:
   - typora
   - markdown
