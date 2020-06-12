@@ -64,7 +64,9 @@ useEffect(() => {
 
 ## 表格的column筛选排序状态重置问题
 
-表格设置了排序以及筛选之后, 当我们从外部点击按钮刷新data时,数据列表实际并没有经过筛选排序。
+> 解决办法来自：https://github.com/ant-design/ant-design-pro/issues/3695#issuecomment-642460173
+
+表格设置了排序以及筛选之后, 当我们从外部点击按钮刷新data时,数据列表实际并没有经过筛选排序。解决办法如下：
 
 ```jsx
 const [sortedInfo, setSortedInfo] = useState({});
