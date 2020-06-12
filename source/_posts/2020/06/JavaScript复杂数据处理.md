@@ -4,6 +4,8 @@ date: 2020-06-11 09:29:52
 tags:
 ---
 
+<!--more-->
+
 ## 根据一个数组过滤另一个数组
 
 - Array.prototype.includes
@@ -32,4 +34,6 @@ arr.forEach(item => {
 console.log(newArr); //输出：[{id:2},{id:3}]
 ```
 
-<!--more-->
+|                           作者微信                           |                           知识星球                           |                           赞赏作者                           |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="https://i.loli.net/2020/02/22/q2tLiGYvhIxm3Fl.jpg" width="200px"/> | <img src="https://i.loli.net/2020/02/22/AQzLmDPopb1ufsG.png" width="200px"/> | <img src="https://i.loli.net/2020/02/23/q56X1eYZuITQpsj.png" width="200px"/> |
