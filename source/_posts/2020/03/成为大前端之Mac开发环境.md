@@ -126,6 +126,16 @@ $ git config --global core.autocrlf input
 - [廖雪峰的git教程](http://t.cn/RK0tLXB)
 - [猴子都能懂的GIT入门](https://backlog.com/git-tutorial/cn/)
 
+## GitHub 加速
+
+```sh
+export ALL_PROXY="socks5://127.0.0.1:7891"
+```
+
+7981 是你的科学上网的代理端口，每个人的不一定一样！！！
+
+![12851588067873_ pic_hd](https://user-images.githubusercontent.com/13204332/80474227-ce18c780-8979-11ea-8024-31bc0503f964.jpg)
+
 ## Node
 
 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时。我们使用 `n` 模块来维护 Node 的版本：
