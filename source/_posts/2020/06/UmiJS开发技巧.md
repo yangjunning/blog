@@ -25,6 +25,18 @@ tags:
 
 方案二：在 `.env` 文件里 设置 `MOCK=none` 也可以关闭
 
+## jsx无法转到定义处
+
+在 `jsconfig.json` 文件中进行如下配置：
+
+```json
+{
+  "compilerOptions": {
+    "jsx": "react"
+  }
+}
+```
+
 ## 联系作者
 
 > 本文首发于个人博客：https://youngjuning.js.org/
