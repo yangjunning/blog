@@ -46,8 +46,8 @@ tags:
 在umi框架中，图片等静态资源主要放到三个地方：
 
 1. 在 `/public` 目录下，一般放共享资源。
-2. 在/src/assets/目录下，一般放全局静态资源。
-3. 在/src/pages/里的各个页面目录下，放在这里的好处是更符合组件化开发的思想，便于拷贝复用。
+2. 在 `/src/assets/` 目录下，一般放全局静态资源。
+3. 在 `/src/pages/` 里的各个页面目录下，放在这里的好处是更符合组件化开发的思想，便于拷贝复用。
 
 由于静态资源会受 `context.config.publicPath` 的影响，所以在 `document.ejs` 中应该这样引入比较安全：
 
@@ -55,7 +55,7 @@ tags:
 <script type="text/javascript" src="<%= context.config.publicPath %>ol.js" />
 ```
 
-## 如何访问静态图片：
+## 如何访问静态图片
 
 1、如果在/public目录下的静态图片，可以直接输入绝对路径，假设/public/yay.jpg,访问方式如下：
 
@@ -110,6 +110,33 @@ const RouterDemo = () => {
   }
   return <div onClick={this.onOk}>点击测试</div>
 }
+```
+
+## 修改浏览器上方图标
+
+> 参考 https://v2.umijs.org/zh/guide/html-template.html#配置模板
+
+```html
+<!-- 图片在 /public 下 -->
+<link rel="icon" type="image/x-icon" href="<%= context.publicPath %>favicon.png" />
+<!-- 图片在 /src/assets/ 下-->
+<link rel="icon" type="image/x-icon" href="<%= context.publicPath %>static/favicon.png" />
+```
+
+## 支持 ie11
+
+> 参考 https://github.com/umijs/umi/issues/1394
+
+配置浏览器最低版本，会自动引入 polyfill 和做语法转换，配置的 targets 会和合并到默认值，所以不需要重复配置:
+
+```js
+// umi默认兼容最低浏览器版本
+// Default: { chrome: 49, firefox: 45, safari: 10, edge: 13, ios: 10 }
+export default {
+  targets: {
+    ie: 11,
+  },
+};
 ```
 
 ## 联系作者
