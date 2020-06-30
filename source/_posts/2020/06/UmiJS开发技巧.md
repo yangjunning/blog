@@ -143,7 +143,7 @@ export default {
 
 ### UmiJS 2.x
 
-> 参考 [How to configure extraBabelIncludes](https://github.com/umijs/umi/issues/2117#issuecomment-539982434)
+> 参考: [How to configure extraBabelIncludes](https://github.com/umijs/umi/issues/2117#issuecomment-539982434)
 
 ```js
 const path = require('path');
@@ -166,6 +166,58 @@ export default {
     type: 'none',
     exclude: [], // 忽略的依赖库，包名，暂不支持绝对路径；可通过 exclude 配置添加额外需要编译的
   },
+}
+```
+
+## 并行运行任务
+
+### call
+
+> 参考: [求教多个异步的请求问题？](https://github.com/dvajs/dva/issues/756#issuecomment-317770608)、[同时执行多个任务](https://redux-saga-in-chinese.js.org/docs/advanced/RunningTasksInParallel.html)
+
+`yield` 指令可以很简单的将异步控制流以同步的写法表现出来，但与此同时我们将也会需要同时执行多个任务，我们不能直接这样写：
+
+```js
+// 错误写法，effects 将按照顺序执行
+const users = yield call(fetch, '/users')
+const repos = yield call(fetch, '/repos')
+```
+
+由于第二个 effect 将会在第一个 call 执行完毕才开始。所以我们需要这样写：
+
+```js
+// 正确写法, effects 将会同步执行
+*effects({}, { all, call }) {
+  const [users, repos] = yield all([
+    call(fetch, '/users'),
+    call(fetch, '/repos')
+  ])
+}
+```
+
+当我们需要 `yield` 一个包含 effects 的数组， generator 会被阻塞直到所有的 effects 都执行完毕，或者当一个 effect 被拒绝 （就像 `Promise.all` 的行为）。
+
+### put
+
+> 参考: [yield all中放put而出现的问题](https://github.com/dvajs/dva/issues/2094)
+
+```js
+*effects({}, { all, call }) {
+  const [users, repos] = yield all([
+    yield put({ type: 'getUsers' }),
+    yield put({ type: 'getRepos' })
+  ])
+}
+```
+
+或者使用 `put.resolve`:
+
+```js
+*effects({}, { all, call }) {
+  const [users, repos] = yield all([
+    put.resolve({ type: 'getUsers' }),
+    put.resolve({ type: 'getRepos' })
+  ])
 }
 ```
 
