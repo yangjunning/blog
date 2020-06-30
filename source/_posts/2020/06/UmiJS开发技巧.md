@@ -15,7 +15,7 @@ tags:
 
 ## 本地开发 umi dev 时关闭 mock
 
-> - [希望本地开发 umi dev 时可以关闭 mock](https://github.com/umijs/umi/issues/486)
+> 参考: [希望本地开发 umi dev 时可以关闭 mock](https://github.com/umijs/umi/issues/486)
 
 方案一（推荐）：在 npm scripts 中加入以下指令：
 
@@ -76,7 +76,7 @@ import yayImg from '/src/assets/yay.jpg';
 
 ## react-router三种传参方式
 
-> 参考: https://www.kelede.win/posts/react-router%E4%B8%89%E7%A7%8D%E4%BC%A0%E5%8F%82%E6%96%B9%E5%BC%8F/
+> 参考: [react-router三种传参方式](https://www.kelede.win/posts/react-router%E4%B8%89%E7%A7%8D%E4%BC%A0%E5%8F%82%E6%96%B9%E5%BC%8F/)
 
 ```jsx
 import { Component } from 'react'
@@ -114,7 +114,7 @@ const RouterDemo = () => {
 
 ## 修改浏览器上方图标
 
-> 参考 https://v2.umijs.org/zh/guide/html-template.html#配置模板
+> 参考: [HTML 配置模板](https://v2.umijs.org/zh/guide/html-template.html#配置模板)
 
 ```html
 <!-- 图片在 /public 下 -->
@@ -125,7 +125,7 @@ const RouterDemo = () => {
 
 ## 支持 ie11
 
-> 参考 https://github.com/umijs/umi/issues/1394
+> 参考: [ie11兼容问题](https://github.com/umijs/umi/issues/1394)
 
 配置浏览器最低版本，会自动引入 polyfill 和做语法转换，配置的 targets 会和合并到默认值，所以不需要重复配置:
 
@@ -137,6 +137,36 @@ export default {
     ie: 11,
   },
 };
+```
+
+## 编译 node_modules 下的包
+
+### UmiJS 2.x
+
+> 参考 [How to configure extraBabelIncludes](https://github.com/umijs/umi/issues/2117#issuecomment-539982434)
+
+```js
+const path = require('path');
+{
+  extraBabelIncludes: [path.resolve(__dirname, 'node_modules/<package_name>')],
+}
+```
+
+### UmiJS 3.1+
+
+> 参考: [nodeModulesTransform](https://umijs.org/zh-CN/config#nodemodulestransform-31)、[如何做编译提速](https://umijs.org/zh-CN/guide/boost-compile-speed)
+
+UmiJS 3 删除了 `extraBabelIncludes` 和 `es5ImcompatibleVersions`，`node_modules` 也走 babel 编译后就没有意义了，无需配置
+
+UmiJS 3 默认编译 `node_modules` 下的文件，带来一些收益的同时，也增加了额外的编译时间。如果不希望 `node_modules` 下的文件走 babel 编译，可通过以下配置减少 40% 到 60% 的编译时间。
+
+```js
+export default {
+  nodeModulesTransform: {
+    type: 'none',
+    exclude: [], // 忽略的依赖库，包名，暂不支持绝对路径；可通过 exclude 配置添加额外需要编译的
+  },
+}
 ```
 
 ## 联系作者
