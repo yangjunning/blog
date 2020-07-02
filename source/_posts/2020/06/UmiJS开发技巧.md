@@ -364,6 +364,47 @@ antd Select 在多选状态下，默认会展示所有选中项，这里我们�
 }
 ```
 
+## 替换 momentjs
+
+> 参考: [antd-dayjs-webpack-plugin](https://github.com/ant-design/antd-dayjs-webpack-plugin)、[替换 Moment.js](https://ant.design/docs/react/replace-moment-cn)、[基于umi、antd的前端工程优化实践](https://zhuanlan.zhihu.com/p/136510620)
+
+请先删除 `ignoreMomentLocale: true` 配置再进行以下操作：
+
+```sh
+yarn add antd-dayjs-webpack-plugin -D
+```
+
+```js
+export default {
+  chainWebpack(config) {
+    // antd moment -> dayjs
+    // 如果在 Ant Design 3.x 的项目中使用本插件，需要传入以下配置，指定 preset。
+    config.plugin('moment2dayjs').use('antd-dayjs-webpack-plugin', [
+      {
+        preset: 'antdv3'
+      }
+    ])
+  }
+}
+```
+
+如果项目中需要使用中文语言，还要引入dayjs的中文语言包并与antd的ConfigProvider配合服用。
+
+```js
+// 设置dayjs中文
+import dayjs from 'dayjs'
+import 'dayjs/locale/zh-cn'
+dayjs.locale('zh-cn')
+
+import { ConfigProvider } from 'antd'
+import zhCN from 'antd/lib/locale-provider/zh_CN'
+export default ({children}) => <ConfigProvider locale={zhCN}>{children}</ConfigProvider>
+```
+
+通过上述配置后，使用DatePicker组件拿到的日期与之前一致，但可以直接使用dayjs的API操作日期，moment不复存在。最终dayjs打包体积为14.64KB，减小了330KB之多。
+
+注：目前dayjs@1.8.20后有个bug会导致替换后WeekPicker显示不正常，1.8.21版本之后已修复。
+
 ## 联系作者
 
 > 本文首发于个人博客：https://youngjuning.js.org/
