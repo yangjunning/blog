@@ -221,6 +221,149 @@ const repos = yield call(fetch, '/repos')
 }
 ```
 
+## 局部覆盖antd 样式
+
+由于业务的个性化需求，我们经常会遇到需要覆盖组件样式的情况，这里举个简单的例子。
+
+antd Select 在多选状态下，默认会展示所有选中项，这里我们给它加一个限制高度，超过此高度就出滚动条。
+
+```tsx
+<Select
+  mode="multiple"
+  style={{ width: 300 }}
+  placeholder="Please select"
+  className={styles.customSelect}
+>
+  {children}
+</Select>
+```
+
+```css
+.customSelect {
+  :global {
+    .ant-select-selection {
+      max-height: 51px;
+      overflow: auto;
+    }
+  }
+}
+```
+
+方法很简单，有两点需要注意：
+
+- 引入的 antd 组件类名没有被 CSS Modules 转化，所以被覆盖的类名 `.ant-select-selection` 必须放到 `:global` 中。
+- 因为覆盖是全局性的。为了防止对其他 Select 组件造成影响，所以需要包裹额外的 className 限制样式的生效范围。
+
+## 优化包大小
+
+> 参考: [H5 分包实现首屏加载时间优化](https://juejin.im/post/5ef8581ce51d4534c14d9a5f)、[webapck4 玄妙的 SplitChunks Plugin](https://juejin.im/post/5c08fe7d6fb9a04a0d56a702)、[请问如何单独打包组件](https://github.com/umijs/umi/issues/3535#issuecomment-617590579)
+
+### UmiJS 2.x
+
+```js
+{
+  // 忽略 moment 的 locale 文件，用于减少尺寸。
+  // https://v2.umijs.org/zh/config/#ignoremomentlocale
+  ignoreMomentLocale: true,
+  // 配置是否开启 treeShaking，默认关闭。
+  // https://v2.umijs.org/zh/config/#treeshaking
+  treeShaking: true,
+  // 通过 [webpack-chain](https://github.com/mozilla-neutrino/webpack-chain) 的 API 扩展或修改 webpack 配置。
+  // https://v2.umijs.org/zh/config/#chainwebpack
+  chainWebpack(config) {
+    config.optimization.splitChunks({
+      chunks: 'all',
+      automaticNameDelimiter: '～',
+      name: true,
+      minSize: 30000,
+      minChunks: 1,
+      cacheGroups: {
+        echarts: {
+          name: 'echarts',
+          test: /[\\/]node_modules[\\/](echarts)[\\/]/,
+          priority: -9,
+          enforce: true,
+        },
+        antd: {
+          name: 'antd',
+          test: /[\\/]node_modules[\\/](@ant-design|antd|antd-mobile)[\\/]/,
+          priority: -10,
+          enforce: true,
+        },
+        vendors: {
+          name: 'vendors',
+          test: /[\\/]node_modules[\\/]/,
+          priority: -11,
+          enforce: true,
+        },
+      },
+    });
+  },
+  plugins: [
+    [
+      // 这是官方封装的一个插件集，包含 18 个常用的进阶功能。
+      // https://v2.umijs.org/zh/plugin/umi-plugin-react.html#%E5%AE%89%E8%A3%85
+      'umi-plugin-react',
+      {
+        // 默认是 ['umi']，可修改，比如做了 vendors 依赖提取之后，会需要在 umi.js 之前加载 vendors.js
+        // https://v2.umijs.org/zh/plugin/umi-plugin-react.html#chunks
+        chunks: ['vendors', 'antd', 'echarts', 'umi'],
+      },
+    ],
+  ],
+}
+```
+
+### UmiJS 3.x
+
+> 参考 [升级 umi-plugin-react 为 @umijs/preset-react](https://umijs.org/zh-CN/docs/upgrade-to-umi-3#%E5%8D%87%E7%BA%A7-umi-plugin-react-%E4%B8%BA-umijspreset-react)
+
+由于 Umi 3 的配置方式是拍平的方式，还需要修改配置:
+
+```js
+{
+  // 忽略 moment 的 locale 文件，用于减少尺寸。
+  // https://v2.umijs.org/zh/config/#ignoremomentlocale
+  ignoreMomentLocale: true,
+  // 配置是否开启 treeShaking，默认关闭。
+  // https://v2.umijs.org/zh/config/#treeshaking
+  treeShaking: true,
+  // 通过 [webpack-chain](https://github.com/mozilla-neutrino/webpack-chain) 的 API 扩展或修改 webpack 配置。
+  // https://v2.umijs.org/zh/config/#chainwebpack
+  chainWebpack(config) {
+    config.optimization.splitChunks({
+      chunks: 'all',
+      automaticNameDelimiter: '～',
+      name: true,
+      minSize: 30000,
+      minChunks: 1,
+      cacheGroups: {
+        echarts: {
+          name: 'echarts',
+          test: /[\\/]node_modules[\\/](echarts)[\\/]/,
+          priority: -9,
+          enforce: true,
+        },
+        antd: {
+          name: 'antd',
+          test: /[\\/]node_modules[\\/](@ant-design|antd|antd-mobile)[\\/]/,
+          priority: -10,
+          enforce: true,
+        },
+        vendors: {
+          name: 'vendors',
+          test: /[\\/]node_modules[\\/]/,
+          priority: -11,
+          enforce: true,
+        },
+      },
+    });
+  },
+  // https://umijs.org/zh-CN/config#chunks
+  chunks: ['vendors', 'antd', 'echarts', 'umi'],
+}
+```
+
 ## 联系作者
 
 > 本文首发于个人博客：https://youngjuning.js.org/
