@@ -132,7 +132,7 @@ $ git config --global core.autocrlf input
 export ALL_PROXY="socks5://127.0.0.1:7891"
 ```
 
-7981 是你的科学上网的代理端口，每个人的不一定一样！！！
+7981 是你的代理端口，每个人的不一定一样！！！
 
 ![12851588067873_ pic_hd](https://user-images.githubusercontent.com/13204332/80474227-ce18c780-8979-11ea-8024-31bc0503f964.jpg)
 
@@ -181,7 +181,44 @@ $ nrm use sigma
 
 Navicat Premium 是一套数据库开发工具，让你从单一应用程序中同时连接 MySQL、MariaDB、MongoDB、SQL Server、Oracle、PostgreSQL 和 SQLite 数据库。它与 Amazon RDS、Amazon Aurora、Amazon Redshift、Microsoft Azure、Oracle Cloud、MongoDB Atlas、腾讯云和华为云等云数据库兼容。你可以快速轻松地创建、管理和维护数据库。
 
-> Mac破解版: 链接:https://pan.baidu.com/s/1SlL1_bd4qirMnF0sLwRLhA  密码:4jq6
+> Mac版: 链接:https://pan.baidu.com/s/1SlL1_bd4qirMnF0sLwRLhA  密码:4jq6
+
+## maven
+
+### 安装
+
+```sh
+$ brew install maven
+```
+
+### 配置 Maven 本地仓库
+
+`setting.xml` 路径为 `${Maven Home}/conf/settings.xml` ，Maven Home 可以通过 `mvn --version 获取`
+
+```xml
+<localRepository>~/maven_repo</localRepository>
+```
+
+可将 `settings.xml` 直接拷贝到 `.m2` 文件夹下，进行配置。
+
+如果没有 `.m2` 文件夹时,运行命令
+
+```sh
+$ mvn help:system
+```
+
+然后打开当前用户的目录，可以在其中找到 `.m2` 文件夹
+
+### 配置阿里镜像
+
+```xml
+<mirror>
+  <id>alimaven</id>
+  <name>aliyun maven</name>
+  <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+  <mirrorOf>central</mirrorOf>
+</mirror>
+```
 
 ## MySql
 
