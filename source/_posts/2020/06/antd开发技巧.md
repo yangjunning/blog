@@ -90,7 +90,7 @@ const handleTableChange = async (pagination, filters, sorter) => {
 </Table>
 ```
 
-### Table Row Hover 时不改变北京
+### Table Row Hover 时不改变背景
 
 ```css
 .ant-table-thead>tr.ant-table-row-hover:not(.ant-table-expanded-row)>td,
