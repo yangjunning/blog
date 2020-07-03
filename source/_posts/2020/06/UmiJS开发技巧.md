@@ -364,7 +364,25 @@ antd Select 在多选状态下，默认会展示所有选中项，这里我们�
 }
 ```
 
-## 替换 momentjs
+## momentjs
+
+### 使用中文配置
+
+> 参考: [antd design国际化配置为中文时，日期组件中月与星期显示为英文，其他显示为中文](https://blog.csdn.net/hu_lanlan/article/details/91043696)
+
+```js
+import { LocaleProvider } from 'antd';
+import zh_CN from 'antd/lib/locale-provider/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+
+moment.locale('zh-cn');
+...
+
+return <LocaleProvider locale={zh_CN}><App /></LocaleProvider>;
+```
+
+### 替换 momentjs
 
 > 参考: [antd-dayjs-webpack-plugin](https://github.com/ant-design/antd-dayjs-webpack-plugin)、[替换 Moment.js](https://ant.design/docs/react/replace-moment-cn)、[基于umi、antd的前端工程优化实践](https://zhuanlan.zhihu.com/p/136510620)
 
