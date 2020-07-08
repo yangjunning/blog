@@ -423,6 +423,93 @@ export default ({children}) => <ConfigProvider locale={zhCN}>{children}</ConfigP
 
 注：目前dayjs@1.8.20后有个bug会导致替换后WeekPicker显示不正常，1.8.21版本之后已修复。
 
+## dva-loading 使用
+
+> 参考: [dva-loading 实践用法](https://www.jianshu.com/p/61fe7a57fad4)
+
+loading 分为四种使用情况，下面依次用代码展示：
+
+**1、全局**
+
+监听的是应用中所有 effect 是否执行完毕，若执行完毕。loading 的值就变为 `false`。
+
+
+```js
+import React from 'react'
+const {useSelector,useDispatch} = 'dva'
+import {Spin} from 'antd'
+const DemoPage = () => {
+  const {loading} = useSelector(stores => ({
+    loading: stores.loading
+  }))
+  return (
+    <Spin spinning={loading.global}/>
+  )
+}
+```
+
+**2、model**
+
+监听某个模块的所有 effect 是否执行完毕，若执行完毕。loading 的值就变为 `false`。
+
+```js
+import React from 'react'
+const {useSelector,useDispatch} = 'dva'
+import {Spin} from 'antd'
+const DemoPage = () => {
+  const {loading,demoModel} = useSelector(stores => ({
+    loading: stores.loading,
+    demoModel: stores.loading,
+  }))
+  return (
+    <Spin spinning={loading.models.demoModel}/>
+  )
+}
+```
+
+**3、effect:**
+
+监听某个 effect 是否执行完毕，若执行完毕。loading 的值就变为 `false`。
+
+```js
+import React from 'react'
+const {useSelector,useDispatch} = 'dva'
+import {Spin} from 'antd'
+const DemoPage = () => {
+  const {loading,demoModel} = useSelector(stores => ({
+    loading: stores.loading,
+    demoModel: stores.loading,
+  }))
+  return (
+    <Spin spinning={loading.effects['demoModel/effect1']/>
+  )
+}
+```
+
+**4、effects**
+
+如果想监听某个 model 中的某几个 effect，可以使用 `||` 连接，当全部执行完毕时，返回的是 `undefined`，所以必须在末尾拼接 `|| false`：
+
+```js
+import React from 'react'
+const {useSelector,useDispatch} = 'dva'
+import {Spin} from 'antd'
+const DemoPage = () => {
+  const {loading,demoModel} = useSelector(stores => ({
+    loading: stores.loading,
+    demoModel: stores.loading,
+  }))
+  return (
+    <Spin spinning={
+      loading.effects['demoModel/effect1'] ||
+      loading.effects['demoModel/effect3'] ||
+      loading.effects['demoModel/effect4'] || false
+      }
+    />
+  )
+}
+```
+
 ## 联系作者
 
 > 本文首发于个人博客：https://youngjuning.js.org/
