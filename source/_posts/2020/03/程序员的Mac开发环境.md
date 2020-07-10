@@ -316,6 +316,14 @@ $ mvn help:system
 </mirror>
 ```
 
+### 升级 maven
+
+```sh
+$ brew unlink
+$ brew update
+$ brew install maven
+```
+
 ## MySql
 
 ```shell
