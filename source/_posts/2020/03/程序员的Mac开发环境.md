@@ -1,5 +1,5 @@
 ---
-title: 大前端之Mac开发环境
+title: 程序员的Mac开发环境
 date: 2020-03-05 01:06:42
 categories:
   - [杂谈]
@@ -12,11 +12,15 @@ tags:
 
 <!--more-->
 
-## Pock
 
-让 Touch Bar 「变废为宝」的免费小工具，点击图片进入官网了解详情：
+## ohmyzsh
 
-[![](https://i.loli.net/2020/03/26/vGRUVX5ACxfasTi.png)](https://pock.dev/)
+```sh
+# 切换 shell 为 zsh
+$ chsh -s /bin/zsh
+# 通过 curl 安装 ohmyzsh
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
 ## vim
 
@@ -28,15 +32,6 @@ $ sh ~/.vim_runtime/install_awesome_vimrc.sh
 $ echo "set number" >> ~/.vimrc
 $ echo "set showcmd" >> ~/.vimrc
 $ source ~/.vimrc
-```
-
-## ohmyzsh
-
-```sh
-# 切换 shell 为 zsh
-$ chsh -s /bin/zsh
-# 通过 curl 安装 ohmyzsh
-$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ### Agnoster 主题配置
@@ -119,13 +114,6 @@ $ git config --global core.autocrlf input
 > Linux或Mac系统使用LF作为行结束符，因此你不想 Git 在签出文件时进行自动的转换；当一个以 `CRLF` 为行结束符的文件不小心被引入时你肯定想进行修正，把 `core.autocrlf` 设置成 `input` 来告诉 Git 在提交时把 `CRLF` 转换成 `LF`，签出时不转换：
 > 这样会在 Windows 系统上的签出文件中保留 `CRLF`，会在 Mac 和 Linux 系统上，包括仓库中保留 `LF`。
 
-### 学习资料
-
-- [官方Book](https://git-scm.com/book/zh/v2)
-- [git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)：助你入门 git 的简明指南，木有高深内容
-- [廖雪峰的git教程](http://t.cn/RK0tLXB)
-- [猴子都能懂的GIT入门](https://backlog.com/git-tutorial/cn/)
-
 ## GitHub 加速
 
 ```sh
@@ -135,6 +123,13 @@ export ALL_PROXY="socks5://127.0.0.1:7891"
 7981 是你的代理端口，每个人的不一定一样！！！
 
 ![12851588067873_ pic_hd](https://user-images.githubusercontent.com/13204332/80474227-ce18c780-8979-11ea-8024-31bc0503f964.jpg)
+
+### 学习资料
+
+- [官方Book](https://git-scm.com/book/zh/v2)
+- [git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)：助你入门 git 的简明指南，木有高深内容
+- [廖雪峰的git教程](http://t.cn/RK0tLXB)
+- [猴子都能懂的GIT入门](https://backlog.com/git-tutorial/cn/)
 
 ## Node
 
@@ -182,6 +177,107 @@ $ nrm use sigma
 Navicat Premium 是一套数据库开发工具，让你从单一应用程序中同时连接 MySQL、MariaDB、MongoDB、SQL Server、Oracle、PostgreSQL 和 SQLite 数据库。它与 Amazon RDS、Amazon Aurora、Amazon Redshift、Microsoft Azure、Oracle Cloud、MongoDB Atlas、腾讯云和华为云等云数据库兼容。你可以快速轻松地创建、管理和维护数据库。
 
 > Mac版: 链接:https://pan.baidu.com/s/1SlL1_bd4qirMnF0sLwRLhA  密码:4jq6
+
+## Java
+
+### 下载安装
+
+- [javase-jdk8-downloads](https://www.oracle.com/hk/java/technologies/javase/javase-jdk8-downloads.html)
+- [Oracle Java 存档](https://www.oracle.com/cn/java/technologies/oracle-java-archive-downloads.html)
+
+### 实用命令
+
+- Mac下查看已安装的jdk版本及其安装目录: `/usr/libexec/java_home -V`
+   ```sh
+   Matching Java Virtual Machines (2):
+    1.8.0_221, x86_64:	"Java SE 8"	/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home
+    1.7.0_80, x86_64:	"Java SE 7"	/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
+
+   /Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home
+   ```
+- 查看jre版本: `java -version`
+- 查看jdk版本: `javac -version`
+
+### 管理 jdk 版本
+
+> 参考 [Mac 多版本 JDK 管理](https://www.cnblogs.com/magexi/p/12053401.html)
+
+1、下载 jenv:
+
+```sh
+$ brew install jenv
+```
+
+2、安装成功后进行配置
+
+```sh
+# Shell: bash
+$ echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
+$ echo 'eval "$(jenv init -)"' >> ~/.bash_profile
+# Shell: zsh
+$ echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
+$ echo 'eval "$(jenv init -)"' >> ~/.zshrc
+$ exec $SHELL -l
+```
+
+> 注：一定要使用命令 `source ~/.zshrc` 来编译 `~/.zshrc` 文件
+
+3、执行 `jenv doctor` 验证 jenv 是否安装成功，出现以下信息，说明成功了。
+
+```sh
+[OK]	No JAVA_HOME set
+[ERROR]	Java binary in path is not in the jenv shims.
+[ERROR]	Please check your path, or try using /path/to/java/home is not a valid path to java installation.
+	PATH : /Users/user/.jenv/libexec:/Users/user/.jenv/shims:/Users/user/.jenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+[OK]	Jenv is correctly loaded
+```
+
+4、输入以下命令查看找到的java版本
+
+```
+$ jenv versions
+   * system (set by /Users/yangjunning/.jenv/version)
+```
+
+只找到了系统默认的 Java，想要切换版本，请先下载安装不同的版本。
+
+5、使用 `jenv add` 命令将 JDK 1.7 加入 jenv 中
+
+> 版本及路径请通过 `/usr/libexec/java_home -V` 查看。
+
+```sh
+$ jenv add /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/
+oracle64-1.7.0.80 added
+1.7.0.80 added
+1.7 added
+```
+
+6、添加最新的 JDK
+
+```sh
+$ jenv add $(/usr/libexec/java_home)
+```
+
+7、使用 `jenv add` 命令将 JDK 1.8 加入 jenv 中
+
+```
+$ jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/
+oracle64-1.8.0_221 added
+1.8.0_221 added
+1.8 added
+```
+
+8、选择一个JDK版本，运行 jenv local 命令
+
+- `jenv global`: 用来设置全局 JDK
+- `jenv local`: 用来设置当前目录 JDK
+- `jenv shell`: 用来设置 `shell session` 中的 JDK
+
+> 每次切换 JDK 之后，执行 `exec $SHELL -l` 或者重启终端
+
+9、Maven 修改
+
+Maven 仍然会使用 `/usr/libexec/java_home -v` 输出的 JDK，可能与当前使用的 JDK 版本不同。用 `jenv enable-plugin maven` s命令启用 Maven 插件即可
 
 ## maven
 
@@ -373,6 +469,12 @@ $ mysql -u root -p
 ```bash
 $ ssh-keygen -t rsa -C "young_email@aliyun.com"
 ```
+
+## Pock
+
+让 Touch Bar 「变废为宝」的免费小工具，点击图片进入官网了解详情：
+
+[![](https://i.loli.net/2020/03/26/vGRUVX5ACxfasTi.png)](https://pock.dev/)
 
 ## 联系作者
 
