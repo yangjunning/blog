@@ -510,6 +510,19 @@ const DemoPage = () => {
 }
 ```
 
+## 关闭 Umi UI
+
+umi 项目默认启动 `umi ui`，会出现一个mini图标气泡浮在右下角，关闭有两种方式，一种是直接用样式 `display none`。另一种是在启动时加上 `UMI_UI=none` 环境变量。
+
+```json
+{
+  "scripts": {
+    "start": "UMI_UI=none umi dev",
+    "dev": "MOCK=none UMI_UI=none umi dev",
+  }
+}
+```
+
 ## 联系作者
 
 > 本文首发于个人博客：https://youngjuning.js.org/
