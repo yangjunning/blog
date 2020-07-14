@@ -1,0 +1,294 @@
+---
+title: 微精通之Vue移动端开发【持续更新】
+date: 2020-07-13 15:37:03
+categories:
+	- [前端开发,Vue]
+tags:
+	- vant
+	- 微精通
+---
+
+[![](https://i.loli.net/2020/07/13/B1Hlcn3iazQ9fxs.png)](https://mubu.com/doc/7ZqGKUzpwrH)
+
+精通任何技能都是需要时间的，但是往往工作中是不会给你这个时间的，尤其是开发工作。新技术层出不穷，每个项目都可能技术栈不一样。
+
+无法改变环境，那么就只能改变我们自身。如果让公司等你精通再开发，那你只能被淘汰。但如果毫无准备进入开发，项目质量又无从谈起，而且项目也可能失控。而微精通就是框定一个最小范围，快速熟悉完成任务所涉及的内容。今天我就拿 Vue 移动端开发做一个实验。
+
+## 项目初始化
+
+```sh
+# 安装 Vue Cli
+npm install -g @vue/cli
+
+# 创建一个项目
+vue create zhiliao-vue
+```
+
+## 使用 Vant
+
+### 安装依赖
+
+```bash
+$ yarn add vant
+```
+
+### 按需引入组件
+
+安装 `babel-import-plugin`
+
+```sh
+$ yarn add babel-plugin-import -D
+```
+
+对于使用 babel7 的用户，可以在 `babel.config.js` 中配置
+
+```js
+module.exports = {
+  plugins: [
+    ['import', {
+      libraryName: 'vant',
+      libraryDirectory: 'es',
+      style: true
+    }, 'vant']
+  ]
+};
+```
+
+接着你可以在代码中直接引入 Vant 组件：
+
+```js
+// 在 main.js 中引入
+import { Button } from 'vant';
+Vue.use(Button);
+// 在组件内引入
+import { Button } from 'vant';
+components: {
+  [Button.name]: Button,
+},
+```
+
+
+### 配置基于 Rem 的适配方案
+
+Vant 中的样式默认使用`px`作为单位，如果需要使用`rem`单位，推荐使用以下两个工具：
+
+- [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 postcss 插件，用于将单位转化为 rem
+- [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值
+
+安装依赖：
+
+```sh
+$ yarn add amfe-flexible postcss-pxtorem
+```
+
+在根目录新建 `postcss.config.js`，并写入以下配置：
+
+> 参考: [设计稿是750px，根元素应该设置75，但是vant转换后好小，要改成35才行](https://github.com/youzan/vant/issues/1181)、[使用vue vantUi框架 根字体是37.5 和默认根字体75不一致，导致页面组件样式变小](https://www.cnblogs.com/yimei/p/11319657.html)
+
+```js
+module.exports = ({ file }) => {
+  const designWidth = file.dirname.includes('node_modules/vant') ? 375 : 750;
+  return {
+    plugins: {
+      autoprefixer: {
+        overrideBrowserslist: [
+          'Android 4.1',
+          'iOS 7.1',
+          'Chrome > 31',
+          'ff > 31',
+          'ie >= 8',
+        ],
+      },
+      'postcss-pxtorem': {
+        rootValue: designWidth,
+        propList: ['*', '!border'],
+        selectorBlackList: ['.ignore', '.hairlines'],
+      },
+    },
+  };
+};
+
+```
+
+> 注意: 你可以使用 `Px` 或 `PX` 来让 `postcss-pxtorem` 忽略转换，而且这样浏览器也能识别。
+
+在 `src/main.js` 中引入 `amfe-flexible`：
+
+```
+...
+import 'amfe-flexible'
+...
+```
+
+### 底部安全区适配
+
+iPhone X 等机型底部存在底部指示条，指示条的操作区域与页面底部存在重合，容易导致用户误操作，因此我们需要针对这些机型进行底部安全区适配。Vant 中部分组件提供了`safe-area-inset-bottom`属性，设置该属性后，即可在对应的机型上开启适配，如下示例：
+
+```html
+<!-- 在 head 标签中添加 meta 标签，并设置 viewport-fit=cover 值 -->
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
+/>
+
+<!-- 开启 safe-area-inset-bottom 属性 -->
+<van-number-keyboard safe-area-inset-bottom />
+```
+
+### 配置自定义主题色方案
+
+#### 1、按需引入样式
+
+在 `babel.config.js` 中配置按需引入样式源文件:
+
+```js
+module.exports = {
+  plugins: [
+    [
+      'import',
+      {
+        libraryName: 'vant',
+        libraryDirectory: 'es',
+        // 指定样式路径
+        style: (name) => `${name}/style/less`,
+      },
+      'vant',
+    ],
+  ],
+};
+```
+
+#### 2、 修改样式变量
+
+```shell
+$ yarn add less less-loader
+```
+
+```js
+// vue.config.js
+module.exports = {
+  css: {
+    loaderOptions: {
+      less: {
+        modifyVars: {
+          // 直接覆盖变量
+          'text-color': '#111',
+          'border-color': '#eee',
+          // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
+          hack: 'true; @import "your-less-file-path.less";',
+        },
+      },
+    },
+  },
+};
+```
+
+> Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置了一些样式变量，下面是一些基本的样式变量，所有可用的颜色变量请参考 [配置文件](https://github.com/youzan/vant/blob/dev/src/style/var.less)。
+
+### 配置基于 Viewport 的适配方案
+
+该方案和**配置基于 Rem 的适配方案**是互斥的，请二选一。
+
+> 参考: [移动端布局之postcss-px-to-viewport（兼容vant）](https://my.oschina.net/u/4382386/blog/4290707)
+
+1、安装 postcss-px-to-viewport
+
+```shell
+$ yarn add postcss-px-to-viewport
+```
+
+2、配置` postcss.config.js` 文件
+
+```js
+module.exports = ({ file }) => {
+  const designWidth = file.dirname.includes('node_modules/vant') ? 375 : 750;
+  return {
+    plugins: {
+      autoprefixer: {
+        // 用来给不同的浏览器自动添加相应前缀，如-webkit-，-moz-等等
+        overrideBrowserslist: [
+          'Android 4.1',
+          'iOS 7.1',
+          'Chrome > 31',
+          'ff > 31',
+          'ie >= 8',
+        ],
+      },
+      "postcss-px-to-viewport": {
+      	unitToConvert: "px", // 要转化的单位
+        viewportWidth: designWidth, // UI设计稿的宽度
+        unitPrecision: 6, // 转换后的精度，即小数点位数
+        propList: ["*"], // 指定转换的css属性的单位，*代表全部css属性的单位都进行转换
+        viewportUnit: "vw", // 指定需要转换成的视窗单位，默认vw
+        fontViewportUnit: "vw", // 指定字体需要转换成的视窗单位，默认vw
+        selectorBlackList: [], // 指定不转换为视窗单位的类名
+        minPixelValue: 1, // 默认值1，小于或等于1px则不进行转换
+        landscape: false // 是否处理横屏情况
+      }
+    }
+  }
+}
+```
+
+- `propList`: 当有些属性的单位我们不希望转换的时候，可以添加在数组后面，并在前面加上`!`号，如`propList: ["*","!border"]`,这表示：所有css属性的属性的单位都进行转化，除了`border`的
+- `selectorBlackList`：转换的黑名单，在黑名单里面的我们可以写入字符串，只要类名包含有这个字符串，就不会被匹配。比如`selectorBlackList: ['wrap']`,它表示形如`wrap`,`my-wrap`,`wrapper`这样的类名的单位，都不会被转换
+
+## Vue开发常见问题
+
+### vue-cli3出现Invalid Host header的解决方案
+
+> 参考: [vue-cli3出现Invalid Host header的解决方案](https://blog.csdn.net/guzhao593/article/details/85918869)
+
+#### 产生原因
+
+新版的 `webpack-dev-server` 增加了安全验证，默认检查`hostname`，如果`hostname`不是配置内的，将中断访问。
+
+#### 解决方案
+
+对`vue.config.js`进行如下配置：
+
+```js
+module.exports = {
+	devServer: {
+  	disableHostCheck: true,
+  }
+}
+```
+
+### vue中style scope深度访问新方式(`::v-deep`)
+
+> 参考： [vue中style scope深度访问新方式(::v-deep)](https://segmentfault.com/a/1190000021576348)
+
+由于使用 scoped 后，父组件的样式将不会渗透到子组件中。官方引入了 [深度作用选择器](https://vue-loader.vuejs.org/zh/guide/scoped-css.html#深度作用选择器)，来解决这个问题。记得之前使用的是 `/deep/`，据说这个属性有兼容问题，现在引入了新方式：`::v-deep`:
+
+```css
+#editDoctorAdvice {
+  .topSearch {
+    float: left;
+    margin-right: 10px;
+  }
+  &::v-deep .el-input__inner {
+    padding-right: 6px;
+  }
+  .dateTimeClass {
+    width: 150px;
+  }
+}
+```
+
+## 参考链接
+
+- [Vue入门指南(快速上手vue)](https://juejin.im/post/5c9f22876fb9a05e425556ed)
+- [vue快速入门的三个小实例](https://juejin.im/post/5a0c191f6fb9a04514639419)
+- [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware)
+
+
+## 联系作者
+
+> 本文首发于[杨俊宁的博客](https://youngjuning.js.org/)
+
+## Contacts
+
+|                           作者微信                           |                           赞赏作者                           |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="https://i.loli.net/2020/02/22/q2tLiGYvhIxm3Fl.jpg" width="200px"/> | <img src="https://i.loli.net/2020/02/23/q56X1eYZuITQpsj.png" width="200px"/> |
