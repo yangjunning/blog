@@ -14,15 +14,193 @@ tags:
 
 无法改变环境，那么就只能改变我们自身。如果让公司等你精通再开发，那你只能被淘汰。但如果毫无准备进入开发，项目质量又无从谈起，而且项目也可能失控。而微精通就是框定一个最小范围，快速熟悉完成任务所涉及的内容。今天我就拿 Vue 移动端开发做一个实验。
 
+<!--more-->
+
 ## 项目初始化
+
+### 创建项目
 
 ```sh
 # 安装 Vue Cli
 npm install -g @vue/cli
 
 # 创建一个项目
-vue create zhiliao-vue
+vue create zhiliao-vant
 ```
+
+### 配置Prettier
+
+1、安装依赖
+
+```sh
+$ yarn add prettier eslint-plugin-prettier eslint-config-prettier -D
+```
+
+- prettier: Prettier CLI
+- eslint-plugin-prettier: 以 ESLint 插件的形式运行 prettier
+- eslint-config-prettier: 关闭所有不必要或可能与 prettier 的规则冲突的 ESLint 规则。一定要放到最后。
+
+2、配置  `.eslintrc.js`:
+
+```js
+module.exports = {
+  root: true,
+  env: {
+    node: true,
+  },
+  extends: [
+    'plugin:vue/essential',
+    '@vue/airbnb',
+    'plugin:prettier/recommended',
+    "prettier/vue"
+  ],
+  parserOptions: {
+    parser: 'babel-eslint',
+  },
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    // add your rules
+  },
+};
+```
+
+3、新建 `/.prettierrc.js`，并写入如下配置
+
+> 注意: 要不要加分号的原则是**领导为大，喜好为小**
+
+```js
+module.exports = {
+  printWidth: 120, // 一行的字符数，如果超过会进行换行，默认为80
+  tabWidth: 2, // tab缩进大小,默认为2
+  useTabs: false, // 使用tab缩进，默认false
+  semi: false, // 使用分号, 默认true
+  /**
+   * 行尾逗号,默认none,可选 none|es5|all
+   * es5 包括es5中的数组、对象
+   * all 包括函数对象等所有可选
+   */
+  trailingComma: 'es5',
+  singleQuote: true, // 使用单引号, 默认false(在jsx中配置无效, 默认都是双引号)
+  /**
+   * 对象中的空格 默认true
+   * true: { foo: bar }
+   * false: {foo: bar}
+   */
+  bracketSpacing: true,
+  /**
+   * JSX标签闭合位置 默认false
+   * false:
+   * <div
+   *  className=""
+   *  style={{}}
+   * >
+   * true:
+   * <div
+   *  className=""
+   * style={{}} >
+   */
+  jsxBracketSameLine: false,
+  /**
+   * 箭头函数参数括号 默认avoid 可选 avoid| always
+   * avoid 能省略括号的时候就省略 例如x => x
+   * always 总是有括号
+   */
+  arrowParens: 'always',
+  vueIndentScriptAndStyle: false, // vue 文件 script 和 style 标签缩进，默认false
+  endOfLine: 'lf', // 强制使用 unix 风格的换行符
+}
+```
+
+### vscode 配置
+
+新建 `/.vscode/settings.json` 并写入以下配置：
+
+```json
+{
+  "editor.formatOnSave": false, // 关闭保存时自动格式化，防止与 eslint 冲突
+  "files.eol": "\n", // 统一默认行尾字符为 LF
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // 保存时自动修复
+  },
+  // 关闭 vetur 验证功能
+  "vetur.validation.script": false,
+  "vetur.validation.style": false,
+  "vetur.validation.template": false,
+  "vetur.format.enable": false,
+  // 禁用 prettier 插件，避免与 eslint 冲突，建议删除 vscode-prettier
+  "prettier.disableLanguages": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "json",
+    "jsonc"
+  ],
+}
+```
+
+> 注意：如果是团队协作的项目，请删除 `.gitignire` 中的 `.vscode` ，将配置加入到代码库。
+
+### Format初始代码
+
+```sh
+$ yarn lint
+```
+
+## @vue/cli 上手
+
+### ~/.vuerc
+
+被保存的 preset 将会存在用户的 home 目录下一个名为 `.vuerc` 的 JSON 文件里。如果你想要修改被保存的 `preset/` 选项，可以编辑这个文件。
+
+在项目创建的过程中，你也会被提示选择喜欢的包管理器或使用[淘宝 npm 镜像源](https://npm.taobao.org/)以更快地安装依赖。这些选择也将会存入 `~/.vuerc`。下面是我的配置：
+
+```json
+{
+  "useTaobaoRegistry": false,
+  "packageManager": "yarn",
+  "presets": {
+    "javascript": {
+      "useConfigFiles": true,
+      "plugins": {
+        "@vue/cli-plugin-babel": {},
+        "@vue/cli-plugin-router": {
+          "historyMode": false
+        },
+        "@vue/cli-plugin-vuex": {},
+        "@vue/cli-plugin-eslint": {
+          "config": "airbnb",
+          "lintOn": [
+            "save",
+            "commit"
+          ]
+        }
+      },
+      "cssPreprocessor": "less"
+    }
+  }
+}
+```
+
+### git hooks
+
+```json
+{
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
+```
+
+## vue.config.js 配置
 
 ## 使用 Vant
 
@@ -44,27 +222,26 @@ $ yarn add babel-plugin-import -D
 
 ```js
 module.exports = {
+  presets: ['@vue/cli-plugin-babel/preset'],
   plugins: [
-    ['import', {
-      libraryName: 'vant',
-      libraryDirectory: 'es',
-      style: true
-    }, 'vant']
-  ]
-};
+    [
+      'import',
+      {
+        libraryName: 'vant',
+        libraryDirectory: 'es',
+        style: true,
+      },
+      'vant',
+    ],
+  ],
+}
 ```
 
 接着你可以在代码中直接引入 Vant 组件：
 
 ```js
-// 在 main.js 中引入
 import { Button } from 'vant';
 Vue.use(Button);
-// 在组件内引入
-import { Button } from 'vant';
-components: {
-  [Button.name]: Button,
-},
 ```
 
 
