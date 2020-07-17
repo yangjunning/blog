@@ -149,7 +149,7 @@ module.exports = {
 $ yarn lint
 ```
 
-## @vue/cli 上手
+## @vue/cli
 
 ### ~/.vuerc
 
@@ -195,14 +195,38 @@ $ yarn lint
     "*.{js,jsx,vue}": [
       "vue-cli-service lint",
       "git add"
+    ],
+    "*.{md,json}": [
+      "prettier --write",
+      "git add"
     ]
   }
 }
 ```
 
-## vue.config.js 配置
+### 常见问题
 
-## 使用 Vant
+#### vue-cli3出现Invalid Host header的解决方案
+
+> 参考: [vue-cli3出现Invalid Host header的解决方案](https://blog.csdn.net/guzhao593/article/details/85918869)
+
+**产生原因**
+
+新版的 `webpack-dev-server` 增加了安全验证，默认检查`hostname`，如果`hostname`不是配置内的，将中断访问。
+
+**解决方案**
+
+对`vue.config.js`进行如下配置：
+
+```js
+module.exports = {
+  devServer: {
+    disableHostCheck: true,
+  },
+}
+```
+
+## Vant UI
 
 ### 安装依赖
 
@@ -252,29 +276,24 @@ Vant 中的样式默认使用`px`作为单位，如果需要使用`rem`单位，
 - [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 postcss 插件，用于将单位转化为 rem
 - [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值
 
-安装依赖：
+1、安装依赖：
 
 ```sh
-$ yarn add amfe-flexible postcss-pxtorem
+$ yarn add amfe-flexible 
+$ yarn add postcss-pxtorem -D
 ```
 
-在根目录新建 `postcss.config.js`，并写入以下配置：
+2、在根目录新建 `postcss.config.js`，并写入以下配置：
 
 > 参考: [设计稿是750px，根元素应该设置75，但是vant转换后好小，要改成35才行](https://github.com/youzan/vant/issues/1181)、[使用vue vantUi框架 根字体是37.5 和默认根字体75不一致，导致页面组件样式变小](https://www.cnblogs.com/yimei/p/11319657.html)
 
 ```js
 module.exports = ({ file }) => {
-  const designWidth = file.dirname.includes('node_modules/vant') ? 375 : 750;
+  const designWidth = file.dirname.includes('node_modules/vant') ? 37.5 : 75
   return {
     plugins: {
       autoprefixer: {
-        overrideBrowserslist: [
-          'Android 4.1',
-          'iOS 7.1',
-          'Chrome > 31',
-          'ff > 31',
-          'ie >= 8',
-        ],
+        overrideBrowserslist: ['Android 4.1', 'iOS 7.1', 'Chrome > 31', 'ff > 31', 'ie >= 8'],
       },
       'postcss-pxtorem': {
         rootValue: designWidth,
@@ -282,14 +301,13 @@ module.exports = ({ file }) => {
         selectorBlackList: ['.ignore', '.hairlines'],
       },
     },
-  };
-};
-
+  }
+}
 ```
 
 > 注意: 你可以使用 `Px` 或 `PX` 来让 `postcss-pxtorem` 忽略转换，而且这样浏览器也能识别。
 
-在 `src/main.js` 中引入 `amfe-flexible`：
+3、在 `src/main.js` 中引入 `amfe-flexible`：
 
 ```
 ...
@@ -362,16 +380,16 @@ module.exports = {
 
 > Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置了一些样式变量，下面是一些基本的样式变量，所有可用的颜色变量请参考 [配置文件](https://github.com/youzan/vant/blob/dev/src/style/var.less)。
 
-### 配置基于 Viewport 的适配方案
+### 配置基于 Viewport 的适配方案（推荐）
 
 该方案和**配置基于 Rem 的适配方案**是互斥的，请二选一。
 
-> 参考: [移动端布局之postcss-px-to-viewport（兼容vant）](https://my.oschina.net/u/4382386/blog/4290707)
+> 参考: [移动端布局之postcss-px-to-viewport（兼容vant）](https://my.oschina.net/u/4382386/blog/4290707)、[vue —— 利用 viewport 进行适配](https://www.cnblogs.com/cnloop/p/9697229.html)
 
 1、安装 postcss-px-to-viewport
 
 ```shell
-$ yarn add postcss-px-to-viewport
+$ yarn add postcss-px-to-viewport -D
 ```
 
 2、配置` postcss.config.js` 文件
@@ -395,10 +413,10 @@ module.exports = ({ file }) => {
       	unitToConvert: "px", // 要转化的单位
         viewportWidth: designWidth, // UI设计稿的宽度
         unitPrecision: 6, // 转换后的精度，即小数点位数
-        propList: ["*"], // 指定转换的css属性的单位，*代表全部css属性的单位都进行转换
+        propList: ["*","!border"], // 指定转换的css属性的单位，*代表全部css属性的单位都进行转换
         viewportUnit: "vw", // 指定需要转换成的视窗单位，默认vw
         fontViewportUnit: "vw", // 指定字体需要转换成的视窗单位，默认vw
-        selectorBlackList: [], // 指定不转换为视窗单位的类名
+        selectorBlackList: ['.ignore', '.hairlines'], // 指定不转换为视窗单位的类名
         minPixelValue: 1, // 默认值1，小于或等于1px则不进行转换
         landscape: false // 是否处理横屏情况
       }
@@ -410,27 +428,7 @@ module.exports = ({ file }) => {
 - `propList`: 当有些属性的单位我们不希望转换的时候，可以添加在数组后面，并在前面加上`!`号，如`propList: ["*","!border"]`,这表示：所有css属性的属性的单位都进行转化，除了`border`的
 - `selectorBlackList`：转换的黑名单，在黑名单里面的我们可以写入字符串，只要类名包含有这个字符串，就不会被匹配。比如`selectorBlackList: ['wrap']`,它表示形如`wrap`,`my-wrap`,`wrapper`这样的类名的单位，都不会被转换
 
-## Vue开发常见问题
-
-### vue-cli3出现Invalid Host header的解决方案
-
-> 参考: [vue-cli3出现Invalid Host header的解决方案](https://blog.csdn.net/guzhao593/article/details/85918869)
-
-#### 产生原因
-
-新版的 `webpack-dev-server` 增加了安全验证，默认检查`hostname`，如果`hostname`不是配置内的，将中断访问。
-
-#### 解决方案
-
-对`vue.config.js`进行如下配置：
-
-```js
-module.exports = {
-	devServer: {
-  	disableHostCheck: true,
-  }
-}
-```
+## vue
 
 ### vue中style scope深度访问新方式(`::v-deep`)
 
@@ -463,8 +461,6 @@ module.exports = {
 ## 联系作者
 
 > 本文首发于[杨俊宁的博客](https://youngjuning.js.org/)
-
-## Contacts
 
 |                           作者微信                           |                           赞赏作者                           |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
