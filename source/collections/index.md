@@ -116,6 +116,7 @@ date: 2020-02-14 14:09:06
 - [React Native面试题](https://www.jianshu.com/p/af455071a6b8)
 - [前端面试之道](https://juejin.im/book/5bdc715fe51d454e755f75ef?referrer=5a3f85db6fb9a0450909b98a)
 - [react-ultimate-resume](https://welovedevs.com/react-ultimate-resume)：react 在线简历项目
+- [mdnice/markdown-resume](https://github.com/mdnice/markdown-resume)
 
 ## 漫画
 
