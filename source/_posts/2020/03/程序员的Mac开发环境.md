@@ -22,18 +22,6 @@ $ chsh -s /bin/zsh
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-## vim
-
-> 建议使用：https://github.com/amix/vimrc
-
-```shell
-$ git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-$ sh ~/.vim_runtime/install_awesome_vimrc.sh
-$ echo "set number" >> ~/.vimrc
-$ echo "set showcmd" >> ~/.vimrc
-$ source ~/.vimrc
-```
-
 ### Agnoster 主题配置
 
 - 终端执行 `open ~/.zshrc`
@@ -68,6 +56,17 @@ $ source ~/.vimrc
 - `source ~/.zshrc`
 - 确保你的  [~/.wakatime.cfg](https://github.com/wakatime/wakatime#configuring) 文件中配置了 [API key](https://wakatime.com/settings/api-key) 。
 
+## vim
+
+> 建议使用：https://github.com/amix/vimrc
+
+```shell
+$ git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+$ sh ~/.vim_runtime/install_awesome_vimrc.sh
+$ echo "set number" >> ~/.vimrc
+$ echo "set showcmd" >> ~/.vimrc
+$ source ~/.vimrc
+```
 
 ## Homebrew
 
